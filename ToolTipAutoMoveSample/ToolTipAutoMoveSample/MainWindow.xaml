@@ -1,0 +1,33 @@
+﻿<Window x:Class="ToolTipAutoMoveSample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:ToolTipAutoMoveSample"
+        Title="MainWindow"
+        Height="350"
+        Width="525">
+    <Grid>
+
+        <StackPanel HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+            <Button MouseMove="Button_MouseMove"
+                    Content="Test Button 1"
+                    Padding="5"
+                    Margin="5">
+                <Button.ToolTip>
+                    <ToolTip x:Name="tt"
+                             Content="Solution for a ToolTip..." />
+                </Button.ToolTip>
+            </Button>
+
+            <Button Content="Test Button 2"
+                    Padding="5"
+                    Margin="5">
+                <Button.ToolTip>
+                    <ToolTip local:ToolTipHelper.AutoMove="True"
+                             Content="Awesome solution for a ToolTip..." />
+                </Button.ToolTip>
+            </Button>
+        </StackPanel>
+
+    </Grid>
+</Window>
