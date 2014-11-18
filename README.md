@@ -2,7 +2,7 @@
 
 - **[MahAppsMetroSample](https://github.com/punker76/code-samples/tree/master/MahAppsMetroSample)**
 simple start for MahApps.Metro, explained [here](http://jkarger.de/archive/2014/11/18/modern-ui-with-mahapps-metro/)
-- **[ToolTipAutoMoveSample]**(https://github.com/punker76/code-samples/tree/master/ToolTipAutoMoveSample)
+- **[ToolTipAutoMoveSample](https://github.com/punker76/code-samples/tree/master/ToolTipAutoMoveSample)**
 auto moving ToolTip, explained [here](http://jkarger.de/archive/2014/11/02/how-to-make-the-tooltip-follow-the-mouse/)
 
 ## license
