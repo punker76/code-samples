@@ -1,0 +1,20 @@
+﻿<Controls:MetroWindow x:Class="MahAppsMetroSample.MainWindow"
+                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                      xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
+                      Title="MainWindow"
+                      
+                      GlowBrush="{DynamicResource AccentColorBrush}"
+                      
+                      Height="350"
+                      Width="525">
+    <Grid>
+
+        <StackPanel VerticalAlignment="Center">
+            <TextBlock Text="Modern UI with MahApps.Metro" HorizontalAlignment="Center" FontSize="30" />
+            <Button Content="Click Me..." HorizontalAlignment="Left" Margin="5" />
+            <TextBox Text="Lorem ipsum dolor sit amet, consetetur sadipscing" HorizontalAlignment="Left" Margin="5" />
+        </StackPanel>
+
+    </Grid>
+</Controls:MetroWindow>
