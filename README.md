@@ -1,9 +1,12 @@
 # code samples
 
 - **[MahAppsMetroSample](https://github.com/punker76/code-samples/tree/master/MahAppsMetroSample)**
-simple start for MahApps.Metro, explained [here](http://jkarger.de/archive/2014/11/18/modern-ui-with-mahapps-metro/)
+simple start for [MahApps.Metro][], explained [here](http://jkarger.de/archive/2014/11/18/modern-ui-with-mahapps-metro/)
 - **[ToolTipAutoMoveSample](https://github.com/punker76/code-samples/tree/master/ToolTipAutoMoveSample)**
 auto moving ToolTip, explained [here](http://jkarger.de/archive/2014/11/02/how-to-make-the-tooltip-follow-the-mouse/)
+- **[MahAppsMetroDataGridSample](https://github.com/punker76/code-samples/tree/master/MahAppsMetroDataGridSample)** showcase for [MahApps.Metro][] `DataGrid` styles  
+![](screenshots/2014-11-22_16h00_23.png)  
+![](screenshots/2014-11-22_16h00_32.png)
 
 ## license
 
@@ -29,3 +32,4 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+  [MahApps.Metro]: https://github.com/MahApps/MahApps.Metro

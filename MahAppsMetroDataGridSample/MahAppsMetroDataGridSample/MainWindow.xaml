@@ -4,15 +4,12 @@
                       xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
                       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-                      xmlns:local="clr-namespace:MahAppsMetroDataGridSample"
                       xmlns:models="clr-namespace:MahAppsMetroDataGridSample.Models"
                       mc:Ignorable="d"
                       Title="MahApps.Metro DataGrid Sample"
                       GlowBrush="{DynamicResource AccentColorBrush}"
                       Height="350"
-                      Width="525"
-                      d:DataContext="{d:DesignInstance local:MainWindow}"
-                      DataContext="{Binding}">
+                      Width="670">
 
     <Controls:MetroWindow.Resources>
         <ResourceDictionary>
@@ -135,7 +132,7 @@
                     <DataGrid.Columns>
                         <DataGridCheckBoxColumn ElementStyle="{DynamicResource MetroDataGridCheckBox}"
                                                 EditingElementStyle="{DynamicResource MetroDataGridCheckBox}"
-                                                Header="IsSelected"
+                                                Header=""
                                                 Binding="{Binding RelativeSource={RelativeSource AncestorType=DataGridRow}, Path=IsSelected, Mode=OneWay}" />
                         <DataGridTextColumn Header="Title"
                                             Binding="{Binding Title}" />
