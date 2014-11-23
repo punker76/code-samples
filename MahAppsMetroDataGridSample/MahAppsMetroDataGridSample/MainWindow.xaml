@@ -116,6 +116,25 @@
             <Grid RenderOptions.ClearTypeHint="Enabled"
                   TextOptions.TextFormattingMode="Display">
 
+                <Grid.Resources>
+                    <!-- for ne metro style -->
+                    <Style TargetType="{x:Type DataGridColumnHeadersPresenter}">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="DataGridColumnHeadersPresenter">
+                                    <Grid>
+                                        <Border IsHitTestVisible="False"
+                                                BorderThickness="0 0 0 3"
+                                                Background="Transparent"
+                                                BorderBrush="{DynamicResource GrayBrush5}" />
+                                        <ItemsPresenter />
+                                    </Grid>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Grid.Resources>
+
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
                     <RowDefinition Height="Auto" />
@@ -157,6 +176,26 @@
         <TabItem Header="Azure">
             <Grid RenderOptions.ClearTypeHint="Enabled"
                   TextOptions.TextFormattingMode="Display">
+
+                <Grid.Resources>
+                    <!-- for the azure style -->
+                    <Style TargetType="{x:Type DataGridColumnHeadersPresenter}">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="DataGridColumnHeadersPresenter">
+                                    <Grid>
+                                        <Border IsHitTestVisible="False"
+                                                Margin="0 0 0 10"
+                                                BorderThickness="0 0 0 3"
+                                                Background="Transparent"
+                                                BorderBrush="{DynamicResource GrayBrush5}" />
+                                        <ItemsPresenter />
+                                    </Grid>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Grid.Resources>
 
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
