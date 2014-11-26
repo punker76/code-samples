@@ -1,0 +1,119 @@
+﻿<Controls:MetroWindow x:Class="MahAppsMetroThemesSample.AccentStyleWindow"
+                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                      xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
+                      xmlns:Converters="http://metro.mahapps.com/winfx/xaml/shared"
+                      xmlns:metro="clr-namespace:MahApps.Metro;assembly=MahApps.Metro"
+                      RenderOptions.ClearTypeHint="Enabled"
+                      TextOptions.TextFormattingMode="Display"
+                      Title="Change App Style"
+                      Height="250"
+                      Width="600"
+                      GlowBrush="{DynamicResource AccentColorBrush}"
+                      ResizeMode="CanResizeWithGrip">
+
+    <Controls:MetroWindow.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Controls:MetroWindow.Resources>
+
+    <Controls:MetroWindow.TitleTemplate>
+        <DataTemplate>
+            <TextBlock Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Converter={Converters:ToUpperConverter}}"
+                       TextTrimming="CharacterEllipsis"
+                       VerticalAlignment="Center"
+                       Margin="8 -1 0 0"
+                       FontSize="{DynamicResource WindowTitleFontSize}"
+                       FontFamily="{DynamicResource DefaultFont}" />
+        </DataTemplate>
+    </Controls:MetroWindow.TitleTemplate>
+
+    <Grid>
+
+        <Grid.Resources>
+            <Style TargetType="Button"
+                   BasedOn="{StaticResource MetroButton}">
+                <Setter Property="Height"
+                        Value="23" />
+                <Setter Property="Margin"
+                        Value="2" />
+            </Style>
+        </Grid.Resources>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <GroupBox Grid.Row="0"
+                  Margin="5"
+                  Header="Change Window">
+            <UniformGrid Columns="5">
+                <Button Content="Dark"
+                        Click="ChangeWindowThemeButtonClick" />
+                <Button Content="Light"
+                        Click="ChangeWindowThemeButtonClick" />
+                <Button Content="Blue"
+                        Click="ChangeWindowAccentButtonClick" />
+                <Button Content="Red"
+                        Click="ChangeWindowAccentButtonClick" />
+                <Button Content="Green"
+                        Click="ChangeWindowAccentButtonClick" />
+            </UniformGrid>
+        </GroupBox>
+
+        <GroupBox Grid.Row="1"
+                  Margin="5"
+                  Header="Change Application">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <UniformGrid Grid.Row="0"
+                             Columns="5">
+                    <Button Content="Dark"
+                            Click="ChangeAppThemeButtonClick" />
+                    <Button Content="Light"
+                            Click="ChangeAppThemeButtonClick" />
+                    <Button Content="Blue"
+                            Click="ChangeAppAccentButtonClick" />
+                    <Button Content="Red"
+                            Click="ChangeAppAccentButtonClick" />
+                    <Button Content="Green"
+                            Click="ChangeAppAccentButtonClick" />
+                </UniformGrid>
+
+                <UniformGrid Grid.Row="1"
+                             Columns="5">
+                    <Button Content="Custom Theme"
+                            Click="CustomThemeAppButtonClick" />
+                    <Button Content="Custom Accent 1"
+                            Click="CustomAccent1AppButtonClick" />
+                    <Button Content="Custom Accent 2"
+                            Click="CustomAccent2AppButtonClick" />
+                </UniformGrid>
+
+                <ComboBox Grid.Row="2"
+                          x:Name="AccentSelector"
+                          Margin="5"
+                          SelectionChanged="AccentSelectionChanged"
+                          ItemsSource="{x:Static metro:ThemeManager.Accents}">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Name}" />
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+            </Grid>
+        </GroupBox>
+
+    </Grid>
+
+</Controls:MetroWindow>
