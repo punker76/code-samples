@@ -23,7 +23,7 @@ a simple `Visual Basic` [MahApps.Metro][] example
 
 ### MahApps.Metro Themes
 
-- **[MahAppsMetroThemesSample](https://github.com/punker76/code-samples/tree/master/MahAppsMetroThemesSample)** [MahApps.Metro][] `ThemeManager` example
+- **[MahAppsMetroThemesSample](https://github.com/punker76/code-samples/tree/master/MahAppsMetroThemesSample)** [MahApps.Metro][] `ThemeManager` example explained [here](http://jkarger.de/archive/2014/11/27/mahapps-metro-themes/)
 ![](screenshots/2014-11-27_17h29_54.png)
 
 ## license
