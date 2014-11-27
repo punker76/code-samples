@@ -1,12 +1,16 @@
 # code samples
 
-- **[MahAppsMetroSample](https://github.com/punker76/code-samples/tree/master/MahAppsMetroSample)**
-simple start for [MahApps.Metro][], explained [here](http://jkarger.de/archive/2014/11/18/modern-ui-with-mahapps-metro/)
 - **[ToolTipAutoMoveSample](https://github.com/punker76/code-samples/tree/master/ToolTipAutoMoveSample)**
 auto moving ToolTip, explained [here](http://jkarger.de/archive/2014/11/02/how-to-make-the-tooltip-follow-the-mouse/)
+- **[MahAppsMetroSample](https://github.com/punker76/code-samples/tree/master/MahAppsMetroSample)**
+simple start for [MahApps.Metro][], explained [here](http://jkarger.de/archive/2014/11/18/modern-ui-with-mahapps-metro/)
+- **[MahAppsMetroVBSample](https://github.com/punker76/code-samples/tree/master/MahAppsMetroVBSample)**
+a simple `Visual Basic` [MahApps.Metro][] example
 - **[MahAppsMetroDataGridSample](https://github.com/punker76/code-samples/tree/master/MahAppsMetroDataGridSample)** showcase for [MahApps.Metro][] `DataGrid` styles  
 ![](screenshots/2014-11-22_16h00_23.png)  
 ![](screenshots/2014-11-22_16h00_32.png)
+- **[MahAppsMetroThemesSample](https://github.com/punker76/code-samples/tree/master/MahAppsMetroThemesSample)** [MahApps.Metro][] `ThemeManager` example
+![](screenshots/2014-11-27_17h29_54.png)
 
 ## license
 
