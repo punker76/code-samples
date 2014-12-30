@@ -40,7 +40,7 @@ namespace MahAppsMetroThemesSample
             resourceDictionary.Add("CheckmarkFill", new SolidColorBrush((Color)resourceDictionary["AccentColor"]));
             resourceDictionary.Add("RightArrowFill", new SolidColorBrush((Color)resourceDictionary["AccentColor"]));
 
-            resourceDictionary.Add("IdealForegroundColor", Colors.Black);
+            resourceDictionary.Add("IdealForegroundColor", Colors.White);
             resourceDictionary.Add("IdealForegroundColorBrush", new SolidColorBrush((Color)resourceDictionary["IdealForegroundColor"]));
 
             // applying theme to MahApps
