@@ -3,17 +3,25 @@
                       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                       xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
                       Title="MainWindow"
-                      
                       GlowBrush="{DynamicResource AccentColorBrush}"
-                      
                       Height="350"
                       Width="525">
     <Grid>
 
-        <StackPanel VerticalAlignment="Center">
-            <TextBlock Text="Modern UI with MahApps.Metro" HorizontalAlignment="Center" FontSize="30" />
-            <Button Content="Click Me..." HorizontalAlignment="Left" Margin="5" />
-            <TextBox Text="Lorem ipsum dolor sit amet, consetetur sadipscing" HorizontalAlignment="Left" Margin="5" />
+        <StackPanel VerticalAlignment="Center"
+                    HorizontalAlignment="Center">
+            <TextBlock Text="Modern UI with MahApps.Metro"
+                       HorizontalAlignment="Center"
+                       FontSize="30" />
+            <Button Content="Click Me..."
+                    HorizontalAlignment="Left"
+                    Margin="5" />
+            <TextBox Text="Lorem ipsum dolor sit amet, consetetur sadipscing"
+                     HorizontalAlignment="Left"
+                     Margin="5" />
+            <CheckBox Content="ToggleFullScreen"
+                      IsChecked="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=ToggleFullScreen}"
+                      Margin="5" />
         </StackPanel>
 
     </Grid>
