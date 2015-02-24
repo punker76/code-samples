@@ -13,6 +13,18 @@ namespace MahAppsMetroSample
             InitializeComponent();
         }
 
+        private void ButtonBase_OnClick(object sender, EventArgs e)
+        {
+            var w = new MetroWindow();
+            w.Title = "Modal";
+            w.Width = 300;
+            w.Height = 200;
+            w.Owner = this;
+            w.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+            w.EnableDWMDropShadow = true;
+            w.ShowDialog();
+        }
+
         public static readonly DependencyProperty ToggleFullScreenProperty =
             DependencyProperty.Register("ToggleFullScreen",
                                         typeof(bool),
