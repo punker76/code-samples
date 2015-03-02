@@ -27,7 +27,6 @@ namespace MahAppsMetroThemesSample
             resourceDictionary.Add("AccentColorBrush3", new SolidColorBrush((Color)resourceDictionary["AccentColor3"]));
             resourceDictionary.Add("AccentColorBrush4", new SolidColorBrush((Color)resourceDictionary["AccentColor4"]));
             resourceDictionary.Add("WindowTitleColorBrush", new SolidColorBrush((Color)resourceDictionary["AccentColor"]));
-            resourceDictionary.Add("AccentSelectedColorBrush", new SolidColorBrush(Colors.White));
 
             resourceDictionary.Add("ProgressBrush", new LinearGradientBrush(
                 new GradientStopCollection(new[]
@@ -42,6 +41,7 @@ namespace MahAppsMetroThemesSample
 
             resourceDictionary.Add("IdealForegroundColor", Colors.White);
             resourceDictionary.Add("IdealForegroundColorBrush", new SolidColorBrush((Color)resourceDictionary["IdealForegroundColor"]));
+            resourceDictionary.Add("AccentSelectedColorBrush", new SolidColorBrush((Color)resourceDictionary["IdealForegroundColor"]));
 
             // applying theme to MahApps
 
