@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Runtime.CompilerServices;
 using System.Windows;
+using System.Windows.Media;
 using MahApps.Metro.Controls;
 
 namespace MahAppsMetroSample
@@ -16,12 +16,13 @@ namespace MahAppsMetroSample
         private void ButtonBase_OnClick(object sender, EventArgs e)
         {
             var w = new MetroWindow();
+            w.GlowBrush = Brushes.Gray;
+            w.BorderThickness=new Thickness(1);
             w.Title = "Modal";
             w.Width = 300;
             w.Height = 200;
             w.Owner = this;
             w.WindowStartupLocation = WindowStartupLocation.CenterOwner;
-            w.EnableDWMDropShadow = true;
             w.ShowDialog();
         }
 

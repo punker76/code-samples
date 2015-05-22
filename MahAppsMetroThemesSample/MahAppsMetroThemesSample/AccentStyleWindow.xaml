@@ -7,8 +7,7 @@
                       RenderOptions.ClearTypeHint="Enabled"
                       TextOptions.TextFormattingMode="Display"
                       Title="Change App Style"
-                      Height="250"
-                      Width="600"
+                      SizeToContent="WidthAndHeight"
                       GlowBrush="{DynamicResource AccentColorBrush}"
                       ResizeMode="CanResizeWithGrip">
 
