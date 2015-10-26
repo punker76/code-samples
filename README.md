@@ -1,36 +1,38 @@
-# code samples
+# Just some code samples...
 
-### Auto moving ToolTip
+Run `Build.cmd` to compile all stuff.
+
+## Auto moving ToolTip
 
 - **[ToolTipAutoMoveSample](https://github.com/punker76/code-samples/tree/master/ToolTipAutoMoveSample)**
 auto moving ToolTip, explained [here](http://jkarger.de/archive/2014/11/02/how-to-make-the-tooltip-follow-the-mouse/)
 
-### MahApps.Metro blank application
+## MahApps.Metro blank application
 
 - **[MahAppsMetroSample](https://github.com/punker76/code-samples/tree/master/MahAppsMetroSample)**
 simple start for [MahApps.Metro][], explained [here](http://jkarger.de/archive/2014/11/18/modern-ui-with-mahapps-metro/)
 
-### MahApps.Metro blank VB application
+## MahApps.Metro blank VB application
 
 - **[MahAppsMetroVBSample](https://github.com/punker76/code-samples/tree/master/MahAppsMetroVBSample)**
 a simple `Visual Basic` [MahApps.Metro][] example
 
-### MahApps.Metro DataGrid
+## MahApps.Metro DataGrid
 
 - **[MahAppsMetroDataGridSample](https://github.com/punker76/code-samples/tree/master/MahAppsMetroDataGridSample)** showcase for [MahApps.Metro][] `DataGrid` styles  
 ![](screenshots/2014-11-22_16h00_23.png)  
 ![](screenshots/2014-11-22_16h00_32.png)
 
-### MahApps.Metro Themes
+## MahApps.Metro Themes
 
 - **[MahAppsMetroThemesSample](https://github.com/punker76/code-samples/tree/master/MahAppsMetroThemesSample)** [MahApps.Metro][] `ThemeManager` example explained [here](http://jkarger.de/archive/2014/11/27/mahapps-metro-themes/)
 ![](screenshots/2014-11-27_17h29_54.png)
 
-## license
+## License
 
 The MIT License (MIT)
 
-Copyright (c) 2014 Jan Karger
+Copyright (c) 2014-2015 Jan Karger
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
