@@ -1,0 +1,3 @@
+source https://nuget.org/api/v2
+
+nuget MahApps.Metro > 1.1.2
