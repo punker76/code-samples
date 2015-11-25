@@ -1,3 +1,4 @@
 source https://nuget.org/api/v2
 
 nuget MahApps.Metro > 1.1.2
+nuget gong-wpf-dragdrop > 0.1.4.3
