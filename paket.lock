@@ -3,5 +3,5 @@ NUGET
   specs:
     gong-wpf-dragdrop (1.0.0-ALPHA012)
       WPFToolkit (>= 3.5.50211.1) - framework: net35
-    MahApps.Metro (1.2.0)
+    MahApps.Metro (1.2.2)
     WPFToolkit (3.5.50211.1) - framework: net35
