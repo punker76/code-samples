@@ -106,6 +106,56 @@
   <Choose>
     <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v3.5'">
       <ItemGroup>
+        <Reference Include="WPFToolkit">
+          <HintPath>..\..\packages\Extended.Wpf.Toolkit\lib\net35\WPFToolkit.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="Xceed.Wpf.Toolkit">
+          <HintPath>..\..\packages\Extended.Wpf.Toolkit\lib\net35\Xceed.Wpf.Toolkit.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+      <ItemGroup>
+        <Reference Include="Xceed.Wpf.AvalonDock.Themes.Aero">
+          <HintPath>..\..\packages\Extended.Wpf.Toolkit\lib\net40\Xceed.Wpf.AvalonDock.Themes.Aero.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="Xceed.Wpf.AvalonDock.Themes.Metro">
+          <HintPath>..\..\packages\Extended.Wpf.Toolkit\lib\net40\Xceed.Wpf.AvalonDock.Themes.Metro.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="Xceed.Wpf.AvalonDock.Themes.VS2010">
+          <HintPath>..\..\packages\Extended.Wpf.Toolkit\lib\net40\Xceed.Wpf.AvalonDock.Themes.VS2010.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="Xceed.Wpf.AvalonDock">
+          <HintPath>..\..\packages\Extended.Wpf.Toolkit\lib\net40\Xceed.Wpf.AvalonDock.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="Xceed.Wpf.DataGrid">
+          <HintPath>..\..\packages\Extended.Wpf.Toolkit\lib\net40\Xceed.Wpf.DataGrid.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="Xceed.Wpf.Toolkit">
+          <HintPath>..\..\packages\Extended.Wpf.Toolkit\lib\net40\Xceed.Wpf.Toolkit.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v3.5'">
+      <ItemGroup>
         <Reference Include="GongSolutions.Wpf.DragDrop">
           <HintPath>..\..\packages\gong-wpf-dragdrop\lib\net35\GongSolutions.Wpf.DragDrop.dll</HintPath>
           <Private>True</Private>

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Media;
 using MahApps.Metro.Controls;
@@ -11,6 +12,18 @@ namespace MahAppsMetroSample
         {
             this.DataContext = this;
             InitializeComponent();
+            this.TestColl.Add("Test 1");
+            this.TestColl.Add("Test 2");
+            this.TestColl.Add("Test 3");
+        }
+
+        public static readonly DependencyProperty TestCollProperty = DependencyProperty.Register(
+                                                        "TestColl", typeof(ObservableCollection<string>), typeof(MainWindow), new PropertyMetadata(new ObservableCollection<string>()));
+
+        public ObservableCollection<string> TestColl
+        {
+            get { return (ObservableCollection<string>)GetValue(TestCollProperty); }
+            set { SetValue(TestCollProperty, value); }
         }
 
         private void ButtonBase_OnClick(object sender, EventArgs e)

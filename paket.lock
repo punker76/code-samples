@@ -1,7 +1,8 @@
 NUGET
   remote: https://www.nuget.org/api/v2
   specs:
-    gong-wpf-dragdrop (1.0.0-ALPHA012)
+    Extended.Wpf.Toolkit (2.6)
+    gong-wpf-dragdrop (1.0.0-ALPHA013)
       WPFToolkit (>= 3.5.50211.1) - framework: net35
-    MahApps.Metro (1.2.2)
+    MahApps.Metro (1.2.3)
     WPFToolkit (3.5.50211.1) - framework: net35
