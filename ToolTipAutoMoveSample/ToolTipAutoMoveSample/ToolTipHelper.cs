@@ -141,11 +141,11 @@ namespace ToolTipAutoMoveSample
             var locationX = (int)topLeftFromScreen.X % screenWidth;
             var locationY = (int)topLeftFromScreen.Y % screenHeight;
 
-            if (locationX + horizontalOffset + toolTip.RenderSize.Width > screenWidth)
+            if (locationX + horizontalOffset + DpiHelper.TransformToDeviceX(toolTip.RenderSize.Width) > screenWidth)
             {
                 horizontalOffset = horizontalOffset - toolTip.RenderSize.Width - 1.5 * hOffset;
             }
-            if (locationY + verticalOffset + toolTip.RenderSize.Height > screenHeight)
+            if (locationY + verticalOffset + DpiHelper.TransformToDeviceY(toolTip.RenderSize.Height) > screenHeight)
             {
                 verticalOffset = verticalOffset - toolTip.RenderSize.Height - 1.5 * vOffset;
             }
