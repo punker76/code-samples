@@ -124,16 +124,20 @@ namespace ToolTipAutoMoveSample
             toolTip.Placement = PlacementMode.Relative;
 
             var hOffset = DpiHelper.TransformToDeviceX(GetAutoMoveHorizontalOffset(toolTip));
-            var vOffset = DpiHelper.TransformToDeviceX(GetAutoMoveVerticalOffset(toolTip));
+            var vOffset = DpiHelper.TransformToDeviceY(GetAutoMoveVerticalOffset(toolTip));
 
             var position = Mouse.GetPosition(toolTip.PlacementTarget);
             var horizontalOffset = position.X + hOffset;
             var verticalOffset = position.Y + vOffset;
 
             var topLeftFromScreen = toolTip.PlacementTarget.PointToScreen(new Point(0, 0));
-            // todo get the current screen size
-            var screenWidth = (int)DpiHelper.TransformToDeviceX(toolTip.PlacementTarget, SystemParameters.PrimaryScreenWidth);
-            var screenHeight = (int)DpiHelper.TransformToDeviceY(toolTip.PlacementTarget, SystemParameters.PrimaryScreenHeight);
+
+            var monitorRECT = MonitorHelper.GetMonitorSizeFromPoint();
+            Debug.WriteLine(">>mo {0} / {1}", monitorRECT.Width, monitorRECT.Height);
+
+            var screenWidth = Math.Abs(monitorRECT.Width);// (int)DpiHelper.TransformToDeviceX(toolTip.PlacementTarget, SystemParameters.PrimaryScreenWidth);
+            var screenHeight = Math.Abs(monitorRECT.Height);// (int)DpiHelper.TransformToDeviceY(toolTip.PlacementTarget, SystemParameters.PrimaryScreenHeight);
+
             var locationX = (int)topLeftFromScreen.X % screenWidth;
             var locationY = (int)topLeftFromScreen.Y % screenHeight;
 

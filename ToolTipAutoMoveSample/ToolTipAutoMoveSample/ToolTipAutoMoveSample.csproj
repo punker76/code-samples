@@ -54,6 +54,20 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="DpiHelper.cs" />
+    <Compile Include="MonitorHelper.cs" />
+    <Compile Include="Standard\ComGuids.cs" />
+    <Compile Include="Standard\Debug.cs" />
+    <Compile Include="Standard\DoubleUtil.cs" />
+    <Compile Include="Standard\DpiHelper.cs" />
+    <Compile Include="Standard\ErrorCodes.cs" />
+    <Compile Include="Standard\MessageWindow.cs" />
+    <Compile Include="Standard\NativeMethods.cs" />
+    <Compile Include="Standard\ShellProvider.cs" />
+    <Compile Include="Standard\StreamHelper.cs" />
+    <Compile Include="Standard\Utilities.cs" />
+    <Compile Include="Standard\Utilities.Windows.cs" />
+    <Compile Include="Standard\Utilities.Wpf.cs" />
+    <Compile Include="Standard\Verify.cs" />
     <Compile Include="ToolTipHelper.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
