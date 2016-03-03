@@ -1,6 +1,8 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 
 namespace ToolTipAutoMoveSample
@@ -8,10 +10,22 @@ namespace ToolTipAutoMoveSample
     public static class ToolTipHelper
     {
         public static readonly DependencyProperty AutoMoveProperty =
-          DependencyProperty.RegisterAttached("AutoMove",
-                                              typeof(bool),
-                                              typeof(ToolTipHelper),
-                                              new FrameworkPropertyMetadata(false, AutoMovePropertyChangedCallback));
+            DependencyProperty.RegisterAttached("AutoMove",
+                                                typeof(bool),
+                                                typeof(ToolTipHelper),
+                                                new FrameworkPropertyMetadata(false, AutoMovePropertyChangedCallback));
+
+        public static readonly DependencyProperty AutoMoveHorizontalOffsetProperty =
+            DependencyProperty.RegisterAttached("AutoMoveHorizontalOffset",
+                                                typeof(double),
+                                                typeof(ToolTipHelper),
+                                                new FrameworkPropertyMetadata(16d));
+
+        public static readonly DependencyProperty AutoMoveVerticalOffsetProperty =
+            DependencyProperty.RegisterAttached("AutoMoveVerticalOffset",
+                                                typeof(double),
+                                                typeof(ToolTipHelper),
+                                                new FrameworkPropertyMetadata(16d));
 
         /// <summary>
         /// Enables a ToolTip to follow the mouse cursor.
@@ -28,12 +42,6 @@ namespace ToolTipAutoMoveSample
             element.SetValue(AutoMoveProperty, value);
         }
 
-        public static readonly DependencyProperty AutoMoveHorizontalOffsetProperty =
-          DependencyProperty.RegisterAttached("AutoMoveHorizontalOffset",
-                                              typeof(double),
-                                              typeof(ToolTipHelper),
-                                              new FrameworkPropertyMetadata(16d));
-
         [AttachedPropertyBrowsableForType(typeof(ToolTip))]
         public static double GetAutoMoveHorizontalOffset(ToolTip element)
         {
@@ -44,12 +52,6 @@ namespace ToolTipAutoMoveSample
         {
             element.SetValue(AutoMoveHorizontalOffsetProperty, value);
         }
-
-        public static readonly DependencyProperty AutoMoveVerticalOffsetProperty =
-          DependencyProperty.RegisterAttached("AutoMoveVerticalOffset",
-                                              typeof(double),
-                                              typeof(ToolTipHelper),
-                                              new FrameworkPropertyMetadata(16d));
 
         [AttachedPropertyBrowsableForType(typeof(ToolTip))]
         public static double GetAutoMoveVerticalOffset(ToolTip element)
@@ -114,15 +116,39 @@ namespace ToolTipAutoMoveSample
 
         private static void MoveToolTip(IInputElement target, ToolTip toolTip)
         {
-            if (toolTip == null || target == null)
+            if (toolTip == null || target == null || toolTip.PlacementTarget == null)
             {
                 return;
             }
-            toolTip.Placement = System.Windows.Controls.Primitives.PlacementMode.Relative;
-            var hOffset = GetAutoMoveHorizontalOffset(toolTip);
-            var vOffset = GetAutoMoveVerticalOffset(toolTip);
-            toolTip.HorizontalOffset = Mouse.GetPosition(target).X + hOffset;
-            toolTip.VerticalOffset = Mouse.GetPosition(target).Y + vOffset;
+
+            toolTip.Placement = PlacementMode.Relative;
+
+            var hOffset = DpiHelper.TransformToDeviceX(GetAutoMoveHorizontalOffset(toolTip));
+            var vOffset = DpiHelper.TransformToDeviceX(GetAutoMoveVerticalOffset(toolTip));
+
+            var position = Mouse.GetPosition(toolTip.PlacementTarget);
+            var horizontalOffset = position.X + hOffset;
+            var verticalOffset = position.Y + vOffset;
+
+            var topLeftFromScreen = toolTip.PlacementTarget.PointToScreen(new Point(0, 0));
+            // todo get the current screen size
+            var screenWidth = (int)DpiHelper.TransformToDeviceX(toolTip.PlacementTarget, SystemParameters.PrimaryScreenWidth);
+            var screenHeight = (int)DpiHelper.TransformToDeviceY(toolTip.PlacementTarget, SystemParameters.PrimaryScreenHeight);
+            var locationX = (int)topLeftFromScreen.X % screenWidth;
+            var locationY = (int)topLeftFromScreen.Y % screenHeight;
+
+            if (locationX + horizontalOffset + toolTip.RenderSize.Width > screenWidth)
+            {
+                horizontalOffset = horizontalOffset - toolTip.RenderSize.Width - 1.5 * hOffset;
+            }
+            if (locationY + verticalOffset + toolTip.RenderSize.Height > screenHeight)
+            {
+                verticalOffset = verticalOffset - toolTip.RenderSize.Height - 1.5 * vOffset;
+            }
+
+            toolTip.HorizontalOffset = horizontalOffset;
+            toolTip.VerticalOffset = verticalOffset;
+
             Debug.WriteLine(">>ho {0:.2f} >> vo {1:.2f}", toolTip.HorizontalOffset, toolTip.VerticalOffset);
         }
     }
