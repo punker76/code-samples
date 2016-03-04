@@ -3,23 +3,24 @@
                       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                       xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
                       xmlns:Converters="http://metro.mahapps.com/winfx/xaml/shared"
-                      RenderOptions.ClearTypeHint="Enabled"
-                      TextOptions.TextFormattingMode="Display"
+                      xmlns:metro="clr-namespace:MahApps.Metro;assembly=MahApps.Metro"
                       Title="MahApps.Metro Themes"
-                      Height="250"
                       Width="600"
+                      Height="250"
                       GlowBrush="{DynamicResource AccentColorBrush}"
+                      RenderOptions.ClearTypeHint="Enabled"
                       ResizeMode="CanResizeWithGrip"
+                      TextOptions.TextFormattingMode="Display"
                       WindowStartupLocation="CenterScreen">
 
     <Controls:MetroWindow.TitleTemplate>
         <DataTemplate>
-            <TextBlock Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Converter={Converters:ToUpperConverter}}"
-                       TextTrimming="CharacterEllipsis"
+            <TextBlock Margin="8 -1 0 0"
                        VerticalAlignment="Center"
-                       Margin="8 -1 0 0"
+                       FontFamily="{DynamicResource DefaultFont}"
                        FontSize="{DynamicResource WindowTitleFontSize}"
-                       FontFamily="{DynamicResource DefaultFont}" />
+                       Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Content, Converter={Converters:ToUpperConverter}}"
+                       TextTrimming="CharacterEllipsis" />
         </DataTemplate>
     </Controls:MetroWindow.TitleTemplate>
 
@@ -27,14 +28,10 @@
         <Controls:WindowCommands>
             <Button Click="ChangeAppStyleButtonClick">
                 <StackPanel Orientation="Horizontal">
-                    <Rectangle Width="20"
-                               Height="20"
-                               Fill="{Binding RelativeSource={RelativeSource AncestorType=Button}, Path=Foreground}">
-                        <Rectangle.OpacityMask>
-                            <VisualBrush Stretch="Fill"
-                                         Visual="{StaticResource appbar_cupcake}" />
-                        </Rectangle.OpacityMask>
-                    </Rectangle>
+                    <metro:PackIconModern Width="24"
+                                          Height="24"
+                                          Padding="-6"
+                                          Kind="Cupcake" />
                     <TextBlock Margin="4 0 0 0"
                                VerticalAlignment="Center"
                                Text="Change App Style..." />
@@ -45,11 +42,10 @@
 
 
     <Grid>
-        <StackPanel HorizontalAlignment="Center"
-                    VerticalAlignment="Center">
-            <TextBlock Text="Welcome to the MahApps.Metro World..."
-                       FontSize="32"
-                       FontWeight="Light" />
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock FontSize="32"
+                       FontWeight="Light"
+                       Text="Welcome to the MahApps.Metro World..." />
             <Border Height="5" Background="{DynamicResource AccentColorBrush}" />
         </StackPanel>
     </Grid>
