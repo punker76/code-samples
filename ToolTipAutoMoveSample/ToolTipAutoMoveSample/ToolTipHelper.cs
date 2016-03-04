@@ -87,24 +87,26 @@ namespace ToolTipAutoMoveSample
         {
             var toolTip = (ToolTip)sender;
             var target = toolTip.PlacementTarget as FrameworkElement;
-            if (target != null)
+            if (target == null)
             {
-                // move the tooltip on openeing to the correct position
-                MoveToolTip(target, toolTip);
-                target.MouseMove += ToolTipTargetPreviewMouseMove;
-                Debug.WriteLine(">>tool tip opened");
+                return;
             }
+            // move the tooltip on openeing to the correct position
+            MoveToolTip(target, toolTip);
+            target.MouseMove += ToolTipTargetPreviewMouseMove;
+            Debug.WriteLine(">>tool tip opened");
         }
 
         private static void ToolTip_Closed(object sender, RoutedEventArgs e)
         {
             var toolTip = (ToolTip)sender;
             var target = toolTip.PlacementTarget as FrameworkElement;
-            if (target != null)
+            if (target == null)
             {
-                target.MouseMove -= ToolTipTargetPreviewMouseMove;
-                Debug.WriteLine(">>tool tip closed");
+                return;
             }
+            target.MouseMove -= ToolTipTargetPreviewMouseMove;
+            Debug.WriteLine(">>tool tip closed");
         }
 
         private static void ToolTipTargetPreviewMouseMove(object sender, MouseEventArgs e)
@@ -135,11 +137,21 @@ namespace ToolTipAutoMoveSample
 
             var topLeftFromScreen = toolTip.PlacementTarget.PointToScreen(new Point(0, 0));
 
-            var monitorRECT = MonitorHelper.GetMonitorSizeFromPoint();
-            Debug.WriteLine(">>mo {0} / {1}", monitorRECT.Width, monitorRECT.Height);
+            var monitorINFO = MonitorHelper.GetMonitorInfoFromPoint();
+            Debug.WriteLine(">>rcWork    >> w: {0}     h: {1}", monitorINFO.rcWork.Width, monitorINFO.rcWork.Height);
+            Debug.WriteLine(">>rcMonitor >> w: {0}     h: {1}", monitorINFO.rcMonitor.Width, monitorINFO.rcMonitor.Height);
 
-            var screenWidth = Math.Abs(monitorRECT.Width); // (int)DpiHelper.TransformToDeviceX(toolTip.PlacementTarget, SystemParameters.PrimaryScreenWidth);
-            var screenHeight = Math.Abs(monitorRECT.Height); // (int)DpiHelper.TransformToDeviceY(toolTip.PlacementTarget, SystemParameters.PrimaryScreenHeight);
+            var screenWidth = Math.Abs(monitorINFO.rcWork.Width); // (int)DpiHelper.TransformToDeviceX(toolTip.PlacementTarget, SystemParameters.PrimaryScreenWidth);
+            var screenHeight = Math.Abs(monitorINFO.rcWork.Height); // (int)DpiHelper.TransformToDeviceY(toolTip.PlacementTarget, SystemParameters.PrimaryScreenHeight);
+
+            if (topLeftFromScreen.X < 0)
+            {
+                topLeftFromScreen.X = Math.Abs(monitorINFO.rcMonitor.Width) + topLeftFromScreen.X;
+            }
+            if (topLeftFromScreen.Y < 0)
+            {
+                topLeftFromScreen.Y = Math.Abs(monitorINFO.rcMonitor.Height) + topLeftFromScreen.Y;
+            }
 
             var locationX = (int)topLeftFromScreen.X % screenWidth;
             var locationY = (int)topLeftFromScreen.Y % screenHeight;
@@ -158,12 +170,12 @@ namespace ToolTipAutoMoveSample
                 newVerticalOffset = position.Y - toolTip.RenderSize.Height - 0.5 * vDPIOffset;
             }
 
-            Debug.WriteLine(">>bottomY {0} \t>> rightX {1}", bottomY, rightX);
+            Debug.WriteLine(">>tooltip   >> bottomY: {0:F}    rightX: {1:F}", bottomY, rightX);
 
             toolTip.HorizontalOffset = newHorizontalOffset;
             toolTip.VerticalOffset = newVerticalOffset;
 
-            Debug.WriteLine(">>ho {0:.2f} \t>> vo {1:.2f}", toolTip.HorizontalOffset, toolTip.VerticalOffset);
+            Debug.WriteLine(">>offset    >> ho: {0:F}         vo: {1:F}", toolTip.HorizontalOffset, toolTip.VerticalOffset);
         }
     }
 }
