@@ -123,37 +123,47 @@ namespace ToolTipAutoMoveSample
 
             toolTip.Placement = PlacementMode.Relative;
 
-            var hOffset = DpiHelper.TransformToDeviceX(GetAutoMoveHorizontalOffset(toolTip));
-            var vOffset = DpiHelper.TransformToDeviceY(GetAutoMoveVerticalOffset(toolTip));
+            var hOffsetFromToolTip = GetAutoMoveHorizontalOffset(toolTip);
+            var vOffsetFromToolTip = GetAutoMoveVerticalOffset(toolTip);
+
+            var hDPIOffset = DpiHelper.TransformToDeviceX(toolTip.PlacementTarget, hOffsetFromToolTip);
+            var vDPIOffset = DpiHelper.TransformToDeviceY(toolTip.PlacementTarget, vOffsetFromToolTip);
 
             var position = Mouse.GetPosition(toolTip.PlacementTarget);
-            var horizontalOffset = position.X + hOffset;
-            var verticalOffset = position.Y + vOffset;
+            var newHorizontalOffset = position.X + hDPIOffset;
+            var newVerticalOffset = position.Y + vDPIOffset;
 
             var topLeftFromScreen = toolTip.PlacementTarget.PointToScreen(new Point(0, 0));
 
             var monitorRECT = MonitorHelper.GetMonitorSizeFromPoint();
             Debug.WriteLine(">>mo {0} / {1}", monitorRECT.Width, monitorRECT.Height);
 
-            var screenWidth = Math.Abs(monitorRECT.Width);// (int)DpiHelper.TransformToDeviceX(toolTip.PlacementTarget, SystemParameters.PrimaryScreenWidth);
-            var screenHeight = Math.Abs(monitorRECT.Height);// (int)DpiHelper.TransformToDeviceY(toolTip.PlacementTarget, SystemParameters.PrimaryScreenHeight);
+            var screenWidth = Math.Abs(monitorRECT.Width); // (int)DpiHelper.TransformToDeviceX(toolTip.PlacementTarget, SystemParameters.PrimaryScreenWidth);
+            var screenHeight = Math.Abs(monitorRECT.Height); // (int)DpiHelper.TransformToDeviceY(toolTip.PlacementTarget, SystemParameters.PrimaryScreenHeight);
 
             var locationX = (int)topLeftFromScreen.X % screenWidth;
             var locationY = (int)topLeftFromScreen.Y % screenHeight;
 
-            if (locationX + horizontalOffset + DpiHelper.TransformToDeviceX(toolTip.RenderSize.Width) > screenWidth)
+            var renderDPIWidth = DpiHelper.TransformToDeviceX(toolTip.RenderSize.Width);
+            var rightX = locationX + newHorizontalOffset + renderDPIWidth;
+            if (rightX > screenWidth)
             {
-                horizontalOffset = horizontalOffset - toolTip.RenderSize.Width - 1.5 * hOffset;
-            }
-            if (locationY + verticalOffset + DpiHelper.TransformToDeviceY(toolTip.RenderSize.Height) > screenHeight)
-            {
-                verticalOffset = verticalOffset - toolTip.RenderSize.Height - 1.5 * vOffset;
+                newHorizontalOffset = position.X - toolTip.RenderSize.Width - 0.5 * hDPIOffset;
             }
 
-            toolTip.HorizontalOffset = horizontalOffset;
-            toolTip.VerticalOffset = verticalOffset;
+            var renderDPIHeight = DpiHelper.TransformToDeviceY(toolTip.RenderSize.Height);
+            var bottomY = locationY + newVerticalOffset + renderDPIHeight;
+            if (bottomY > screenHeight)
+            {
+                newVerticalOffset = position.Y - toolTip.RenderSize.Height - 0.5 * vDPIOffset;
+            }
 
-            Debug.WriteLine(">>ho {0:.2f} >> vo {1:.2f}", toolTip.HorizontalOffset, toolTip.VerticalOffset);
+            Debug.WriteLine(">>bottomY {0} \t>> rightX {1}", bottomY, rightX);
+
+            toolTip.HorizontalOffset = newHorizontalOffset;
+            toolTip.VerticalOffset = newVerticalOffset;
+
+            Debug.WriteLine(">>ho {0:.2f} \t>> vo {1:.2f}", toolTip.HorizontalOffset, toolTip.VerticalOffset);
         }
     }
 }
