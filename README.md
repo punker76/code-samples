@@ -5,8 +5,7 @@ Run `Build.cmd` to compile all stuff.
 ## Auto moving ToolTip
 
 - **[ToolTipAutoMoveSample](https://github.com/punker76/code-samples/tree/master/ToolTipAutoMoveSample)** Auto moving ToolTip, explained [here](http://jkarger.de/archive/2014/11/02/how-to-make-the-tooltip-follow-the-mouse/)  
-![automove_tooltip2](https://cloud.githubusercontent.com/assets/658431/13525375/d708a9e8-e200-11e5-9bd9-035d50632b34.gif)  
-![automove_tooltip](https://cloud.githubusercontent.com/assets/658431/13509772/7ff7406a-e18d-11e5-9238-e48c6e4fa2fa.gif)
+![automove_tooltip2](https://cloud.githubusercontent.com/assets/658431/13525375/d708a9e8-e200-11e5-9bd9-035d50632b34.gif)
 
 ## MahApps.Metro blank application
 
@@ -26,14 +25,16 @@ a simple `Visual Basic` [MahApps.Metro][] example
 
 ## MahApps.Metro Themes
 
-- **[MahAppsMetroThemesSample](https://github.com/punker76/code-samples/tree/master/MahAppsMetroThemesSample)** [MahApps.Metro][] `ThemeManager` example explained [here](http://jkarger.de/archive/2014/11/27/mahapps-metro-themes/)
+- **[MahAppsMetroThemesSample](https://github.com/punker76/code-samples/tree/master/MahAppsMetroThemesSample)** [MahApps.Metro][] `ThemeManager` example explained [here](http://jkarger.de/archive/2014/11/27/mahapps-metro-themes/)  
+![mahapps_more_colors](https://cloud.githubusercontent.com/assets/658431/13557016/9d7e23a4-e3e7-11e5-839a-177c39977e8e.gif)  
+
 ![](screenshots/2014-11-27_17h29_54.png)
 
 ## License
 
 The MIT License (MIT)
 
-Copyright (c) 2014-2015 Jan Karger
+Copyright (c) 2014-2016 Jan Karger
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
