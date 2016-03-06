@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Linq;
 using System.Windows;
 using System.Windows.Media;
 using MahApps.Metro;
@@ -39,7 +38,7 @@ namespace MahAppsMetroThemesSample
             resourceDictionary.Add("CheckmarkFill", GetSolidColorBrush((Color)resourceDictionary["AccentColor"]));
             resourceDictionary.Add("RightArrowFill", GetSolidColorBrush((Color)resourceDictionary["AccentColor"]));
 
-            resourceDictionary.Add("IdealForegroundColor", Colors.White);
+            resourceDictionary.Add("IdealForegroundColor", IdealTextColor(color));
             resourceDictionary.Add("IdealForegroundColorBrush", GetSolidColorBrush((Color)resourceDictionary["IdealForegroundColor"]));
             resourceDictionary.Add("IdealForegroundDisabledBrush", GetSolidColorBrush((Color)resourceDictionary["IdealForegroundColor"], 0.4));
             resourceDictionary.Add("AccentSelectedColorBrush", GetSolidColorBrush((Color)resourceDictionary["IdealForegroundColor"]));
@@ -69,9 +68,25 @@ namespace MahAppsMetroThemesSample
             if (changeImmediately)
             {
                 var application = Application.Current;
-                var applicationTheme = ThemeManager.AppThemes.First(x => string.Equals(x.Name, "BaseLight"));
-                ThemeManager.ChangeAppStyle(application, newAccent, applicationTheme);
+                //var applicationTheme = ThemeManager.AppThemes.First(x => string.Equals(x.Name, "BaseLight"));
+                // detect current application theme
+                Tuple<AppTheme, Accent> applicationTheme = ThemeManager.DetectAppStyle(application);
+                ThemeManager.ChangeAppStyle(application, newAccent, applicationTheme.Item1);
             }
+        }
+
+        /// <summary>
+        /// Determining Ideal Text Color Based on Specified Background Color
+        /// http://www.codeproject.com/KB/GDI-plus/IdealTextColor.aspx
+        /// </summary>
+        /// <param name = "color">The bg.</param>
+        /// <returns></returns>
+        private static Color IdealTextColor(Color color)
+        {
+            const int nThreshold = 105;
+            var bgDelta = System.Convert.ToInt32((color.R * 0.299) + (color.G * 0.587) + (color.B * 0.114));
+            var foreColor = (255 - bgDelta < nThreshold) ? Colors.Black : Colors.White;
+            return foreColor;
         }
 
         private static SolidColorBrush GetSolidColorBrush(Color color, double opacity = 1d)

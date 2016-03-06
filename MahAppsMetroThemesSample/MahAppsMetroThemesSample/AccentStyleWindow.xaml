@@ -110,6 +110,17 @@
                             </DataTemplate>
                         </ComboBox.ItemTemplate>
                     </ComboBox>
+
+                    <ComboBox x:Name="ColorsSelector"
+                              Margin="5"
+                              SelectionChanged="ColorsSelectorOnSelectionChanged"
+                              ItemsSource="{Binding Colors}">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Key}" />
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
                 </UniformGrid>
             </Grid>
         </GroupBox>
