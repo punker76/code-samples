@@ -1,6 +1,6 @@
 # Just some code samples...
 
-Run `Build.cmd` to compile all stuff.
+Run `Build.cmd` to compile all stuff. You need [Visual Studio 2015 Community Edition](<https://www.visualstudio.com/>) to build the solutions, so I can use the new C# 6 features.
 
 ## Auto moving ToolTip
 
