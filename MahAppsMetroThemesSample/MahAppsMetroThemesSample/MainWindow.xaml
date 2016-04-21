@@ -28,13 +28,8 @@
         <Controls:WindowCommands>
             <Button Click="ChangeAppStyleButtonClick">
                 <StackPanel Orientation="Horizontal">
-                    <metro:PackIconModern Width="24"
-                                          Height="24"
-                                          Padding="-6"
-                                          Kind="Cupcake" />
-                    <TextBlock Margin="4 0 0 0"
-                               VerticalAlignment="Center"
-                               Text="Change App Style..." />
+                    <Controls:PackIconModern Width="24" Height="24" Kind="Cupcake" />
+                    <TextBlock Margin="4 0 0 0" VerticalAlignment="Center" Text="Change App Style..." />
                 </StackPanel>
             </Button>
         </Controls:WindowCommands>
