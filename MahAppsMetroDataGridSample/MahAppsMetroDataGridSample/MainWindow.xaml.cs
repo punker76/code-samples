@@ -11,6 +11,10 @@ namespace MahAppsMetroDataGridSample
         public MainWindow()
         {
             InitializeComponent();
+            var viewModel = new MainViewModel();
+            this.DataContext = viewModel;
+            this.Loaded += (sender, args) => viewModel.Start();
+            this.Closed += (sender, args) => viewModel.Stop();
         }
     }
 }
