@@ -1,0 +1,18 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:mahAppsMetroSample="clr-namespace:MahAppsMetroSample"
+                    xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colors.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Themes/MetroWindow.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style TargetType="mahAppsMetroSample:CustomBaseMetroWindow" BasedOn="{StaticResource {x:Type controls:MetroWindow}}">
+        <Setter Property="controls:ControlsHelper.ContentCharacterCasing" Value="Lower" />
+        <Setter Property="WindowTransitionsEnabled" Value="False" />
+        <Setter Property="WindowTitleBrush" Value="Brown" />
+    </Style>
+
+</ResourceDictionary>

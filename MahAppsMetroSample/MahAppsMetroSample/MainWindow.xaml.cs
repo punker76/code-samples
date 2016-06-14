@@ -6,7 +6,7 @@ using MahApps.Metro.Controls;
 
 namespace MahAppsMetroSample
 {
-    public partial class MainWindow : MetroWindow
+    public partial class MainWindow : CustomBaseMetroWindow
     {
         public MainWindow()
         {
@@ -18,11 +18,11 @@ namespace MahAppsMetroSample
         }
 
         public static readonly DependencyProperty TestCollProperty = DependencyProperty.Register(
-                                                        "TestColl", typeof(ObservableCollection<string>), typeof(MainWindow), new PropertyMetadata(new ObservableCollection<string>()));
+            "TestColl", typeof(ObservableCollection<string>), typeof(MainWindow), new PropertyMetadata(new ObservableCollection<string>()));
 
         public ObservableCollection<string> TestColl
         {
-            get { return (ObservableCollection<string>)GetValue(TestCollProperty); }
+            get { return (ObservableCollection<string>) GetValue(TestCollProperty); }
             set { SetValue(TestCollProperty, value); }
         }
 
@@ -30,7 +30,7 @@ namespace MahAppsMetroSample
         {
             var w = new MetroWindow();
             w.GlowBrush = Brushes.Gray;
-            w.BorderThickness=new Thickness(1);
+            w.BorderThickness = new Thickness(1);
             w.Title = "Modal";
             w.Width = 300;
             w.Height = 200;
@@ -41,16 +41,16 @@ namespace MahAppsMetroSample
 
         public static readonly DependencyProperty ToggleFullScreenProperty =
             DependencyProperty.Register("ToggleFullScreen",
-                                        typeof(bool),
-                                        typeof(MainWindow),
-                                        new PropertyMetadata(default(bool), ToggleFullScreenPropertyChangedCallback));
+                typeof(bool),
+                typeof(MainWindow),
+                new PropertyMetadata(default(bool), ToggleFullScreenPropertyChangedCallback));
 
         private static void ToggleFullScreenPropertyChangedCallback(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs e)
         {
-            var metroWindow = (MetroWindow)dependencyObject;
+            var metroWindow = (MetroWindow) dependencyObject;
             if (e.OldValue != e.NewValue)
             {
-                var fullScreen = (bool)e.NewValue;
+                var fullScreen = (bool) e.NewValue;
                 if (fullScreen)
                 {
                     metroWindow.UseNoneWindowStyle = true;
@@ -75,7 +75,7 @@ namespace MahAppsMetroSample
 
         public bool ToggleFullScreen
         {
-            get { return (bool)GetValue(ToggleFullScreenProperty); }
+            get { return (bool) GetValue(ToggleFullScreenProperty); }
             set { SetValue(ToggleFullScreenProperty, value); }
         }
     }
