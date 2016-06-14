@@ -10,7 +10,7 @@
     </ResourceDictionary.MergedDictionaries>
 
     <Style TargetType="mahAppsMetroSample:CustomBaseMetroWindow" BasedOn="{StaticResource {x:Type controls:MetroWindow}}">
-        <Setter Property="controls:ControlsHelper.ContentCharacterCasing" Value="Lower" />
+        <Setter Property="TitleCharacterCasing" Value="Lower" />
         <Setter Property="WindowTransitionsEnabled" Value="False" />
         <Setter Property="WindowTitleBrush" Value="Brown" />
     </Style>
