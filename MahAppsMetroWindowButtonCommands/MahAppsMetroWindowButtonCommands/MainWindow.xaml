@@ -98,7 +98,11 @@
     </controls:MetroWindow.Resources>
 
     <controls:MetroWindow.WindowButtonCommands>
-        <controls:WindowButtonCommands LightMinButtonStyle="{StaticResource CustomLightMinButtonStyle}"
+        <controls:WindowButtonCommands Minimize="A custom Tooltip which will be shown on Min button"
+                                       Maximize="Maximize the window"
+                                       Restore="Restore the window"
+                                       Close="Noooo... don't close me!"
+                                       LightMinButtonStyle="{StaticResource CustomLightMinButtonStyle}"
                                        LightMaxButtonStyle="{StaticResource CustomLightMaxButtonStyle}"
                                        LightCloseButtonStyle="{StaticResource CustomLightCloseButtonStyle}"
                                        DarkMinButtonStyle="{StaticResource CustomDarkMinButtonStylee}"
