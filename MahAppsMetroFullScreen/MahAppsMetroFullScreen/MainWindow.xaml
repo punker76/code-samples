@@ -8,6 +8,9 @@
                       BorderThickness="1"
                       BorderBrush="{DynamicResource AccentBaseColorBrush}"
                       WindowStartupLocation="CenterScreen"
+                      WindowState="Maximized"
+                      UseNoneWindowStyle="True"
+                      IgnoreTaskbarOnMaximize="True"
                       Width="525"
                       Height="350"
                       mc:Ignorable="d">
