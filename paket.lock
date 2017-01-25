@@ -1,8 +1,8 @@
 FRAMEWORK: >= NET45
 NUGET
   remote: https://www.nuget.org/api/v2
-    Extended.Wpf.Toolkit (2.9)
-    gong-wpf-dragdrop (1.0)
+    Extended.Wpf.Toolkit (3.0)
+    gong-wpf-dragdrop (1.1)
     JetBrains.Annotations (10.2.1)
-    MahApps.Metro (1.4.0-ALPHA029)
-    MahApps.Metro.IconPacks (1.6)
+    MahApps.Metro (1.4.1)
+    MahApps.Metro.IconPacks (1.7)

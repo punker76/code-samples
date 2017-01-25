@@ -50,7 +50,7 @@
 
         <GroupBox Grid.Row="0"
                   Margin="5"
-                  Header="Change Window">
+                  Header="This Window">
             <UniformGrid Columns="5">
                 <Button Content="Dark"
                         Click="ChangeWindowThemeButtonClick" />
@@ -67,7 +67,7 @@
 
         <GroupBox Grid.Row="1"
                   Margin="5"
-                  Header="Change Application">
+                  Header="The Application">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
@@ -99,9 +99,13 @@
                             Click="CustomAccent2AppButtonClick" />
                 </UniformGrid>
 
-                <UniformGrid Grid.Row="2" Margin="5" Columns="2">
+                <UniformGrid Grid.Row="2" Margin="5" Columns="2" Rows="2">
+                    <TextBlock Text="Accents" Margin="0 0 2 0" VerticalAlignment="Center" />
+                    <TextBlock Text="Colors" Margin="2 0 0 0" VerticalAlignment="Center" />
+
                     <ComboBox x:Name="AccentSelector"
-                              Margin="5"
+                              Margin="0 0 2 0"
+                              VerticalAlignment="Center"
                               SelectionChanged="AccentSelectionChanged"
                               ItemsSource="{x:Static metro:ThemeManager.Accents}">
                         <ComboBox.ItemTemplate>
@@ -112,7 +116,8 @@
                     </ComboBox>
 
                     <ComboBox x:Name="ColorsSelector"
-                              Margin="5"
+                              Margin="2 0 0 0"
+                              VerticalAlignment="Center"
                               SelectionChanged="ColorsSelectorOnSelectionChanged"
                               ItemsSource="{Binding Colors}">
                         <ComboBox.ItemTemplate>
