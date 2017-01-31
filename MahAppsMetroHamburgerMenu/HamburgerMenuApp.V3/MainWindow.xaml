@@ -1,0 +1,645 @@
+﻿<controls:MetroWindow x:Class="HamburgerMenuApp.V3.MainWindow"
+                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                      xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+                      xmlns:core="clr-namespace:HamburgerMenuApp.Core;assembly=HamburgerMenuApp.Core"
+                      xmlns:views="clr-namespace:HamburgerMenuApp.Core.Views;assembly=HamburgerMenuApp.Core"
+                      xmlns:local="clr-namespace:HamburgerMenuApp.V3"
+                      xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+                      mc:Ignorable="d"
+                      Title="MainWindow"
+                      WindowTransitionsEnabled="False"
+                      WindowStartupLocation="CenterScreen"
+                      Height="350"
+                      Width="525">
+
+    <Grid>
+
+        <Grid.Resources>
+
+            <core:SelectedItemToContentConverter x:Key="SelectedItemToContentConverter" />
+
+            <DataTemplate x:Key="MenuItemTemplate"
+                          DataType="{x:Type local:HamburgerMenuIconItem}">
+                <Grid Height="48">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="48" />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <ContentControl Grid.Column="0"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Foreground="White"
+                                    Focusable="False"
+                                    Content="{Binding Icon}" />
+                    <TextBlock Grid.Column="1"
+                               VerticalAlignment="Center"
+                               FontSize="16"
+                               Foreground="White"
+                               Text="{Binding Label}" />
+                </Grid>
+            </DataTemplate>
+
+        </Grid.Resources>
+
+        <controls:HamburgerMenu x:Name="HamburgerMenuControl"
+                                Foreground="White"
+                                PaneBackground="#FF444444"
+                                IsPaneOpen="False"
+                                ItemTemplate="{StaticResource MenuItemTemplate}"
+                                OptionsItemTemplate="{StaticResource MenuItemTemplate}"
+                                DisplayMode="CompactInline">
+
+            <controls:HamburgerMenu.Content>
+                <MultiBinding Converter="{StaticResource SelectedItemToContentConverter}">
+                    <Binding RelativeSource="{RelativeSource Self}"
+                             Mode="OneWay"
+                             Path="SelectedItem" />
+                    <Binding RelativeSource="{RelativeSource Self}"
+                             Mode="OneWay"
+                             Path="SelectedOptionsItem" />
+                </MultiBinding>
+            </controls:HamburgerMenu.Content>
+
+            <!--  Items  -->
+            <controls:HamburgerMenu.ItemsSource>
+                <controls:HamburgerMenuItemCollection>
+                    <local:HamburgerMenuIconItem Icon="{iconPacks:PackIconMaterial Kind=Home}"
+                                                 Label="Home">
+                        <local:HamburgerMenuIconItem.Tag>
+                            <views:HomeView />
+                        </local:HamburgerMenuIconItem.Tag>
+                    </local:HamburgerMenuIconItem>
+
+                    <local:HamburgerMenuIconItem Icon="{iconPacks:PackIconMaterial Kind=AccountCircle}"
+                                                 Label="Private">
+                        <local:HamburgerMenuIconItem.Tag>
+                            <views:PrivateView />
+                        </local:HamburgerMenuIconItem.Tag>
+                    </local:HamburgerMenuIconItem>
+
+                    <local:HamburgerMenuIconItem Icon="{iconPacks:PackIconMaterial Kind=Settings}"
+                                                 Label="Settings">
+                        <local:HamburgerMenuIconItem.Tag>
+                            <views:SettingsView />
+                        </local:HamburgerMenuIconItem.Tag>
+                    </local:HamburgerMenuIconItem>
+                </controls:HamburgerMenuItemCollection>
+            </controls:HamburgerMenu.ItemsSource>
+
+            <!--  Options  -->
+            <controls:HamburgerMenu.OptionsItemsSource>
+                <controls:HamburgerMenuItemCollection>
+                    <local:HamburgerMenuIconItem Icon="{iconPacks:PackIconMaterial Kind=Help}"
+                                                 Label="About">
+                        <local:HamburgerMenuIconItem.Tag>
+                            <views:AboutView />
+                        </local:HamburgerMenuIconItem.Tag>
+                    </local:HamburgerMenuIconItem>
+                </controls:HamburgerMenuItemCollection>
+            </controls:HamburgerMenu.OptionsItemsSource>
+
+            <!--  Content  -->
+            <controls:HamburgerMenu.ContentTemplate>
+                <DataTemplate DataType="{x:Type controls:HamburgerMenuItem}">
+                    <Grid x:Name="TheContentGrid">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="48" />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Border Grid.Row="0"
+                                Background="#FF444444">
+                            <TextBlock x:Name="Header"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       FontSize="24"
+                                       Foreground="White"
+                                       Text="{Binding Label}" />
+                        </Border>
+                        <ContentControl x:Name="TheContent"
+                                        Grid.Row="1"
+                                        Focusable="False"
+                                        Foreground="{DynamicResource BlackBrush}"
+                                        Content="{Binding Tag}" />
+                    </Grid>
+                </DataTemplate>
+            </controls:HamburgerMenu.ContentTemplate>
+
+        </controls:HamburgerMenu>
+
+    </Grid>
+
+</controls:MetroWindow>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
