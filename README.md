@@ -10,6 +10,18 @@ This ToolTip is now also available in the [ControlzEx](https://github.com/Contro
 
 ![automove_tooltip2](https://cloud.githubusercontent.com/assets/658431/13525375/d708a9e8-e200-11e5-9bd9-035d50632b34.gif)
 
+## MahApps.Metro HamburgerMenu
+
+**[MahAppsMetroHamburgerMenu](MahAppsMetroHamburgerMenu)** showcase for [MahApps.Metro][] `HamburgerMenu`.  
+
+- Simple straight forward sample
+- Sample with `Binding` to the `SelectedItem` / `SelectedOptionsItem`
+- Sample with a custom helper class `HamburgerMenuIconItem` which uses the [MahApps.Metro.IconPacks](https://github.com/MahApps/MahApps.Metro.IconPacks)
+- Sample with Caliburn.Micro (tba)
+- Sample with some code behind (tba)
+
+![](screenshots/hamburgermenu01.png)  
+
 ## MahApps.Metro blank application
 
 **[MahAppsMetroSample](https://github.com/punker76/code-samples/tree/master/MahAppsMetroSample)** is a simple blank app for [MahApps.Metro][], explained in this [blog post](http://jkarger.de/archive/2014/11/18/modern-ui-with-mahapps-metro/).
