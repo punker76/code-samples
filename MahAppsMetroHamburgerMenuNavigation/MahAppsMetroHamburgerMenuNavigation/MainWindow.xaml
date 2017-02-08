@@ -1,0 +1,78 @@
+﻿<controls:MetroWindow x:Class="MahAppsMetroHamburgerMenuNavigation.MainWindow"
+                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                      xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+                      xmlns:viewModels="clr-namespace:MahAppsMetroHamburgerMenuNavigation.ViewModels"
+                      xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+                      mc:Ignorable="d"
+                      Title="MainWindow"
+                      WindowTransitionsEnabled="False"
+                      WindowStartupLocation="CenterScreen"
+                      Height="450"
+                      Width="600">
+
+    <controls:MetroWindow.DataContext>
+        <viewModels:ShellViewModel />
+    </controls:MetroWindow.DataContext>
+
+    <controls:MetroWindow.LeftWindowCommands>
+        <controls:WindowCommands>
+            <Button x:Name="GoBackButton"
+                    Click="GoBack_OnClick">
+                <iconPacks:PackIconMaterial Kind="ArrowLeft" />
+            </Button>
+        </controls:WindowCommands>
+    </controls:MetroWindow.LeftWindowCommands>
+
+    <Grid>
+
+        <Grid.Resources>
+
+            <DataTemplate x:Key="MenuItemTemplate"
+                          DataType="{x:Type viewModels:MenuItem}">
+                <Grid Height="48">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="48" />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <ContentControl Grid.Column="0"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                    Foreground="White"
+                                    Focusable="False"
+                                    Content="{Binding Icon}" />
+                    <TextBlock Grid.Column="1"
+                               VerticalAlignment="Center"
+                               FontSize="16"
+                               Foreground="White"
+                               Text="{Binding Text}" />
+                </Grid>
+            </DataTemplate>
+
+        </Grid.Resources>
+
+        <controls:HamburgerMenu x:Name="HamburgerMenuControl"
+                                Foreground="White"
+                                PaneBackground="#FF444444"
+                                IsPaneOpen="False"
+                                ItemsSource="{Binding Menu}"
+                                OptionsItemsSource="{Binding OptionsMenu}"
+                                ItemClick="HamburgerMenuControl_OnItemClick"
+                                OptionsItemClick="HamburgerMenuControl_OnItemClick"
+                                ItemTemplate="{StaticResource MenuItemTemplate}"
+                                OptionsItemTemplate="{StaticResource MenuItemTemplate}"
+                                DisplayMode="CompactInline">
+        </controls:HamburgerMenu>
+
+    </Grid>
+
+</controls:MetroWindow>
+
+
+
+
+
+
+
