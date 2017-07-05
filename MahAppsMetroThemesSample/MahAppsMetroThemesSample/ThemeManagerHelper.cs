@@ -27,6 +27,7 @@ namespace MahAppsMetroThemesSample
             resourceDictionary.Add("AccentColorBrush2", GetSolidColorBrush((Color)resourceDictionary["AccentColor2"]));
             resourceDictionary.Add("AccentColorBrush3", GetSolidColorBrush((Color)resourceDictionary["AccentColor3"]));
             resourceDictionary.Add("AccentColorBrush4", GetSolidColorBrush((Color)resourceDictionary["AccentColor4"]));
+
             resourceDictionary.Add("WindowTitleColorBrush", GetSolidColorBrush((Color)resourceDictionary["AccentColor"]));
 
             resourceDictionary.Add("ProgressBrush", new LinearGradientBrush(
@@ -35,7 +36,8 @@ namespace MahAppsMetroThemesSample
                     new GradientStop((Color)resourceDictionary["HighlightColor"], 0),
                     new GradientStop((Color)resourceDictionary["AccentColor3"], 1)
                 }),
-                new Point(0.001, 0.5), new Point(1.002, 0.5)));
+                // StartPoint="1.002,0.5" EndPoint="0.001,0.5"
+                startPoint: new Point(1.002, 0.5), endPoint: new Point(0.001, 0.5)));
 
             resourceDictionary.Add("CheckmarkFill", GetSolidColorBrush((Color)resourceDictionary["AccentColor"]));
             resourceDictionary.Add("RightArrowFill", GetSolidColorBrush((Color)resourceDictionary["AccentColor"]));
