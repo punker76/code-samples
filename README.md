@@ -1,10 +1,10 @@
 # Just some code samples...
 
-Run `Build.cmd` to compile all stuff. You need [Visual Studio 2015 Community Edition](<https://www.visualstudio.com/>) to build the solutions, cause I use the new C# 6 features.
+To build these samples you'll need at least [Visual Studio 2015 Community Edition](<https://www.visualstudio.com/>), cause I use the new C# 6 features. You can run `Build.cmd` at the console to compile all (most) stuff.
 
 ## ListViewSwitchItemsPanel
 
-Simple sample which shows how to switch the `ItemsPanel` of a `ListView`.
+Simple [sample](./ListViewSwitchItemsPanel) which shows how to switch the `ItemsPanel` of a `ListView`.
 
 ![listview](https://user-images.githubusercontent.com/658431/30153860-4b156442-93b8-11e7-836f-226925a6a2d8.gif)
 
