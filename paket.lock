@@ -1,8 +1,11 @@
 RESTRICTION: >= net45
 NUGET
   remote: https://www.nuget.org/api/v2
-    Extended.Wpf.Toolkit (3.0)
+    ControlzEx (3.0.2.4)
+    Extended.Wpf.Toolkit (3.2)
     gong-wpf-dragdrop (1.1)
-    JetBrains.Annotations (10.4)
-    MahApps.Metro (1.6.0-alpha006)
-    MahApps.Metro.IconPacks (1.9)
+    JetBrains.Annotations (11.0)
+    MahApps.Metro.IconPacks (1.9.1)
+  remote: https://ci.appveyor.com/nuget/mahapps.metro
+    MahApps.Metro (1.6.0-alpha0176)
+      ControlzEx (> 3.0.2 < 4.0)

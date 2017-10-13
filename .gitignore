@@ -196,4 +196,5 @@ FakesAssemblies/
 *.opt
 
 # paket
-.paket/paket.exe
+#.paket/paket.exe
+paket-files/
