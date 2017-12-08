@@ -2,6 +2,12 @@
 
 To build these samples you'll need at least [Visual Studio 2015 Community Edition](<https://www.visualstudio.com/>), cause I use the new C# 6 features. You can run `Build.cmd` at the console to compile all (most) stuff.
 
+## IconPacksValueConverterSample
+
+Simple [MahApps.Metro.IconPacks](https://github.com/MahApps/MahApps.Metro.IconPacks) [sample](./IconPacksValueConverterSample) which shows how to produce a percantage view of a binded value together with an `IValueConverter`.
+
+![](https://user-images.githubusercontent.com/658431/33761712-4edd2e3a-dc0a-11e7-92ba-5fceae2c8a2c.gif)
+
 ## ListViewSwitchItemsPanel
 
 Simple [sample](./ListViewSwitchItemsPanel) which shows how to switch the `ItemsPanel` of a `ListView`.
