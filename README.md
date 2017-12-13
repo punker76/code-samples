@@ -57,7 +57,7 @@ A sample app to demonstrate the customization of the Min/Max/Close buttons (for 
 
 ## MahApps.Metro Themes
 
-**[MahAppsMetroThemesSample](https://github.com/punker76/code-samples/tree/master/MahAppsMetroThemesSample)** [MahApps.Metro][] `ThemeManager` example explained in this [blog post](http://jkarger.de/archive/2014/11/27/mahapps-metro-themes/).  
+**[MahAppsMetroThemesSample](https://github.com/punker76/code-samples/tree/master/MahAppsMetroThemesSample)** [MahApps.Metro][] `ThemeManager` example explained in this [blog post](http://jkarger.de/2014/11/27/mahapps-metro-themes/).  
 
 ![mahapps_more_colors](https://cloud.githubusercontent.com/assets/658431/13557016/9d7e23a4-e3e7-11e5-839a-177c39977e8e.gif)    
 ![](screenshots/2014-11-27_17h29_54.png)  
