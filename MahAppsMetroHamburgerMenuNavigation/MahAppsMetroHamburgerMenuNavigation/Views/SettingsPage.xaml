@@ -19,7 +19,7 @@
                                        HorizontalAlignment="Right"
                                        VerticalAlignment="Top"
                                        Foreground="{DynamicResource GrayBrush3}"
-                                       Kind="Cogs" />
+                                       Kind="CogsSolid" />
 
     </Grid>
 </Page>

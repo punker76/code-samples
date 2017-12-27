@@ -15,3 +15,4 @@ msbuild.exe /tv:14.0 "MahAppsMetroThemesSample\MahAppsMetroThemesSample.sln" /p:
 msbuild.exe /tv:14.0 "MahAppsMetroVBSample\MahAppsMetroVBSample.sln" /p:configuration=Debug /p:platform="Any CPU" /m /t:Clean,Rebuild
 msbuild.exe /tv:14.0 "MahAppsMetroWindowButtonCommands\MahAppsMetroWindowButtonCommands.sln" /p:configuration=Debug /p:platform="Any CPU" /m /t:Clean,Rebuild
 msbuild.exe /tv:14.0 "ToolTipAutoMoveSample\ToolTipAutoMoveSample.sln" /p:configuration=Debug /p:platform="Any CPU" /m /t:Clean,Rebuild
+msbuild.exe /tv:14.0 "IconPacksValueConverterSample\IconPacksValueConverterSample.sln" /p:configuration=Debug /p:platform="Any CPU" /m /t:Clean,Rebuild

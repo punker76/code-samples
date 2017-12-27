@@ -13,21 +13,21 @@ namespace IconPacksValueConverterSample
             var percentage = (value as double?).GetValueOrDefault(0);
             if (percentage < 25)
             {
-                return PackIconFontAwesomeKind.BatteryEmpty;
+                return PackIconFontAwesomeKind.BatteryEmptySolid;
             }
             else if (percentage < 50)
             {
-                return PackIconFontAwesomeKind.BatteryQuarter;
+                return PackIconFontAwesomeKind.BatteryQuarterSolid;
             }
             else if (percentage < 75)
             {
-                return PackIconFontAwesomeKind.BatteryHalf;
+                return PackIconFontAwesomeKind.BatteryHalfSolid;
             }
             else if (percentage < 100)
             {
-                return PackIconFontAwesomeKind.BatteryThreeQuarters;
+                return PackIconFontAwesomeKind.BatteryThreeQuartersSolid;
             }
-            return PackIconFontAwesomeKind.BatteryFull;
+            return PackIconFontAwesomeKind.BatteryFullSolid;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

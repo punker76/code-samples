@@ -78,7 +78,7 @@
             <!--  Items  -->
             <controls:HamburgerMenu.ItemsSource>
                 <controls:HamburgerMenuItemCollection>
-                    <local:CustomHamburgerMenuIconItem Icon="{iconPacks:PackIconMaterial Kind=Home}"
+                    <local:CustomHamburgerMenuIconItem Icon="{iconPacks:Material Kind=Home}"
                                                        Label="Home"
                                                        ToolTip="Show the Home view">
                         <local:CustomHamburgerMenuIconItem.Tag>
@@ -86,7 +86,7 @@
                         </local:CustomHamburgerMenuIconItem.Tag>
                     </local:CustomHamburgerMenuIconItem>
 
-                    <local:CustomHamburgerMenuIconItem Icon="{iconPacks:PackIconMaterial Kind=AccountCircle}"
+                    <local:CustomHamburgerMenuIconItem Icon="{iconPacks:Material Kind=AccountCircle}"
                                                        Label="Private"
                                                        ToolTip="Show the Private view">
                         <local:CustomHamburgerMenuIconItem.Tag>
@@ -94,7 +94,7 @@
                         </local:CustomHamburgerMenuIconItem.Tag>
                     </local:CustomHamburgerMenuIconItem>
 
-                    <local:CustomHamburgerMenuIconItem Icon="{iconPacks:PackIconMaterial Kind=Settings}"
+                    <local:CustomHamburgerMenuIconItem Icon="{iconPacks:Material Kind=Settings}"
                                                        Label="Settings"
                                                        ToolTip="Just the Settings view">
                         <local:CustomHamburgerMenuIconItem.Tag>
@@ -107,7 +107,7 @@
             <!--  Options  -->
             <controls:HamburgerMenu.OptionsItemsSource>
                 <controls:HamburgerMenuItemCollection>
-                    <local:CustomHamburgerMenuIconItem Icon="{iconPacks:PackIconMaterial Kind=Help}" Label="About">
+                    <local:CustomHamburgerMenuIconItem Icon="{iconPacks:Material Kind=Help}" Label="About">
                         <local:CustomHamburgerMenuIconItem.Tag>
                             <views:AboutView />
                         </local:CustomHamburgerMenuIconItem.Tag>

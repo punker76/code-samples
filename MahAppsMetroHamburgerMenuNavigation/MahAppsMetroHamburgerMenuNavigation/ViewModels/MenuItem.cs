@@ -8,6 +8,7 @@ namespace MahAppsMetroHamburgerMenuNavigation.ViewModels
     {
         private object _icon;
         private string _text;
+        private bool _isEnabled = true;
         private DelegateCommand _command;
         private Uri _navigationDestination;
 
@@ -21,6 +22,12 @@ namespace MahAppsMetroHamburgerMenuNavigation.ViewModels
         {
             get { return this._text; }
             set { this.SetProperty(ref this._text, value); }
+        }
+
+        public bool IsEnabled
+        {
+            get { return this._isEnabled; }
+            set { this.SetProperty(ref this._isEnabled, value); }
         }
 
         public ICommand Command

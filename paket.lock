@@ -4,7 +4,8 @@ NUGET
     ControlzEx (3.0.2.4)
     Extended.Wpf.Toolkit (3.2)
     gong-wpf-dragdrop (1.1)
-    JetBrains.Annotations (11.0)
-    MahApps.Metro (1.6.0-alpha0184)
+    JetBrains.Annotations (11.1)
+    MahApps.Metro.IconPacks (2.0)
+  remote: https://ci.appveyor.com/nuget/mahapps.metro
+    MahApps.Metro (1.6.0-alpha0197)
       ControlzEx (> 3.0.2 < 4.0)
-    MahApps.Metro.IconPacks (1.9.1)

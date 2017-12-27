@@ -19,7 +19,7 @@
                                        HorizontalAlignment="Right"
                                        VerticalAlignment="Top"
                                        Foreground="{DynamicResource GrayBrush3}"
-                                       Kind="Bug" />
+                                       Kind="BugSolid" />
 
     </Grid>
 </Page>

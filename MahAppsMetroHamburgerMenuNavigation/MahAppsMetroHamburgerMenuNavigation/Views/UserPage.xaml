@@ -19,7 +19,7 @@
                                        HorizontalAlignment="Right"
                                        VerticalAlignment="Top"
                                        Foreground="{DynamicResource GrayBrush3}"
-                                       Kind="UserOutline" />
+                                       Kind="UserRegular" />
 
     </Grid>
 </Page>
