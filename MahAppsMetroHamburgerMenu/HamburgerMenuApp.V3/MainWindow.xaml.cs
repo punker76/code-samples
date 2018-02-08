@@ -11,6 +11,13 @@ namespace HamburgerMenuApp.V3
         public MainWindow()
         {
             InitializeComponent();
+            this.DataContext = new MainViewModel();
+            this.Loaded += MainWindow_Loaded;
+        }
+
+        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            ((MainViewModel) this.DataContext).CreateMenuItems();
         }
 
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)

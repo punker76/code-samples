@@ -7,5 +7,5 @@ NUGET
     JetBrains.Annotations (11.1)
     MahApps.Metro.IconPacks (2.0)
   remote: https://ci.appveyor.com/nuget/mahapps.metro
-    MahApps.Metro (1.6.0-alpha0197)
+    MahApps.Metro (1.6.0-alpha0345)
       ControlzEx (> 3.0.2 < 4.0)
