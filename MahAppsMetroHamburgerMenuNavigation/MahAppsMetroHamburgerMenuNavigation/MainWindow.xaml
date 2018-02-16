@@ -18,10 +18,11 @@
     </controls:MetroWindow.DataContext>
 
     <controls:MetroWindow.LeftWindowCommands>
-        <controls:WindowCommands>
+        <controls:WindowCommands ShowSeparators="False">
             <Button x:Name="GoBackButton"
+                    Width="{Binding ElementName=HamburgerMenuControl, Path=CompactPaneLength}"
                     Click="GoBack_OnClick">
-                <iconPacks:PackIconMaterial Kind="ArrowLeft" />
+                <iconPacks:PackIconMaterial Kind="ArrowLeft" HorizontalAlignment="Center" VerticalAlignment="Center" />
             </Button>
         </controls:WindowCommands>
     </controls:MetroWindow.LeftWindowCommands>
@@ -40,13 +41,11 @@
                     <ContentControl Grid.Column="0"
                                     HorizontalAlignment="Center"
                                     VerticalAlignment="Center"
-                                    Foreground="White"
                                     Focusable="False"
                                     Content="{Binding Icon}" />
                     <TextBlock Grid.Column="1"
                                VerticalAlignment="Center"
                                FontSize="16"
-                               Foreground="White"
                                Text="{Binding Text}" />
                 </Grid>
             </DataTemplate>
@@ -54,17 +53,13 @@
         </Grid.Resources>
 
         <controls:HamburgerMenu x:Name="HamburgerMenuControl"
-                                Foreground="White"
-                                PaneBackground="#FF444444"
                                 IsPaneOpen="False"
                                 ItemsSource="{Binding Menu}"
                                 OptionsItemsSource="{Binding OptionsMenu}"
-                                ItemClick="HamburgerMenuControl_OnItemClick"
-                                OptionsItemClick="HamburgerMenuControl_OnItemClick"
+                                ItemInvoked="HamburgerMenuControl_OnItemInvoked"
                                 ItemTemplate="{StaticResource MenuItemTemplate}"
                                 OptionsItemTemplate="{StaticResource MenuItemTemplate}"
-                                DisplayMode="CompactInline">
-        </controls:HamburgerMenu>
+                                DisplayMode="CompactInline" />
 
     </Grid>
 

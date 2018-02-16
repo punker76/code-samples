@@ -58,27 +58,6 @@
     <Compile Include="ViewModels\MenuItem.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
-    <Compile Include="Views\AboutPage.xaml.cs">
-      <DependentUpon>AboutPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\AwesomePage.xaml.cs">
-      <DependentUpon>AwesomePage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\BreakPage.xaml.cs">
-      <DependentUpon>BreakPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\BugsPage.xaml.cs">
-      <DependentUpon>BugsPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\MainPage.xaml.cs">
-      <DependentUpon>MainPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\SettingsPage.xaml.cs">
-      <DependentUpon>SettingsPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\UserPage.xaml.cs">
-      <DependentUpon>UserPage.xaml</DependentUpon>
-    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

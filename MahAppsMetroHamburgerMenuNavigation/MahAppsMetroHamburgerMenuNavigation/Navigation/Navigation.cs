@@ -13,11 +13,11 @@ namespace MahAppsMetroHamburgerMenuNavigation.Navigation
             set { _frame = value; }
         }
 
-        public static bool Navigate(Uri sourcePageUri)
+        public static bool Navigate(Uri sourcePageUri, object extraData = null)
         {
             if (_frame.CurrentSource != sourcePageUri)
             {
-                return _frame.Navigate(sourcePageUri);
+                return _frame.Navigate(sourcePageUri, extraData);
             }
             return true;
         }

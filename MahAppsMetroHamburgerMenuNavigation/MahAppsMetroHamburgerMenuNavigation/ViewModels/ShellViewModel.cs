@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using MahApps.Metro.IconPacks;
 
 namespace MahAppsMetroHamburgerMenuNavigation.ViewModels
@@ -15,6 +16,16 @@ namespace MahAppsMetroHamburgerMenuNavigation.ViewModels
 
             this.OptionsMenu.Add(new MenuItem() {Icon = new PackIconFontAwesome() {Kind = PackIconFontAwesomeKind.CogsSolid}, Text = "Settings", NavigationDestination = new Uri("Views/SettingsPage.xaml", UriKind.RelativeOrAbsolute)});
             this.OptionsMenu.Add(new MenuItem() {Icon = new PackIconFontAwesome() {Kind = PackIconFontAwesomeKind.InfoCircleSolid}, Text = "About", NavigationDestination = new Uri("Views/AboutPage.xaml", UriKind.RelativeOrAbsolute)});
+        }
+
+        public object GetItem(object uri)
+        {
+            return null == uri ? null : this.Menu.FirstOrDefault(m => m.NavigationDestination.Equals(uri));
+        }
+
+        public object GetOptionsItem(object uri)
+        {
+            return null == uri ? null : this.OptionsMenu.FirstOrDefault(m => m.NavigationDestination.Equals(uri));
         }
     }
 }
