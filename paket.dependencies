@@ -4,6 +4,6 @@ framework >= net45
 
 nuget JetBrains.Annotations
 nuget MahApps.Metro.IconPacks
-nuget MahApps.Metro 1.6.0-alpha0345
+nuget MahApps.Metro
 nuget gong-wpf-dragdrop
 nuget Extended.Wpf.Toolkit
