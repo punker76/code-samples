@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HamburgerMenuApp.V2", "Hamb
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HamburgerMenuApp.V3", "HamburgerMenuApp.V3\HamburgerMenuApp.V3.csproj", "{CDDC6A53-3649-47E0-A507-8CE97A0AB676}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HamburgerMenuApp.V4", "HamburgerMenuApp.V4\HamburgerMenuApp.V4.csproj", "{59F8D458-EA8F-4745-9B0C-6B33587C3E71}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{CDDC6A53-3649-47E0-A507-8CE97A0AB676}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CDDC6A53-3649-47E0-A507-8CE97A0AB676}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CDDC6A53-3649-47E0-A507-8CE97A0AB676}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59F8D458-EA8F-4745-9B0C-6B33587C3E71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59F8D458-EA8F-4745-9B0C-6B33587C3E71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59F8D458-EA8F-4745-9B0C-6B33587C3E71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59F8D458-EA8F-4745-9B0C-6B33587C3E71}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
