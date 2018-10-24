@@ -1,6 +1,12 @@
 # Just some code samples...
 
-To build these samples you'll need at least [Visual Studio 2015 Community Edition](<https://www.visualstudio.com/>), cause I use the new C# 6 features. You can run `Build.cmd` at the console to compile all (most) stuff.
+To build these samples you'll need at least [Visual Studio 2017 Community Edition](<https://www.visualstudio.com/>).
+
+You can use the cake build script to compile all projects via commandline:
+
+```bash
+powershell .\build.ps1
+```
 
 ## IconPacksValueConverterSample
 

@@ -1,9 +1,22 @@
-source https://nuget.org/api/v2
-source https://ci.appveyor.com/nuget/mahapps.metro
-framework >= net45
+framework: >= net45
+source https://api.nuget.org/v3/index.json
 
-nuget JetBrains.Annotations
+//source https://ci.appveyor.com/nuget/mahapps.metro
+
+nuget JetBrains.Annotations copy_local: true // => PrivateAssets=All, mean all these type of assets are private of the project (so no need to add the deps in the nupkg dep list)
+
 nuget MahApps.Metro.IconPacks
 nuget MahApps.Metro
 nuget gong-wpf-dragdrop
 nuget Extended.Wpf.Toolkit
+
+group cake
+	framework: >= net45
+	source https://api.nuget.org/v3/index.json
+	
+	nuget Cake
+	nuget Cake.Git
+	nuget Cake.Figlet
+	nuget Cake.Paket
+	nuget Cake.Paket.Module
+	nuget vswhere

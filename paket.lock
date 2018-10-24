@@ -1,11 +1,22 @@
 RESTRICTION: >= net45
 NUGET
-  remote: https://www.nuget.org/api/v2
+  remote: https://api.nuget.org/v3/index.json
     ControlzEx (3.0.2.4)
-    Extended.Wpf.Toolkit (3.2)
+    Extended.Wpf.Toolkit (3.4)
     gong-wpf-dragdrop (1.1)
-    JetBrains.Annotations (11.1)
-    MahApps.Metro.IconPacks (2.0)
-  remote: https://ci.appveyor.com/nuget/mahapps.metro
-    MahApps.Metro (1.6.0.361)
-      ControlzEx (> 3.0.2 < 4.0)
+    JetBrains.Annotations (2018.2.1) - copy_local: true
+    MahApps.Metro (1.6.5)
+      ControlzEx (>= 3.0.2.4 < 4.0)
+    MahApps.Metro.IconPacks (2.3)
+      ControlzEx (>= 3.0.2.4 < 4.0)
+
+GROUP cake
+RESTRICTION: >= net45
+NUGET
+  remote: https://api.nuget.org/v3/index.json
+    Cake (0.30)
+    Cake.Figlet (1.2)
+    Cake.Git (0.19)
+    Cake.Paket (4.0)
+    Cake.Paket.Module (4.0)
+    vswhere (2.5.2)
