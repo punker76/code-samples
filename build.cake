@@ -102,12 +102,14 @@ Task("Restore")
 Task("BuildAll")
   .Does(() =>
 {
-  var msBuildSettings = new MSBuildSettings { ToolPath = msBuildPath, ArgumentCustomization = args => args.Append("/m") };
+  //var msBuildSettings = new MSBuildSettings { ToolPath = msBuildPath, ArgumentCustomization = args => args.Append("/m") };
+  var msBuildSettings = new MSBuildSettings { ArgumentCustomization = args => args.Append("/m") };
   var solutions = GetFiles("./**/*.sln");
 
   foreach(var solution in solutions)
   {
     MSBuild(solution, msBuildSettings
+      .UseToolVersion(MSBuildToolVersion.VS2015) // for now
       .SetMaxCpuCount(0)
       .SetConfiguration(configuration)
       .SetVerbosity(Verbosity.Normal)

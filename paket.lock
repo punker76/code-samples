@@ -20,3 +20,9 @@ NUGET
     Cake.Paket (4.0)
     Cake.Paket.Module (4.0)
     vswhere (2.5.2)
+
+GROUP ToolTipAutoMoveSample
+RESTRICTION: >= net45
+NUGET
+  remote: https://api.nuget.org/v3/index.json
+    ControlzEx (4.0.0-alpha0189)

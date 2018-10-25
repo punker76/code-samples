@@ -10,6 +10,12 @@ nuget MahApps.Metro
 nuget gong-wpf-dragdrop
 nuget Extended.Wpf.Toolkit
 
+group ToolTipAutoMoveSample
+	framework: >= net45
+	source https://api.nuget.org/v3/index.json
+	
+	nuget ControlzEx prerelease
+
 group cake
 	framework: >= net45
 	source https://api.nuget.org/v3/index.json

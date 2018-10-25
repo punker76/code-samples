@@ -54,22 +54,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="DpiHelper.cs" />
-    <Compile Include="MonitorHelper.cs" />
-    <Compile Include="Standard\ComGuids.cs" />
-    <Compile Include="Standard\Debug.cs" />
-    <Compile Include="Standard\DoubleUtil.cs" />
-    <Compile Include="Standard\DpiHelper.cs" />
-    <Compile Include="Standard\ErrorCodes.cs" />
-    <Compile Include="Standard\MessageWindow.cs" />
-    <Compile Include="Standard\NativeMethods.cs" />
-    <Compile Include="Standard\ShellProvider.cs" />
-    <Compile Include="Standard\StreamHelper.cs" />
-    <Compile Include="Standard\Utilities.cs" />
-    <Compile Include="Standard\Utilities.Windows.cs" />
-    <Compile Include="Standard\Utilities.Wpf.cs" />
-    <Compile Include="Standard\Verify.cs" />
-    <Compile Include="ToolTipHelper.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -133,6 +117,36 @@
       <ItemGroup>
         <Reference Include="JetBrains.Annotations">
           <HintPath>..\..\packages\JetBrains.Annotations\lib\netstandard2.0\JetBrains.Annotations.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1')">
+      <ItemGroup>
+        <Reference Include="ControlzEx">
+          <HintPath>..\..\packages\tooltipautomovesample\ControlzEx\lib\net45\ControlzEx.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="System.Windows.Interactivity">
+          <HintPath>..\..\packages\tooltipautomovesample\ControlzEx\lib\net45\System.Windows.Interactivity.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3' Or $(TargetFrameworkVersion) == 'v4.7' Or $(TargetFrameworkVersion) == 'v4.7.1' Or $(TargetFrameworkVersion) == 'v4.7.2')">
+      <ItemGroup>
+        <Reference Include="ControlzEx">
+          <HintPath>..\..\packages\tooltipautomovesample\ControlzEx\lib\net462\ControlzEx.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="System.Windows.Interactivity">
+          <HintPath>..\..\packages\tooltipautomovesample\ControlzEx\lib\net462\System.Windows.Interactivity.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
