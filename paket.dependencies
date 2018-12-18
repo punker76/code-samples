@@ -20,7 +20,7 @@ group cake
 	framework: >= net45
 	source https://api.nuget.org/v3/index.json
 	
-	nuget Cake
+	nuget Cake < 0.31
 	nuget Cake.Git
 	nuget Cake.Figlet
 	nuget Cake.Paket

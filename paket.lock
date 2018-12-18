@@ -25,4 +25,6 @@ GROUP ToolTipAutoMoveSample
 RESTRICTION: >= net45
 NUGET
   remote: https://api.nuget.org/v3/index.json
-    ControlzEx (4.0.0-alpha0189)
+    ControlzEx (4.0.0-alpha0218)
+      Microsoft.Xaml.Behaviors.Wpf (>= 1.0.1)
+    Microsoft.Xaml.Behaviors.Wpf (1.0.1)

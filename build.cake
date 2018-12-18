@@ -37,9 +37,9 @@ if (string.IsNullOrWhiteSpace(configuration))
 var repoName = "code-samples";
 var local = BuildSystem.IsLocalBuild;
 
-// Set build version
-var latestInstallationPath = VSWhereProducts("*", new VSWhereProductSettings { Version = "[\"15.0\",\"16.0\"]" }).FirstOrDefault();
-var msBuildPath = latestInstallationPath.CombineWithFilePath("./MSBuild/15.0/Bin/MSBuild.exe");
+var latestInstallationPath = VSWhereLatest(new VSWhereLatestSettings { IncludePrerelease = true });
+var msBuildPath = latestInstallationPath?.CombineWithFilePath("./MSBuild/15.0/Bin/MSBuild.exe");
+var msBuildCurrentPath = latestInstallationPath?.CombineWithFilePath("./MSBuild/Current/Bin/MSBuild.exe");
 
 var gitBranch = GitBranchCurrent(".");
 var branchName = gitBranch.FriendlyName;
@@ -59,6 +59,11 @@ Setup(context =>
     if (!IsRunningOnWindows())
     {
         throw new NotImplementedException($"{repoName} will only build on Windows because it's not possible to target WPF and Windows Forms from UNIX.");
+    }
+
+    if (FileExists(msBuildCurrentPath))
+    {
+    	msBuildPath = msBuildCurrentPath;
     }
 
     Information(Figlet(repoName));
@@ -102,14 +107,12 @@ Task("Restore")
 Task("BuildAll")
   .Does(() =>
 {
-  //var msBuildSettings = new MSBuildSettings { ToolPath = msBuildPath, ArgumentCustomization = args => args.Append("/m") };
-  var msBuildSettings = new MSBuildSettings { ArgumentCustomization = args => args.Append("/m") };
+  var msBuildSettings = new MSBuildSettings { ToolPath = msBuildPath, ArgumentCustomization = args => args.Append("/m") };
   var solutions = GetFiles("./**/*.sln");
 
   foreach(var solution in solutions)
   {
     MSBuild(solution, msBuildSettings
-      .UseToolVersion(MSBuildToolVersion.VS2015) // for now
       .SetMaxCpuCount(0)
       .SetConfiguration(configuration)
       .SetVerbosity(Verbosity.Normal)
