@@ -73,7 +73,7 @@
                            ItemsSource="{Binding MenuItems}"
                            OptionsItemTemplate="{StaticResource MenuItemTemplate}"
                            OptionsItemsSource="{Binding MenuOptionItems}"
-                           SelectedIndex="0">
+                           SelectedIndex="1">
 
             <!--  select the tag (ViewModel) of the selected item (options item)  -->
             <mah:HamburgerMenu.Content>

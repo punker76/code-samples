@@ -1,7 +1,5 @@
-﻿using System;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Media;
-using MahApps.Metro;
 
 namespace MahAppsMetroThemesSample
 {
@@ -13,14 +11,17 @@ namespace MahAppsMetroThemesSample
         protected override void OnStartup(StartupEventArgs e)
         {
             // add custom accent and theme resource dictionaries
-            ThemeManager.AddAccent("CustomAccent1", new Uri("pack://application:,,,/MahAppsMetroThemesSample;component/CustomAccents/CustomAccent1.xaml"));
-            ThemeManager.AddAccent("CustomAccent2", new Uri("pack://application:,,,/MahAppsMetroThemesSample;component/CustomAccents/CustomAccent2.xaml"));
-            ThemeManager.AddAppTheme("CustomTheme", new Uri("pack://application:,,,/MahAppsMetroThemesSample;component/CustomAccents/CustomTheme.xaml"));
+//            ThemeManager.AddAccent("CustomAccent1", new Uri("pack://application:,,,/MahAppsMetroThemesSample;component/CustomAccents/CustomAccent1.xaml"));
+//            ThemeManager.AddAccent("CustomAccent2", new Uri("pack://application:,,,/MahAppsMetroThemesSample;component/CustomAccents/CustomAccent2.xaml"));
+//            ThemeManager.AddAppTheme("CustomTheme", new Uri("pack://application:,,,/MahAppsMetroThemesSample;component/CustomAccents/CustomTheme.xaml"));
 
             // create custom accents
-            ThemeManagerHelper.CreateAppStyleBy(Colors.Red);
-            ThemeManagerHelper.CreateAppStyleBy(Colors.GreenYellow);
-            ThemeManagerHelper.CreateAppStyleBy(Colors.Indigo, true);
+            ThemeManagerHelper.CreateTheme("Dark", Colors.Red, "CustomAccentDarkRed");
+            ThemeManagerHelper.CreateTheme("Light", Colors.Red, "CustomAccentLightRed");
+            ThemeManagerHelper.CreateTheme("Dark", Colors.GreenYellow);
+            ThemeManagerHelper.CreateTheme("Light", Colors.GreenYellow);
+            ThemeManagerHelper.CreateTheme("Dark", Colors.Indigo);
+            ThemeManagerHelper.CreateTheme("Light", Colors.Indigo, changeImmediately: true);
 
             base.OnStartup(e);
         }

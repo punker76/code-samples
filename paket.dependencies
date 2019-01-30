@@ -1,20 +1,19 @@
 framework: >= net45
 source https://api.nuget.org/v3/index.json
 
-//source https://ci.appveyor.com/nuget/mahapps.metro
+//source https://ci.appveyor.com/nuget/controlzex
+source https://ci.appveyor.com/nuget/mahapps.metro
+source https://ci.appveyor.com/nuget/mahapps-metro-iconpacks
 
-nuget JetBrains.Annotations copy_local: true // => PrivateAssets=All, mean all these type of assets are private of the project (so no need to add the deps in the nupkg dep list)
+// copy_local: true => PrivateAssets=All, mean all these type of assets are private of the project (so no need to add the deps in the nupkg dep list)
 
-nuget MahApps.Metro.IconPacks
-nuget MahApps.Metro
-nuget gong-wpf-dragdrop
+nuget JetBrains.Annotations copy_local: true
+nuget XamlColorSchemeGenerator copy_local: true
+
+nuget MahApps.Metro.IconPacks prerelease
+nuget MahApps.Metro prerelease
+nuget gong-wpf-dragdrop prerelease
 nuget Extended.Wpf.Toolkit
-
-group ToolTipAutoMoveSample
-	framework: >= net45
-	source https://api.nuget.org/v3/index.json
-	
-	nuget ControlzEx prerelease
 
 group cake
 	framework: >= net45

@@ -1,14 +1,19 @@
 RESTRICTION: >= net45
 NUGET
   remote: https://api.nuget.org/v3/index.json
-    ControlzEx (3.0.2.4)
+    ControlzEx (4.0.0-alpha0222)
+      Microsoft.Xaml.Behaviors.Wpf (>= 1.0.1)
     Extended.Wpf.Toolkit (3.4)
-    gong-wpf-dragdrop (1.1)
-    JetBrains.Annotations (2018.2.1) - copy_local: true
-    MahApps.Metro (1.6.5)
-      ControlzEx (>= 3.0.2.4 < 4.0)
-    MahApps.Metro.IconPacks (2.3)
-      ControlzEx (>= 3.0.2.4 < 4.0)
+    gong-wpf-dragdrop (2.0.0-alpha0106)
+    JetBrains.Annotations (2018.3) - copy_local: true
+    MahApps.Metro.IconPacks (3.0.0-alpha0096)
+    Microsoft.Xaml.Behaviors.Wpf (1.0.1)
+    Newtonsoft.Json (12.0.1) - copy_local: true
+    XamlColorSchemeGenerator (3.0.0.31) - copy_local: true
+      Newtonsoft.Json (>= 10.1)
+  remote: https://ci.appveyor.com/nuget/mahapps.metro
+    MahApps.Metro (2.0.0-alpha0245)
+      ControlzEx (>= 4.0.0-alpha0222)
 
 GROUP cake
 RESTRICTION: >= net45
@@ -19,12 +24,4 @@ NUGET
     Cake.Git (0.19)
     Cake.Paket (4.0)
     Cake.Paket.Module (4.0)
-    vswhere (2.5.2)
-
-GROUP ToolTipAutoMoveSample
-RESTRICTION: >= net45
-NUGET
-  remote: https://api.nuget.org/v3/index.json
-    ControlzEx (4.0.0-alpha0218)
-      Microsoft.Xaml.Behaviors.Wpf (>= 1.0.1)
-    Microsoft.Xaml.Behaviors.Wpf (1.0.1)
+    vswhere (2.5.9)

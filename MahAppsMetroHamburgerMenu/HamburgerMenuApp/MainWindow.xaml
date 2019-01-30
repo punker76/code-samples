@@ -69,6 +69,7 @@
                                 OptionsItemTemplate="{StaticResource OptionsMenuItemTemplate}"
                                 ItemClick="HamburgerMenuControl_OnItemClick"
                                 OptionsItemClick="HamburgerMenuControl_OnItemClick"
+                                SelectedIndex="1"
                                 DisplayMode="CompactInline">
             
             <!--  Items  -->

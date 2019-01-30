@@ -7,7 +7,7 @@
                                           Title="MainWindow"
                                           Width="525"
                                           Height="350"
-                                          EnableDWMDropShadow="True">
+                                          GlowBrush="Black">
 
     <Window.Resources>
         <xctk:InverseBoolConverter x:Key="InverseBoolConverter" />

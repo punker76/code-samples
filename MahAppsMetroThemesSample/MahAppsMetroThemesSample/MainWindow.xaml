@@ -17,7 +17,7 @@
         <Controls:WindowCommands>
             <Button Click="ChangeAppStyleButtonClick">
                 <StackPanel Orientation="Horizontal">
-                    <iconPacks:PackIconModern Width="24" Height="24" Kind="Cupcake" />
+                    <iconPacks:PackIconModern Width="24" Height="24" Kind="FoodCupcake" />
                     <TextBlock Margin="4 0 0 0" VerticalAlignment="Center" Text="Change App Style..." />
                 </StackPanel>
             </Button>
