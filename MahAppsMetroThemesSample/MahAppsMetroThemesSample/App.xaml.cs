@@ -15,6 +15,11 @@ namespace MahAppsMetroThemesSample
 //            ThemeManager.AddAccent("CustomAccent2", new Uri("pack://application:,,,/MahAppsMetroThemesSample;component/CustomAccents/CustomAccent2.xaml"));
 //            ThemeManager.AddAppTheme("CustomTheme", new Uri("pack://application:,,,/MahAppsMetroThemesSample;component/CustomAccents/CustomTheme.xaml"));
 
+            base.OnStartup(e);
+
+            MahApps.Metro.ThemeManager.IsAutomaticWindowsAppModeSettingSyncEnabled = true;
+            MahApps.Metro.ThemeManager.SyncThemeWithWindowsAppModeSetting();
+
             // create custom accents
             ThemeManagerHelper.CreateTheme("Dark", Colors.Red, "CustomAccentDarkRed");
             ThemeManagerHelper.CreateTheme("Light", Colors.Red, "CustomAccentLightRed");
@@ -22,8 +27,6 @@ namespace MahAppsMetroThemesSample
             ThemeManagerHelper.CreateTheme("Light", Colors.GreenYellow);
             ThemeManagerHelper.CreateTheme("Dark", Colors.Indigo);
             ThemeManagerHelper.CreateTheme("Light", Colors.Indigo, changeImmediately: true);
-
-            base.OnStartup(e);
         }
     }
 }
