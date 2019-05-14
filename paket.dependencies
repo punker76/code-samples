@@ -2,8 +2,8 @@ framework: >= net45
 source https://api.nuget.org/v3/index.json
 
 //source https://ci.appveyor.com/nuget/controlzex
-source https://ci.appveyor.com/nuget/mahapps.metro
-source https://ci.appveyor.com/nuget/mahapps-metro-iconpacks
+//source https://ci.appveyor.com/nuget/mahapps.metro
+//source https://ci.appveyor.com/nuget/mahapps-metro-iconpacks
 
 // copy_local: true => PrivateAssets=All, mean all these type of assets are private of the project (so no need to add the deps in the nupkg dep list)
 
@@ -19,7 +19,7 @@ group cake
 	framework: >= net45
 	source https://api.nuget.org/v3/index.json
 	
-	nuget Cake < 0.31
+	nuget Cake
 	nuget Cake.Git
 	nuget Cake.Figlet
 	nuget Cake.Paket
