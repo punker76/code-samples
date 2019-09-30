@@ -8,11 +8,11 @@ source https://api.nuget.org/v3/index.json
 // copy_local: true => PrivateAssets=All, mean all these type of assets are private of the project (so no need to add the deps in the nupkg dep list)
 
 nuget JetBrains.Annotations copy_local: true
-nuget XamlColorSchemeGenerator copy_local: true
+nuget XamlColorSchemeGenerator prerelease copy_local: true
 
 nuget MahApps.Metro.IconPacks prerelease
 nuget MahApps.Metro prerelease
-nuget gong-wpf-dragdrop prerelease
+nuget gong-wpf-dragdrop
 nuget Extended.Wpf.Toolkit
 
 group cake

@@ -10,7 +10,7 @@
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Themes/Light.Orange.xaml" />
             </ResourceDictionary.MergedDictionaries>
-            <Style BasedOn="{StaticResource MahApps.Metro.Styles.WindowButtonCommands.Win10}" TargetType="{x:Type mah:WindowButtonCommands}" />
+            <Style TargetType="{x:Type mah:WindowButtonCommands}" BasedOn="{StaticResource MahApps.Styles.WindowButtonCommands.Win10}" />
         </ResourceDictionary>
     </Application.Resources>
 </Application>

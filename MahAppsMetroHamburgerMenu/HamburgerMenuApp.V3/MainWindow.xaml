@@ -38,12 +38,10 @@
                                     HorizontalAlignment="Center"
                                     VerticalAlignment="Center"
                                     Content="{Binding Icon}"
-                                    Focusable="False"
-                                    Foreground="White" />
+                                    Focusable="False" />
                     <TextBlock Grid.Column="1"
                                VerticalAlignment="Center"
                                FontSize="16"
-                               Foreground="White"
                                Text="{Binding Label}" />
                 </Grid>
                 <DataTemplate.Triggers>
@@ -57,13 +55,11 @@
 
         <controls:HamburgerMenu x:Name="HamburgerMenuControl"
                                 DisplayMode="CompactInline"
-                                Foreground="White"
                                 IsPaneOpen="False"
                                 ItemsSource="{Binding MenuItems}"
                                 OptionsItemsSource="{Binding MenuOptionItems}"
                                 ItemTemplate="{StaticResource MenuItemTemplate}"
-                                OptionsItemTemplate="{StaticResource MenuItemTemplate}"
-                                PaneBackground="#FF444444">
+                                OptionsItemTemplate="{StaticResource MenuItemTemplate}">
 
             <!--  Content  -->
             <controls:HamburgerMenu.Content>
@@ -96,8 +92,7 @@
                         <ContentControl x:Name="TheContent"
                                         Grid.Row="1"
                                         Content="{Binding Tag}"
-                                        Focusable="False"
-                                        Foreground="{DynamicResource BlackBrush}" />
+                                        Focusable="False" />
                     </Grid>
                 </DataTemplate>
             </controls:HamburgerMenu.ContentTemplate>

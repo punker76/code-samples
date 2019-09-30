@@ -1,14 +1,14 @@
 RESTRICTION: >= net45
 NUGET
   remote: https://api.nuget.org/v3/index.json
-    ControlzEx (4.0.0-alpha0290)
+    ControlzEx (4.1)
       Microsoft.Xaml.Behaviors.Wpf (>= 1.0.1)
-    Extended.Wpf.Toolkit (3.5)
-    gong-wpf-dragdrop (2.1.0-alpha0009)
-    JetBrains.Annotations (2019.1.1) - copy_local: true
-    MahApps.Metro (2.0.0-alpha0316)
-      ControlzEx (>= 4.0.0-alpha0290 < 5.0)
-    MahApps.Metro.IconPacks (3.0.0-alpha0146)
+    Extended.Wpf.Toolkit (3.6)
+    gong-wpf-dragdrop (2.1)
+    JetBrains.Annotations (2019.1.3) - copy_local: true
+    MahApps.Metro (2.0.0-alpha0490)
+      ControlzEx (>= 4.1 < 5.0)
+    MahApps.Metro.IconPacks (3.0.0-alpha0223)
     Microsoft.Xaml.Behaviors.Wpf (1.0.1)
     Newtonsoft.Json (12.0.2) - copy_local: true
     XamlColorSchemeGenerator (3.0.0.31) - copy_local: true
@@ -18,9 +18,9 @@ GROUP cake
 RESTRICTION: >= net45
 NUGET
   remote: https://api.nuget.org/v3/index.json
-    Cake (0.33)
-    Cake.Figlet (1.3)
-    Cake.Git (0.19)
+    Cake (0.35)
+    Cake.Figlet (1.3.1)
+    Cake.Git (0.21)
     Cake.Paket (4.0)
     Cake.Paket.Module (4.0)
-    vswhere (2.6.7)
+    vswhere (2.7.1)

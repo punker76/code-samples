@@ -17,7 +17,7 @@
                                        Margin="10"
                                        HorizontalAlignment="Right"
                                        VerticalAlignment="Top"
-                                       Foreground="{DynamicResource AccentBaseColorBrush}"
+                                       Foreground="{DynamicResource MahApps.Brushes.AccentBase}"
                                        Kind="BugSolid" />
 
     </Grid>

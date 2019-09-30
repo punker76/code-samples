@@ -3,23 +3,22 @@
                       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-                      xmlns:local="clr-namespace:MahAppsMetroWindowButtonCommands"
                       xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
                       mc:Ignorable="d" ResizeMode="CanResizeWithGrip"
                       Title="MainWindow" Height="350" Width="525"
                       BorderThickness="1"
-                      GlowBrush="{DynamicResource AccentBaseColorBrush}"
+                      GlowBrush="{DynamicResource MahApps.Brushes.AccentBase}"
                       WindowStartupLocation="CenterScreen">
 
     <controls:MetroWindow.Resources>
         <Style x:Key="CustomLightMinButtonStyle"
-               BasedOn="{StaticResource LightMetroWindowButtonStyle}"
+               BasedOn="{StaticResource MahApps.Styles.Button.MetroWindow.Light}"
                TargetType="{x:Type Button}">
-            <Setter Property="Background" Value="{StaticResource AccentColorBrush}" />
+            <Setter Property="Background" Value="{StaticResource MahApps.Brushes.Accent}" />
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
                     <Setter Property="Background" Value="DarkGreen" />
-                    <Setter Property="Foreground" Value="{DynamicResource WhiteBrush}" />
+                    <Setter Property="Foreground" Value="{DynamicResource MahApps.Brushes.White}" />
                 </Trigger>
                 <Trigger Property="IsPressed" Value="True">
                     <Setter Property="Background" Value="Green" />
@@ -27,13 +26,13 @@
             </Style.Triggers>
         </Style>
         <Style x:Key="CustomDarkMinButtonStylee"
-               BasedOn="{StaticResource DarkMetroWindowButtonStyle}"
+               BasedOn="{StaticResource MahApps.Styles.Button.MetroWindow.Dark}"
                TargetType="{x:Type Button}">
-            <Setter Property="Background" Value="{StaticResource AccentColorBrush}" />
+            <Setter Property="Background" Value="{StaticResource MahApps.Brushes.Accent}" />
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
                     <Setter Property="Background" Value="DarkGreen" />
-                    <Setter Property="Foreground" Value="{DynamicResource WhiteBrush}" />
+                    <Setter Property="Foreground" Value="{DynamicResource MahApps.Brushes.White}" />
                 </Trigger>
                 <Trigger Property="IsPressed" Value="True">
                     <Setter Property="Background" Value="Green" />
@@ -42,41 +41,41 @@
         </Style>
 
         <Style x:Key="CustomLightMaxButtonStyle"
-               BasedOn="{StaticResource LightMetroWindowButtonStyle}"
+               BasedOn="{StaticResource MahApps.Styles.Button.MetroWindow.Light}"
                TargetType="{x:Type Button}">
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
                     <Setter Property="Background" Value="DarkGoldenrod" />
-                    <Setter Property="Foreground" Value="{DynamicResource WhiteBrush}" />
+                    <Setter Property="Foreground" Value="{DynamicResource MahApps.Brushes.White}" />
                 </Trigger>
                 <Trigger Property="IsPressed" Value="True">
                     <Setter Property="Background" Value="Yellow" />
-                    <Setter Property="Foreground" Value="{DynamicResource BlackBrush}" />
+                    <Setter Property="Foreground" Value="{DynamicResource MahApps.Brushes.Black}" />
                 </Trigger>
             </Style.Triggers>
         </Style>
         <Style x:Key="CustomDarkMaxButtonStylee"
-               BasedOn="{StaticResource DarkMetroWindowButtonStyle}"
+               BasedOn="{StaticResource MahApps.Styles.Button.MetroWindow.Dark}"
                TargetType="{x:Type Button}">
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
                     <Setter Property="Background" Value="DarkGoldenrod" />
-                    <Setter Property="Foreground" Value="{DynamicResource WhiteBrush}" />
+                    <Setter Property="Foreground" Value="{DynamicResource MahApps.Brushes.White}" />
                 </Trigger>
                 <Trigger Property="IsPressed" Value="True">
                     <Setter Property="Background" Value="Yellow" />
-                    <Setter Property="Foreground" Value="{DynamicResource BlackBrush}" />
+                    <Setter Property="Foreground" Value="{DynamicResource MahApps.Brushes.Black}" />
                 </Trigger>
             </Style.Triggers>
         </Style>
 
         <Style x:Key="CustomLightCloseButtonStyle"
-               BasedOn="{StaticResource LightMetroWindowButtonStyle}"
+               BasedOn="{StaticResource MahApps.Styles.Button.MetroWindow.Light}"
                TargetType="{x:Type Button}">
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
                     <Setter Property="Background" Value="DarkRed" />
-                    <Setter Property="Foreground" Value="{DynamicResource WhiteBrush}" />
+                    <Setter Property="Foreground" Value="{DynamicResource MahApps.Brushes.White}" />
                 </Trigger>
                 <Trigger Property="IsPressed" Value="True">
                     <Setter Property="Background" Value="Red" />
@@ -84,12 +83,12 @@
             </Style.Triggers>
         </Style>
         <Style x:Key="CustomDarkCloseButtonStylee"
-               BasedOn="{StaticResource DarkMetroWindowButtonStyle}"
+               BasedOn="{StaticResource MahApps.Styles.Button.MetroWindow.Dark}"
                TargetType="{x:Type Button}">
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
                     <Setter Property="Background" Value="DarkRed" />
-                    <Setter Property="Foreground" Value="{DynamicResource WhiteBrush}" />
+                    <Setter Property="Foreground" Value="{DynamicResource MahApps.Brushes.White}" />
                 </Trigger>
                 <Trigger Property="IsPressed" Value="True">
                     <Setter Property="Background" Value="Red" />
