@@ -10,9 +10,9 @@
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Themes/Light.Steel.xaml" />
             </ResourceDictionary.MergedDictionaries>
-            <Style TargetType="{x:Type Controls:WindowButtonCommands}" BasedOn="{StaticResource MahApps.Metro.Styles.WindowButtonCommands.Win10}" />
-            <Style TargetType="{x:Type Page}" BasedOn="{StaticResource MetroPage}" x:Key="PageStyle">
-                <Setter Property="Background" Value="{DynamicResource AccentColorBrush4}" />
+            <Style TargetType="{x:Type Controls:WindowButtonCommands}" BasedOn="{StaticResource MahApps.Styles.WindowButtonCommands.Win10}" />
+            <Style TargetType="{x:Type Page}" BasedOn="{StaticResource MahApps.Styles.Page}" x:Key="PageStyle">
+                <Setter Property="Background" Value="{DynamicResource MahApps.Brushes.Accent4}" />
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type Page}">

@@ -31,12 +31,10 @@
                                HorizontalAlignment="Center"
                                VerticalAlignment="Center"
                                FontFamily="Segoe MDL2 Assets"
-                               Foreground="White"
                                Text="{Binding Glyph}" />
                     <TextBlock Grid.Column="1"
                                VerticalAlignment="Center"
                                FontSize="16"
-                               Foreground="White"
                                Text="{Binding Label}" />
                 </Grid>
             </DataTemplate>
@@ -53,12 +51,10 @@
                                HorizontalAlignment="Center"
                                VerticalAlignment="Center"
                                FontFamily="Segoe MDL2 Assets"
-                               Foreground="White"
                                Text="{Binding Glyph}" />
                     <TextBlock Grid.Column="1"
                                VerticalAlignment="Center"
                                FontSize="16"
-                               Foreground="White"
                                Text="{Binding Label}" />
                 </Grid>
             </DataTemplate>
@@ -66,8 +62,6 @@
         </Grid.Resources>
 
         <controls:HamburgerMenu x:Name="HamburgerMenuControl"
-                                Foreground="White"
-                                PaneBackground="#FF444444"
                                 IsPaneOpen="False"
                                 ItemTemplate="{StaticResource MenuItemTemplate}"
                                 OptionsItemTemplate="{StaticResource OptionsMenuItemTemplate}"
@@ -142,7 +136,6 @@
                         <ContentControl x:Name="TheContent"
                                         Grid.Row="1"
                                         Focusable="False"
-                                        Foreground="{DynamicResource BlackBrush}"
                                         Content="{Binding Tag}" />
                     </Grid>
                 </DataTemplate>

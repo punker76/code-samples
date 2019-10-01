@@ -19,6 +19,7 @@ namespace MahAppsMetroHamburgerMenuNavigation
 
             Navigation.Navigation.Frame = new Frame() {NavigationUIVisibility = NavigationUIVisibility.Hidden};
             Navigation.Navigation.Frame.Navigated += SplitViewFrame_OnNavigated;
+            this.HamburgerMenuControl.Content = Navigation.Navigation.Frame;
 
             // Navigate to the home page.
             this.Loaded += (sender, args) => Navigation.Navigation.Navigate(new Uri("Views/MainPage.xaml", UriKind.RelativeOrAbsolute));
@@ -26,7 +27,7 @@ namespace MahAppsMetroHamburgerMenuNavigation
 
         private void SplitViewFrame_OnNavigated(object sender, NavigationEventArgs e)
         {
-            this.HamburgerMenuControl.Content = e.Content;
+//            this.HamburgerMenuControl.Content = e.Content;
             this.HamburgerMenuControl.SelectedItem = e.ExtraData ?? ((ShellViewModel)this.DataContext).GetItem(e.Uri);
             this.HamburgerMenuControl.SelectedOptionsItem = e.ExtraData ?? ((ShellViewModel)this.DataContext).GetOptionsItem(e.Uri);
             GoBackButton.Visibility = Navigation.Navigation.Frame.CanGoBack ? Visibility.Visible : Visibility.Collapsed;

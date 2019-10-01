@@ -68,15 +68,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="CustomAccents\CustomAccent1.xaml">
+    <Page Include="CustomAccents\Light.Accent1.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="CustomAccents\CustomAccent2.xaml">
+    <Page Include="CustomAccents\Dark.Accent1.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="CustomAccents\CustomTheme.xaml">
+    <Page Include="CustomAccents\Dark.Accent2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CustomAccents\Light.Accent2.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

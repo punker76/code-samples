@@ -8,7 +8,7 @@
                       Title="MahApps.Metro DataGrid Sample"
                       Width="670"
                       Height="350"
-                      GlowBrush="{DynamicResource AccentColorBrush}"
+                      GlowBrush="{DynamicResource MahApps.Brushes.Accent}"
                       mc:Ignorable="d">
 
     <Controls:MetroWindow.Resources>
@@ -117,7 +117,7 @@
                                 <ControlTemplate TargetType="DataGridColumnHeadersPresenter">
                                     <Grid>
                                         <Border Background="Transparent"
-                                                BorderBrush="{DynamicResource GrayBrush5}"
+                                                BorderBrush="{DynamicResource MahApps:Brushes.Gray5}"
                                                 BorderThickness="0 0 0 3"
                                                 IsHitTestVisible="False" />
                                         <ItemsPresenter />
@@ -152,8 +152,8 @@
                               TextOptions.TextFormattingMode="Display">
                         <DataGrid.Columns>
                             <DataGridCheckBoxColumn Binding="{Binding RelativeSource={RelativeSource AncestorType=DataGridRow}, Path=IsSelected, Mode=OneWay}"
-                                                    EditingElementStyle="{DynamicResource MetroDataGridCheckBox}"
-                                                    ElementStyle="{DynamicResource MetroDataGridCheckBox}"
+                                                    EditingElementStyle="{DynamicResource MahApps.Styles.CheckBox.DataGrid}"
+                                                    ElementStyle="{DynamicResource MahApps.Styles.CheckBox.DataGrid}"
                                                     Header="" />
                             <DataGridTextColumn Binding="{Binding Title}" Header="Title" />
                             <DataGridTextColumn Binding="{Binding Artist.Name}" Header="Artist" />
@@ -184,7 +184,7 @@
                                     <Grid>
                                         <Border Margin="0 0 0 10"
                                                 Background="Transparent"
-                                                BorderBrush="{DynamicResource GrayBrush5}"
+                                                BorderBrush="{DynamicResource MahApps.Brushes.Gray5}"
                                                 BorderThickness="0 0 0 3"
                                                 IsHitTestVisible="False" />
                                         <ItemsPresenter />
@@ -203,7 +203,7 @@
                 <DataGrid x:Name="AzureDataGrid"
                           Grid.Row="0"
                           Margin="2"
-                          Style="{DynamicResource AzureDataGrid}"
+                          Style="{DynamicResource MahApps.Styles.DataGrid.Azure}"
                           AutoGenerateColumns="False"
                           ItemsSource="{x:Static models:SampleData.Albums}"
                           RenderOptions.ClearTypeHint="Enabled"

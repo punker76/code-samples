@@ -3,7 +3,6 @@
                       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-                      xmlns:local="clr-namespace:HamburgerMenuApp"
                       xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
                       xmlns:views="clr-namespace:HamburgerMenuApp.Core.Views;assembly=HamburgerMenuApp.Core"
                       mc:Ignorable="d"
@@ -28,12 +27,10 @@
                                HorizontalAlignment="Center"
                                VerticalAlignment="Center"
                                FontFamily="Segoe MDL2 Assets"
-                               Foreground="White"
                                Text="{Binding Glyph}" />
                     <TextBlock Grid.Column="1"
                                VerticalAlignment="Center"
                                FontSize="16"
-                               Foreground="White"
                                Text="{Binding Label}" />
                 </Grid>
             </DataTemplate>
@@ -49,12 +46,10 @@
                                HorizontalAlignment="Center"
                                VerticalAlignment="Center"
                                FontFamily="Segoe MDL2 Assets"
-                               Foreground="White"
                                Text="{Binding Glyph}" />
                     <TextBlock Grid.Column="1"
                                VerticalAlignment="Center"
                                FontSize="16"
-                               Foreground="White"
                                Text="{Binding Label}" />
                 </Grid>
             </DataTemplate>
@@ -62,8 +57,6 @@
         </Grid.Resources>
         
         <controls:HamburgerMenu x:Name="HamburgerMenuControl"
-                                Foreground="White"
-                                PaneBackground="#FF444444"
                                 IsPaneOpen="False"
                                 ItemTemplate="{StaticResource MenuItemTemplate}"
                                 OptionsItemTemplate="{StaticResource OptionsMenuItemTemplate}"
@@ -130,7 +123,6 @@
                         <ContentControl x:Name="TheContent"
                                         Grid.Row="1"
                                         Focusable="False"
-                                        Foreground="{DynamicResource BlackBrush}"
                                         Content="{Binding Tag}" />
                     </Grid>
                 </DataTemplate>
