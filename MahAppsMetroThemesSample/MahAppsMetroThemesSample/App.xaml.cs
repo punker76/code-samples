@@ -1,5 +1,7 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Media;
+using MahApps.Metro;
 
 namespace MahAppsMetroThemesSample
 {
@@ -11,9 +13,10 @@ namespace MahAppsMetroThemesSample
         protected override void OnStartup(StartupEventArgs e)
         {
             // add custom accent and theme resource dictionaries
-//            ThemeManager.AddAccent("CustomAccent1", new Uri("pack://application:,,,/MahAppsMetroThemesSample;component/CustomAccents/CustomAccent1.xaml"));
-//            ThemeManager.AddAccent("CustomAccent2", new Uri("pack://application:,,,/MahAppsMetroThemesSample;component/CustomAccents/CustomAccent2.xaml"));
-//            ThemeManager.AddAppTheme("CustomTheme", new Uri("pack://application:,,,/MahAppsMetroThemesSample;component/CustomAccents/CustomTheme.xaml"));
+            ThemeManager.AddTheme(new Uri("pack://application:,,,/MahAppsMetroThemesSample;component/CustomAccents/Dark.Accent1.xaml"));
+            ThemeManager.AddTheme(new Uri("pack://application:,,,/MahAppsMetroThemesSample;component/CustomAccents/Dark.Accent2.xaml"));
+            ThemeManager.AddTheme(new Uri("pack://application:,,,/MahAppsMetroThemesSample;component/CustomAccents/Light.Accent1.xaml"));
+            ThemeManager.AddTheme(new Uri("pack://application:,,,/MahAppsMetroThemesSample;component/CustomAccents/Light.Accent2.xaml"));
 
             base.OnStartup(e);
 

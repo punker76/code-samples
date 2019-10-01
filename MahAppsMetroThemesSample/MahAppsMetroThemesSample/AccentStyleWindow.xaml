@@ -8,7 +8,7 @@
                       TextOptions.TextFormattingMode="Display"
                       Title="Change App Style"
                       SizeToContent="WidthAndHeight"
-                      GlowBrush="{DynamicResource AccentColorBrush}"
+                      GlowBrush="{DynamicResource MahApps.Brushes.Accent}"
                       ResizeMode="CanResizeWithGrip">
 
     <Controls:MetroWindow.Resources>
@@ -25,16 +25,16 @@
                        TextTrimming="CharacterEllipsis"
                        VerticalAlignment="Center"
                        Margin="8 -1 0 0"
-                       FontSize="{DynamicResource WindowTitleFontSize}"
-                       FontFamily="{DynamicResource DefaultFont}" />
+                       FontSize="{DynamicResource MahApps.Sizes.Font.WindowTitle}"
+                       FontFamily="{DynamicResource MahApps.Fonts.Default}" />
         </DataTemplate>
     </Controls:MetroWindow.TitleTemplate>
 
     <Grid>
 
         <Grid.Resources>
-            <Style TargetType="Button"
-                   BasedOn="{StaticResource MahApps.Metro.Styles.MetroButton}">
+            <Style TargetType="{x:Type Button}"
+                   BasedOn="{StaticResource {x:Type Button}}">
                 <Setter Property="Height"
                         Value="23" />
                 <Setter Property="Margin"
@@ -90,12 +90,10 @@
 
                 <UniformGrid Grid.Row="1"
                              Columns="5">
-                    <Button Content="Custom Theme"
-                            Click="CustomThemeAppButtonClick" />
-                    <Button Content="Custom Accent 1"
-                            Click="CustomAccent1AppButtonClick" />
-                    <Button Content="Custom Accent 2"
-                            Click="CustomAccent2AppButtonClick" />
+                    <Button Content="Dark.Accent1"
+                            Click="DarkAccent1AppButtonClick" />
+                    <Button Content="Light.Accent2"
+                            Click="LightAccent2AppButtonClick" />
                 </UniformGrid>
 
                 <UniformGrid Grid.Row="2" Margin="5" Columns="2" Rows="2">

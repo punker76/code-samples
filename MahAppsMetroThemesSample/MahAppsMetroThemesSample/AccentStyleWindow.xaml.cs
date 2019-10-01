@@ -64,22 +64,16 @@ namespace MahAppsMetroThemesSample
             Application.Current?.MainWindow?.Activate();
         }
 
-        private void CustomThemeAppButtonClick(object sender, RoutedEventArgs e)
+        private void DarkAccent1AppButtonClick(object sender, RoutedEventArgs e)
         {
-            var theme = ThemeManager.DetectTheme(Application.Current);
-//            ThemeManager.ChangeAppStyle(Application.Current, theme.Item2, ThemeManager.GetAppTheme("CustomTheme"));
+            var expectedTheme = ThemeManager.GetTheme("Dark.Accent1");
+            ThemeManager.ChangeTheme(Application.Current, expectedTheme);
         }
 
-        private void CustomAccent1AppButtonClick(object sender, RoutedEventArgs e)
+        private void LightAccent2AppButtonClick(object sender, RoutedEventArgs e)
         {
-            var theme = ThemeManager.DetectTheme(Application.Current);
-//            ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("CustomAccent1"), theme.Item1);
-        }
-
-        private void CustomAccent2AppButtonClick(object sender, RoutedEventArgs e)
-        {
-            var theme = ThemeManager.DetectTheme(Application.Current);
-//            ThemeManager.ChangeAppStyle(Application.Current, ThemeManager.GetAccent("CustomAccent2"), theme.Item1);
+            var expectedTheme = ThemeManager.GetTheme("Light.Accent2");
+            ThemeManager.ChangeTheme(Application.Current, expectedTheme);
         }
 
         private void AccentSelectionChanged(object sender, SelectionChangedEventArgs e)
