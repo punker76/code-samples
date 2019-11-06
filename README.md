@@ -22,7 +22,7 @@ Simple [sample](./ListViewSwitchItemsPanel) which shows how to switch the `Items
 
 ## An auto moving ToolTip
 
-**[ToolTipAutoMoveSample](https://github.com/punker76/code-samples/tree/master/ToolTipAutoMoveSample)** is a sample which demonstrates my auto moving ToolTip, explained [here](http://jkarger.de/archive/2014/11/02/how-to-make-the-tooltip-follow-the-mouse/).
+**[ToolTipAutoMoveSample](https://github.com/punker76/code-samples/tree/master/ToolTipAutoMoveSample)** is a sample which demonstrates my auto moving ToolTip, explained [here](http://jkarger.de/2014/11/02/how-to-make-the-tooltip-follow-the-mouse/).
 
 This ToolTip is now also available in the [ControlzEx](https://github.com/ControlzEx/ControlzEx) library.
 
@@ -42,7 +42,7 @@ This ToolTip is now also available in the [ControlzEx](https://github.com/Contro
 
 ## MahApps.Metro blank application
 
-**[MahAppsMetroSample](https://github.com/punker76/code-samples/tree/master/MahAppsMetroSample)** is a simple blank app for [MahApps.Metro][], explained in this [blog post](http://jkarger.de/archive/2014/11/18/modern-ui-with-mahapps-metro/).
+**[MahAppsMetroSample](https://github.com/punker76/code-samples/tree/master/MahAppsMetroSample)** is a simple blank app for [MahApps.Metro][], explained in this [blog post](http://jkarger.de/2014/11/18/modern-ui-with-mahapps-metro/).
 
 ## MahApps.Metro custom WindowButtonCommands
 
@@ -63,7 +63,7 @@ A sample app to demonstrate the customization of the Min/Max/Close buttons (for 
 
 ## MahApps.Metro Themes
 
-**[MahAppsMetroThemesSample](https://github.com/punker76/code-samples/tree/master/MahAppsMetroThemesSample)** [MahApps.Metro][] `ThemeManager` example explained in this [blog post](http://jkarger.de/archive/2014/11/27/mahapps-metro-themes/).  
+**[MahAppsMetroThemesSample](https://github.com/punker76/code-samples/tree/master/MahAppsMetroThemesSample)** [MahApps.Metro][] `ThemeManager` example explained in this [blog post](http://jkarger.de/2014/11/27/mahapps-metro-themes/).  
 
 ![mahapps_more_colors](https://cloud.githubusercontent.com/assets/658431/13557016/9d7e23a4-e3e7-11e5-839a-177c39977e8e.gif)    
 ![](screenshots/2014-11-27_17h29_54.png)  
