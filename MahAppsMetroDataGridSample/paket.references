@@ -1,2 +1,4 @@
 JetBrains.Annotations
 MahApps.Metro
+Microsoft.Xaml.Behaviors.Wpf
+	exclude Microsoft.Xaml.Behaviors.Design.dll

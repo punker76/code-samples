@@ -10,7 +10,7 @@ source https://api.nuget.org/v3/index.json
 nuget JetBrains.Annotations copy_local: true
 nuget XamlColorSchemeGenerator prerelease copy_local: true
 
-nuget MahApps.Metro.IconPacks prerelease
+nuget MahApps.Metro.IconPacks
 nuget MahApps.Metro prerelease
 nuget gong-wpf-dragdrop
 nuget Extended.Wpf.Toolkit
