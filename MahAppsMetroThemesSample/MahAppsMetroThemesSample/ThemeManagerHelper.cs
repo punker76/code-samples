@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Markup;
 using System.Windows.Media;
@@ -15,7 +16,7 @@ namespace MahAppsMetroThemesSample
     {
         public static ResourceDictionary CreateTheme(string baseColorScheme, Color accentBaseColor, string name = null, bool changeImmediately = false)
         {
-            name = name ?? $"RuntimeTheme_{baseColorScheme}_{accentBaseColor.ToString().Replace("#", string.Empty)}";
+            name = name ?? $"{baseColorScheme}.{accentBaseColor.ToString().Replace("#", string.Empty)}.RuntimeTheme";
 
             var generatorParameters = GetGeneratorParameters();
             var themeTemplateContent = GetThemeTemplateContent();
@@ -35,6 +36,8 @@ namespace MahAppsMetroThemesSample
 
             var xamlContent = new ColorSchemeGenerator().GenerateColorSchemeFileContent(generatorParameters, variant, colorScheme, themeTemplateContent, name, name);
 
+            xamlContent = FixXamlReaderBug(xamlContent);
+
             var resourceDictionary = (ResourceDictionary)XamlReader.Parse(xamlContent);
 
             var newTheme = new Theme(resourceDictionary);
@@ -50,6 +53,29 @@ namespace MahAppsMetroThemesSample
             return resourceDictionary;
         }
 
+        private static string FixXamlReaderBug(string xamlContent)
+        {
+            // Check if we have to fix something
+            if (xamlContent.Contains("WithAssembly=\"") == false)
+            {
+                return xamlContent;
+            }
+
+            var withAssemblyMatches = Regex.Matches(xamlContent, @"\s*xmlns:(.+?)WithAssembly=("".+?"")");
+
+            foreach (Match withAssemblyMatch in withAssemblyMatches)
+            {
+                var originalMatches = Regex.Matches(xamlContent, $@"\s*xmlns:({withAssemblyMatch.Groups[1].Value})=("".+?"")");
+
+                foreach (Match originalMatch in originalMatches)
+                {
+                    xamlContent = xamlContent.Replace(originalMatch.Groups[2].Value, withAssemblyMatch.Groups[2].Value);
+                }
+            }
+
+            return xamlContent;
+        }
+
         /// <summary>
         ///     Determining Ideal Text Color Based on Specified Background Color
         ///     http://www.codeproject.com/KB/GDI-plus/IdealTextColor.aspx
@@ -61,8 +87,8 @@ namespace MahAppsMetroThemesSample
             const int nThreshold = 105;
             var bgDelta = Convert.ToInt32((color.R * 0.299) + (color.G * 0.587) + (color.B * 0.114));
             var foreColor = 255 - bgDelta < nThreshold
-                ? Colors.Black
-                : Colors.White;
+                                ? Colors.Black
+                                : Colors.White;
             return foreColor;
         }
 

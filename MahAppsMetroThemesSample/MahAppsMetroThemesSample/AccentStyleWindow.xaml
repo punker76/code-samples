@@ -25,8 +25,8 @@
                        TextTrimming="CharacterEllipsis"
                        VerticalAlignment="Center"
                        Margin="8 -1 0 0"
-                       FontSize="{DynamicResource MahApps.Sizes.Font.WindowTitle}"
-                       FontFamily="{DynamicResource MahApps.Fonts.Default}" />
+                       FontSize="{DynamicResource MahApps.Font.Size.Window.Title}"
+                       FontFamily="{DynamicResource MahApps.Fonts.Family.Window.Title}" />
         </DataTemplate>
     </Controls:MetroWindow.TitleTemplate>
 

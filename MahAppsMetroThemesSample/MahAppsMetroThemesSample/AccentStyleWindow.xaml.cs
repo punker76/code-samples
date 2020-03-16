@@ -92,6 +92,8 @@ namespace MahAppsMetroThemesSample
             if (selectedColor.HasValue)
             {
                 var theme = ThemeManager.DetectTheme(Application.Current);
+                var inverseTheme = ThemeManager.GetInverseTheme(theme);
+                ThemeManagerHelper.CreateTheme(inverseTheme.BaseColorScheme, selectedColor.Value.Value);
                 ThemeManagerHelper.CreateTheme(theme.BaseColorScheme, selectedColor.Value.Value, changeImmediately: true);
                 Application.Current?.MainWindow?.Activate();
             }
