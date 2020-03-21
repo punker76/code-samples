@@ -30,8 +30,8 @@
                       Height="48"
                       Background="Transparent">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="48" />
-                        <ColumnDefinition />
+                        <ColumnDefinition Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type mah:HamburgerMenu}}, Path=CompactPaneLength}" />
+                        <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
                     <ContentControl Grid.Column="0"
                                     HorizontalAlignment="Center"
