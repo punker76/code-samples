@@ -8,7 +8,7 @@ NUGET
     JetBrains.Annotations (2019.1.3) - copy_local: true
     MahApps.Metro (2.0.0-alpha0748)
       ControlzEx (>= 4.2.2 < 5.0)
-    MahApps.Metro.IconPacks (3.4)
+    MahApps.Metro.IconPacks (3.5)
     Microsoft.Xaml.Behaviors.Wpf (1.1.19)
     Newtonsoft.Json (12.0.3) - copy_local: true
     XamlColorSchemeGenerator (3.0.0.31) - copy_local: true
