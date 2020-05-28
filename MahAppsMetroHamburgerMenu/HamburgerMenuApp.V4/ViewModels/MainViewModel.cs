@@ -33,7 +33,7 @@ namespace HamburgerMenuApp.V4.ViewModels
                 },
                 new HamburgerMenuIconItem()
                 {
-                    Icon = new PackIconMaterial() {Kind = PackIconMaterialKind.Settings},
+                    Icon = new PackIconMaterial() {Kind = PackIconMaterialKind.Cog},
                     Label = "Settings",
                     ToolTip = "The Application settings.",
                     Tag = new SettingsViewModel(this)

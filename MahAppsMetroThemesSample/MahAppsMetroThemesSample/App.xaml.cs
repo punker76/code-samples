@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Media;
+using ControlzEx.Theming;
 using MahApps.Metro;
+using MahApps.Metro.Theming;
 
 namespace MahAppsMetroThemesSample
 {
@@ -12,24 +14,39 @@ namespace MahAppsMetroThemesSample
     {
         protected override void OnStartup(StartupEventArgs e)
         {
-            // add custom accent and theme resource dictionaries
-            ThemeManager.AddTheme(new Uri("pack://application:,,,/MahAppsMetroThemesSample;component/CustomAccents/Dark.Accent1.xaml"));
-            ThemeManager.AddTheme(new Uri("pack://application:,,,/MahAppsMetroThemesSample;component/CustomAccents/Dark.Accent2.xaml"));
-            ThemeManager.AddTheme(new Uri("pack://application:,,,/MahAppsMetroThemesSample;component/CustomAccents/Light.Accent1.xaml"));
-            ThemeManager.AddTheme(new Uri("pack://application:,,,/MahAppsMetroThemesSample;component/CustomAccents/Light.Accent2.xaml"));
+            // Add custom theme resource dictionaries
+            ThemeManager.Current.AddLibraryTheme(new LibraryTheme(
+                                                     new Uri("pack://application:,,,/MahAppsMetroThemesSample;component/CustomAccents/Light.Accent1.xaml"),
+                                                     MahAppsLibraryThemeProvider.DefaultInstance));
+            ThemeManager.Current.AddLibraryTheme(new LibraryTheme(
+                                                     new Uri("pack://application:,,,/MahAppsMetroThemesSample;component/CustomAccents/Dark.Accent1.xaml"),
+                                                     MahAppsLibraryThemeProvider.DefaultInstance));
+            ThemeManager.Current.AddLibraryTheme(new LibraryTheme(
+                                                     new Uri("pack://application:,,,/MahAppsMetroThemesSample;component/CustomAccents/Light.Accent2.xaml"),
+                                                     MahAppsLibraryThemeProvider.DefaultInstance));
+            ThemeManager.Current.AddLibraryTheme(new LibraryTheme(
+                                                     new Uri("pack://application:,,,/MahAppsMetroThemesSample;component/CustomAccents/Dark.Accent2.xaml"),
+                                                     MahAppsLibraryThemeProvider.DefaultInstance));
 
             base.OnStartup(e);
 
-            MahApps.Metro.ThemeManager.IsAutomaticWindowsAppModeSettingSyncEnabled = true;
-            MahApps.Metro.ThemeManager.SyncThemeWithWindowsAppModeSetting();
+            ThemeManager.Current.ThemeSyncMode = ThemeSyncMode.SyncWithAppMode;
+            ThemeManager.Current.SyncTheme();
 
-            // create custom accents
-            ThemeManagerHelper.CreateTheme("Dark", Colors.Red, "CustomAccentDarkRed");
-            ThemeManagerHelper.CreateTheme("Light", Colors.Red, "CustomAccentLightRed");
-            ThemeManagerHelper.CreateTheme("Dark", Colors.GreenYellow);
-            ThemeManagerHelper.CreateTheme("Light", Colors.GreenYellow);
-            ThemeManagerHelper.CreateTheme("Dark", Colors.Indigo);
-            ThemeManagerHelper.CreateTheme("Light", Colors.Indigo, changeImmediately: true);
+            // Create runtime themes
+            ThemeManager.Current.AddTheme(new Theme("CustomDarkRed", "CustomDarkRed", "Dark", "Red", Colors.DarkRed, Brushes.DarkRed, true, false));
+            ThemeManager.Current.AddTheme(new Theme("CustomLightRed", "CustomLightRed", "Light", "Red", Colors.DarkRed, Brushes.DarkRed, true, false));
+
+            ThemeManager.Current.AddTheme(RuntimeThemeGenerator.Current.GenerateRuntimeTheme("Dark", Colors.Red));
+            ThemeManager.Current.AddTheme(RuntimeThemeGenerator.Current.GenerateRuntimeTheme("Light", Colors.Red));
+
+            ThemeManager.Current.AddTheme(RuntimeThemeGenerator.Current.GenerateRuntimeTheme("Dark", Colors.GreenYellow));
+            ThemeManager.Current.AddTheme(RuntimeThemeGenerator.Current.GenerateRuntimeTheme("Light", Colors.GreenYellow));
+
+            ThemeManager.Current.AddTheme(RuntimeThemeGenerator.Current.GenerateRuntimeTheme("Dark", Colors.Indigo));
+            ThemeManager.Current.ChangeTheme(this, ThemeManager.Current.AddTheme(RuntimeThemeGenerator.Current.GenerateRuntimeTheme("Light", Colors.Indigo)));
+
+            ThemeManager.Current.ChangeTheme(this, "Light.Red");
         }
     }
 }

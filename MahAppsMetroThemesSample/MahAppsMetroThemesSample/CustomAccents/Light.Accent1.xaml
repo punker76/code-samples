@@ -7,11 +7,13 @@
                     xmlns:system="clr-namespace:System;assembly=mscorlib"
                     mc:Ignorable="options">
 
-    <!--  Matadata  -->
+    <!--  Metadata  -->
     <system:String x:Key="Theme.Name">Light.Accent1</system:String>
+    <system:String x:Key="Theme.Origin">MahAppsMetroThemesSample</system:String>
     <system:String x:Key="Theme.DisplayName">Accent1 (Light)</system:String>
     <system:String x:Key="Theme.BaseColorScheme">Light</system:String>
     <system:String x:Key="Theme.ColorScheme">Accent1</system:String>
+    <Color x:Key="Theme.PrimaryAccentColor">#FFD80073</Color>
     <SolidColorBrush x:Key="Theme.ShowcaseBrush" Color="#FFD80073" options:Freeze="True" />
 
     <!--  *************COLORS START*************  -->
@@ -208,17 +210,18 @@
     <!--  DataGrid brushes  -->
 
     <SolidColorBrush x:Key="MahApps.Brushes.DataGrid.Selection.Background" Color="{StaticResource MahApps.Colors.Accent}" options:Freeze="True" />
-    <SolidColorBrush x:Key="MahApps.Brushes.DataGrid.Selection.BorderBrush" Color="{StaticResource MahApps.Colors.Accent}" options:Freeze="True" />
     <SolidColorBrush x:Key="MahApps.Brushes.DataGrid.Selection.Background.Disabled" Color="{StaticResource MahApps.Colors.Gray7}" options:Freeze="True" />
+    <SolidColorBrush x:Key="MahApps.Brushes.DataGrid.Selection.Background.Inactive" Color="{StaticResource MahApps.Colors.Accent3}" options:Freeze="True" />
+    <SolidColorBrush x:Key="MahApps.Brushes.DataGrid.Selection.Background.MouseOver" Color="{StaticResource MahApps.Colors.Accent2}" options:Freeze="True" />
+    <SolidColorBrush x:Key="MahApps.Brushes.DataGrid.Selection.BorderBrush" Color="{StaticResource MahApps.Colors.Accent}" options:Freeze="True" />
     <SolidColorBrush x:Key="MahApps.Brushes.DataGrid.Selection.BorderBrush.Disabled" Color="{StaticResource MahApps.Colors.Gray7}" options:Freeze="True" />
-    <SolidColorBrush x:Key="MahApps.Brushes.DataGrid.Selection.Text" Color="{StaticResource MahApps.Colors.IdealForeground}" options:Freeze="True" />
-    <SolidColorBrush x:Key="MahApps.Brushes.DataGrid.Selection.Text.Disabled" Color="{StaticResource MahApps.Colors.IdealForeground}" options:Freeze="True" />
-    <SolidColorBrush x:Key="MahApps.Brushes.DataGrid.Selection.Background.MouseOver" Color="{StaticResource MahApps.Colors.Accent3}" options:Freeze="True" />
-    <SolidColorBrush x:Key="MahApps.Brushes.DataGrid.Selection.BorderBrush.MouseOver" Color="{StaticResource MahApps.Colors.Accent3}" options:Freeze="True" />
     <SolidColorBrush x:Key="MahApps.Brushes.DataGrid.Selection.BorderBrush.Focus" Color="{StaticResource MahApps.Colors.Accent}" options:Freeze="True" />
-    <SolidColorBrush x:Key="MahApps.Brushes.DataGrid.Selection.Background.Inactive" Color="{StaticResource MahApps.Colors.Accent2}" options:Freeze="True" />
-    <SolidColorBrush x:Key="MahApps.Brushes.DataGrid.Selection.BorderBrush.Inactive" Color="{StaticResource MahApps.Colors.Accent2}" options:Freeze="True" />
-    <SolidColorBrush x:Key="MahApps.Brushes.DataGrid.Selection.Text.Inactive" Color="{StaticResource MahApps.Colors.IdealForeground}" options:Freeze="True" />
+    <SolidColorBrush x:Key="MahApps.Brushes.DataGrid.Selection.BorderBrush.Inactive" Color="{StaticResource MahApps.Colors.Accent3}" options:Freeze="True" />
+    <SolidColorBrush x:Key="MahApps.Brushes.DataGrid.Selection.BorderBrush.MouseOver" Color="{StaticResource MahApps.Colors.Accent2}" options:Freeze="True" />
+    <SolidColorBrush x:Key="MahApps.Brushes.DataGrid.Selection.Text" Color="{StaticResource MahApps.Colors.IdealForeground}" options:Freeze="True" />
+    <SolidColorBrush x:Key="MahApps.Brushes.DataGrid.Selection.Text.Disabled" Color="{StaticResource MahApps.Colors.Gray1}" options:Freeze="True" />
+    <SolidColorBrush x:Key="MahApps.Brushes.DataGrid.Selection.Text.Inactive" Color="{StaticResource MahApps.Colors.ThemeForeground}" options:Freeze="True" />
+    <SolidColorBrush x:Key="MahApps.Brushes.DataGrid.Selection.Text.MouseOver" Color="{StaticResource MahApps.Colors.IdealForeground}" options:Freeze="True" />
 
     <SolidColorBrush x:Key="MahApps.Brushes.Badged.Background" Color="{StaticResource MahApps.Colors.AccentBase}" options:Freeze="True" />
     <SolidColorBrush x:Key="MahApps.Brushes.Badged.Background.Disabled" Color="#FF999999" options:Freeze="True" />

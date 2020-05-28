@@ -3,7 +3,8 @@
                       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                       xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
                       xmlns:Converters="http://metro.mahapps.com/winfx/xaml/shared"
-                      xmlns:metro="clr-namespace:MahApps.Metro;assembly=MahApps.Metro"
+                      xmlns:controlzex="urn:controlzex"
+                      xmlns:componentModel="clr-namespace:System.ComponentModel;assembly=WindowsBase"
                       RenderOptions.ClearTypeHint="Enabled"
                       TextOptions.TextFormattingMode="Display"
                       Title="Change App Style"
@@ -13,9 +14,17 @@
 
     <Controls:MetroWindow.Resources>
         <ResourceDictionary>
+
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Themes/Light.Blue.xaml" />
             </ResourceDictionary.MergedDictionaries>
+
+            <CollectionViewSource x:Key="Themes" Source="{Binding Source={x:Static controlzex:ThemeManager.Current}, Path=Themes}">
+                <CollectionViewSource.SortDescriptions>
+                    <componentModel:SortDescription PropertyName="Name" />
+                </CollectionViewSource.SortDescriptions>
+            </CollectionViewSource>
+
         </ResourceDictionary>
     </Controls:MetroWindow.Resources>
 
@@ -90,10 +99,14 @@
 
                 <UniformGrid Grid.Row="1"
                              Columns="5">
+                    <Button Content="Light.Accent1"
+                            Click="LightAccent1AppButtonClick" />
                     <Button Content="Dark.Accent1"
                             Click="DarkAccent1AppButtonClick" />
                     <Button Content="Light.Accent2"
                             Click="LightAccent2AppButtonClick" />
+                    <Button Content="Dark.Accent2"
+                            Click="DarkAccent2AppButtonClick" />
                 </UniformGrid>
 
                 <UniformGrid Grid.Row="2" Margin="5" Columns="2" Rows="2">
@@ -103,26 +116,17 @@
                     <ComboBox x:Name="AccentSelector"
                               Margin="0 0 2 0"
                               VerticalAlignment="Center"
+                              IsSynchronizedWithCurrentItem="False"
                               SelectionChanged="AccentSelectionChanged"
-                              ItemsSource="{x:Static metro:ThemeManager.ColorSchemes}">
-                        <ComboBox.ItemTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding Name}" />
-                            </DataTemplate>
-                        </ComboBox.ItemTemplate>
-                    </ComboBox>
+                              DisplayMemberPath="Name"
+                              ItemsSource="{Binding Source={StaticResource Themes}}" />
 
                     <ComboBox x:Name="ColorsSelector"
                               Margin="2 0 0 0"
                               VerticalAlignment="Center"
                               SelectionChanged="ColorsSelectorOnSelectionChanged"
-                              ItemsSource="{Binding Colors}">
-                        <ComboBox.ItemTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding Key}" />
-                            </DataTemplate>
-                        </ComboBox.ItemTemplate>
-                    </ComboBox>
+                              DisplayMemberPath="Key"
+                              ItemsSource="{Binding Colors}" />
                 </UniformGrid>
             </Grid>
         </GroupBox>
