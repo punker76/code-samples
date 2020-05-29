@@ -1,9 +1,8 @@
 ﻿using System;
+using System.Linq;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Navigation;
 using MahApps.Metro.Controls;
-using MahAppsMetroHamburgerMenuNavigation.ViewModels;
 using MenuItem = MahAppsMetroHamburgerMenuNavigation.ViewModels.MenuItem;
 
 namespace MahAppsMetroHamburgerMenuNavigation
@@ -13,37 +12,44 @@ namespace MahAppsMetroHamburgerMenuNavigation
     /// </summary>
     public partial class MainWindow : MetroWindow
     {
+        private Navigation.NavigationServiceEx navigationServiceEx;
+
         public MainWindow()
         {
-            InitializeComponent();
+            this.InitializeComponent();
 
-            Navigation.Navigation.Frame = new Frame() {NavigationUIVisibility = NavigationUIVisibility.Hidden};
-            Navigation.Navigation.Frame.Navigated += SplitViewFrame_OnNavigated;
-            this.HamburgerMenuControl.Content = Navigation.Navigation.Frame;
+            this.navigationServiceEx = new Navigation.NavigationServiceEx();
+            this.navigationServiceEx.Navigated += this.SplitViewFrame_OnNavigated;
+            this.HamburgerMenuControl.Content = this.navigationServiceEx.Frame;
 
             // Navigate to the home page.
-            this.Loaded += (sender, args) => Navigation.Navigation.Navigate(new Uri("Views/MainPage.xaml", UriKind.RelativeOrAbsolute));
+            this.Loaded += (sender, args) => this.navigationServiceEx.Navigate(new Uri("Views/MainPage.xaml", UriKind.RelativeOrAbsolute));
         }
 
         private void SplitViewFrame_OnNavigated(object sender, NavigationEventArgs e)
         {
-//            this.HamburgerMenuControl.Content = e.Content;
-            this.HamburgerMenuControl.SelectedItem = e.ExtraData ?? ((ShellViewModel)this.DataContext).GetItem(e.Uri);
-            this.HamburgerMenuControl.SelectedOptionsItem = e.ExtraData ?? ((ShellViewModel)this.DataContext).GetOptionsItem(e.Uri);
-            GoBackButton.Visibility = Navigation.Navigation.Frame.CanGoBack ? Visibility.Visible : Visibility.Collapsed;
+            // select the menu item
+            this.HamburgerMenuControl.SelectedItem = this.HamburgerMenuControl.Items.OfType<MenuItem>().FirstOrDefault(x => x.NavigationDestination == e.Uri);
+            this.HamburgerMenuControl.SelectedOptionsItem = this.HamburgerMenuControl.OptionsItems.OfType<MenuItem>().FirstOrDefault(x => x.NavigationDestination == e.Uri);
+
+            // or
+            // this.HamburgerMenuControl.SelectedItem = this.HamburgerMenuControl.Items.OfType<MenuItem>().FirstOrDefault(x => x.NavigationType == e.Content?.GetType());
+            // this.HamburgerMenuControl.SelectedOptionsItem = this.HamburgerMenuControl.OptionsItems.OfType<MenuItem>().FirstOrDefault(x => x.NavigationType == e.Content?.GetType());
+
+            // update back button
+            this.GoBackButton.Visibility = this.navigationServiceEx.CanGoBack ? Visibility.Visible : Visibility.Collapsed;
         }
 
         private void GoBack_OnClick(object sender, RoutedEventArgs e)
         {
-            Navigation.Navigation.GoBack();
+            this.navigationServiceEx.GoBack();
         }
 
         private void HamburgerMenuControl_OnItemInvoked(object sender, HamburgerMenuItemInvokedEventArgs e)
         {
-            var menuItem = e.InvokedItem as MenuItem;
-            if (menuItem != null && menuItem.IsNavigation)
+            if (e.InvokedItem is MenuItem menuItem && menuItem.IsNavigation)
             {
-                Navigation.Navigation.Navigate(menuItem.NavigationDestination, menuItem);
+                this.navigationServiceEx.Navigate(menuItem.NavigationDestination);
             }
         }
     }

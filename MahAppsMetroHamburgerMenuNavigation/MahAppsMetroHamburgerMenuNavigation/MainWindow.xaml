@@ -6,7 +6,6 @@
                       xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
                       xmlns:viewModels="clr-namespace:MahAppsMetroHamburgerMenuNavigation.ViewModels"
                       xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
-                      xmlns:mahAppsMetroHamburgerMenuNavigation="clr-namespace:MahAppsMetroHamburgerMenuNavigation"
                       mc:Ignorable="d"
                       GlowBrush="{DynamicResource MahApps.Brushes.AccentBase}"
                       Title="MainWindow"
@@ -66,10 +65,3 @@
     </Grid>
 
 </controls:MetroWindow>
-
-
-
-
-
-
-

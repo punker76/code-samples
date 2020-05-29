@@ -1,7 +1,6 @@
 ﻿<Application x:Class="MahAppsMetroHamburgerMenuNavigation.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
@@ -10,7 +9,7 @@
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Themes/Light.Steel.xaml" />
             </ResourceDictionary.MergedDictionaries>
-            <Style TargetType="{x:Type Controls:WindowButtonCommands}" BasedOn="{StaticResource MahApps.Styles.WindowButtonCommands.Win10}" />
+
             <Style TargetType="{x:Type Page}" BasedOn="{StaticResource MahApps.Styles.Page}" x:Key="PageStyle">
                 <Setter Property="Background" Value="{DynamicResource MahApps.Brushes.Accent4}" />
                 <Setter Property="Template">
