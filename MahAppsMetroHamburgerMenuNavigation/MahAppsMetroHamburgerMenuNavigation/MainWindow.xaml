@@ -51,6 +51,43 @@
                 </Grid>
             </DataTemplate>
 
+            <Style TargetType="{x:Type Frame}" BasedOn="{StaticResource {x:Type Frame}}">
+                <Setter Property="Background" Value="{DynamicResource MahApps.Brushes.Accent4}" />
+                <Setter Property="ClipToBounds" Value="True" />
+                <Setter Property="ContentTemplate">
+                    <Setter.Value>
+                        <DataTemplate>
+                            <controls:TransitioningContentControl Content="{Binding}" Transition="Custom" RestartTransitionOnContentChange="True">
+                                <controls:TransitioningContentControl.CustomVisualStates>
+                                    <VisualState x:Name="CustomTransition">
+                                        <Storyboard>
+                                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                                                       Storyboard.TargetName="CurrentContentPresentationSite"
+                                                                       Storyboard.TargetProperty="(UIElement.Opacity)">
+                                                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0" />
+                                                <SplineDoubleKeyFrame KeyTime="00:00:00.150" Value="1" />
+                                            </DoubleAnimationUsingKeyFrames>
+                                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                                                       Storyboard.TargetName="CurrentContentPresentationSite"
+                                                                       Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)">
+                                                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="200" />
+                                                <SplineDoubleKeyFrame KeyTime="00:00:00.300" Value="0" KeySpline="0.1, 0.9, 0.2, 1" />
+                                            </DoubleAnimationUsingKeyFrames>
+
+                                            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                                                       Storyboard.TargetName="PreviousContentPresentationSite"
+                                                                       Storyboard.TargetProperty="(UIElement.Opacity)">
+                                                <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0" />
+                                            </DoubleAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                </controls:TransitioningContentControl.CustomVisualStates>
+                            </controls:TransitioningContentControl>
+                        </DataTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
         </Grid.Resources>
 
         <controls:HamburgerMenu x:Name="HamburgerMenuControl"
