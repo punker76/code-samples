@@ -33,11 +33,24 @@
                        FontSize="48"
                        Text="{Binding ElementName=ValueSlider, Path=Value, StringFormat={}{0:000.00}}" />
 
+            <StackPanel HorizontalAlignment="Center">
+                <CheckBox x:Name="ChargingCheckBox"
+                          Content="Charging" />
+            </StackPanel>
+
             <iconPacks:PackIconMaterial Width="56"
                                         Height="56"
                                         Margin="0 5"
-                                        HorizontalAlignment="Center"
-                                        Kind="{Binding ElementName=ValueSlider, Path=Value, Converter={StaticResource BatteryValueConverter}}" />
+                                        HorizontalAlignment="Center">
+                <iconPacks:PackIconMaterial.Kind>
+                    <MultiBinding Converter="{StaticResource BatteryValueConverter}">
+                        <MultiBinding.Bindings>
+                            <Binding ElementName="ValueSlider" Path="Value"/>
+                            <Binding ElementName="ChargingCheckBox" Path="IsChecked"/>
+                        </MultiBinding.Bindings>
+                    </MultiBinding>
+                </iconPacks:PackIconMaterial.Kind>
+            </iconPacks:PackIconMaterial>
             <iconPacks:PackIconFontAwesome Width="56"
                                            Height="56"
                                            Margin="0 5"
