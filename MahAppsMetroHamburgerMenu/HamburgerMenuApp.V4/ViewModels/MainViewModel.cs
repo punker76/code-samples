@@ -1,12 +1,13 @@
-﻿using MahApps.Metro.Controls;
+﻿using System.Collections.ObjectModel;
+using HamburgerMenuApp.Core.MVVM;
 using MahApps.Metro.IconPacks;
 
 namespace HamburgerMenuApp.V4.ViewModels
 {
-    public class MainViewModel : PropertyChangedViewModel
+    public class MainViewModel : BindableBase
     {
-        private HamburgerMenuItemCollection _menuItems;
-        private HamburgerMenuItemCollection _menuOptionItems;
+        private ObservableCollection<MenuItemViewModel> _menuItems;
+        private ObservableCollection<MenuItemViewModel> _menuOptionItems;
 
         public MainViewModel()
         {
@@ -15,63 +16,49 @@ namespace HamburgerMenuApp.V4.ViewModels
 
         public void CreateMenuItems()
         {
-            MenuItems = new HamburgerMenuItemCollection
+            MenuItems = new ObservableCollection<MenuItemViewModel>
             {
-                new HamburgerMenuIconItem()
+                new HomeViewModel(this)
                 {
                     Icon = new PackIconMaterial() {Kind = PackIconMaterialKind.Home},
                     Label = "Home",
-                    ToolTip = "The Home view.",
-                    Tag = new HomeViewModel(this)
+                    ToolTip = "Welcome Home"
                 },
-                new HamburgerMenuIconItem()
+                new PrivateViewModel(this)
                 {
                     Icon = new PackIconMaterial() {Kind = PackIconMaterialKind.AccountCircle},
                     Label = "Private",
-                    ToolTip = "Private stuff.",
-                    Tag = new PrivateViewModel(this)
+                    ToolTip = "...42"
                 },
-                new HamburgerMenuIconItem()
-                {
-                    Icon = new PackIconMaterial() {Kind = PackIconMaterialKind.Cog},
-                    Label = "Settings",
-                    ToolTip = "The Application settings.",
-                    Tag = new SettingsViewModel(this)
-                }
-            };
-
-            MenuOptionItems = new HamburgerMenuItemCollection
-            {
-                new HamburgerMenuIconItem()
+                new AboutViewModel(this)
                 {
                     Icon = new PackIconMaterial() {Kind = PackIconMaterialKind.Help},
                     Label = "About",
-                    ToolTip = "Some help.",
-                    Tag = new AboutViewModel(this)
+                    ToolTip = "About this one..."
+                }
+            };
+
+            MenuOptionItems = new ObservableCollection<MenuItemViewModel>
+            {
+                new SettingsViewModel(this)
+                {
+                    Icon = new PackIconMaterial() {Kind = PackIconMaterialKind.Cog},
+                    Label = "Settings",
+                    ToolTip = "The App settings"
                 }
             };
         }
 
-        public HamburgerMenuItemCollection MenuItems
+        public ObservableCollection<MenuItemViewModel> MenuItems
         {
-            get { return _menuItems; }
-            set
-            {
-                if (Equals(value, _menuItems)) return;
-                _menuItems = value;
-                OnPropertyChanged();
-            }
+            get => _menuItems;
+            set => SetProperty(ref _menuItems, value);
         }
 
-        public HamburgerMenuItemCollection MenuOptionItems
+        public ObservableCollection<MenuItemViewModel> MenuOptionItems
         {
-            get { return _menuOptionItems; }
-            set
-            {
-                if (Equals(value, _menuOptionItems)) return;
-                _menuOptionItems = value;
-                OnPropertyChanged();
-            }
+            get => _menuOptionItems;
+            set => SetProperty(ref _menuOptionItems, value);
         }
     }
 }

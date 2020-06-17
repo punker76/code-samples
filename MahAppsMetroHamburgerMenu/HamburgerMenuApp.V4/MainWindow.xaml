@@ -7,6 +7,7 @@
                  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                  xmlns:viewModels="clr-namespace:HamburgerMenuApp.V4.ViewModels"
                  xmlns:views="clr-namespace:HamburgerMenuApp.Core.Views;assembly=HamburgerMenuApp.Core"
+                 xmlns:localViews="clr-namespace:HamburgerMenuApp.V4.Views"
                  Title="MainWindow"
                  Width="525"
                  Height="350"
@@ -25,7 +26,7 @@
             <core:SelectedItemToContentConverter x:Key="SelectedItemToContentConverter" />
 
             <!--  this is the template for the items (options too)  -->
-            <DataTemplate x:Key="MenuItemTemplate" DataType="{x:Type mah:HamburgerMenuIconItem}">
+            <DataTemplate x:Key="MenuItemTemplate" DataType="{x:Type viewModels:MenuItemViewModel}">
                 <Grid x:Name="RootGrid"
                       Height="48"
                       Background="Transparent">
@@ -57,11 +58,11 @@
             <DataTemplate DataType="{x:Type viewModels:PrivateViewModel}">
                 <views:PrivateView DataContext="{Binding}" />
             </DataTemplate>
-            <DataTemplate DataType="{x:Type viewModels:SettingsViewModel}">
-                <views:SettingsView DataContext="{Binding}" />
-            </DataTemplate>
             <DataTemplate DataType="{x:Type viewModels:AboutViewModel}">
                 <views:AboutView DataContext="{Binding}" />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModels:SettingsViewModel}">
+                <localViews:AppSettingsView DataContext="{Binding}" />
             </DataTemplate>
 
         </Grid.Resources>
@@ -75,16 +76,16 @@
                            OptionsItemsSource="{Binding MenuOptionItems}"
                            SelectedIndex="1">
 
-            <!--  select the tag (ViewModel) of the selected item (options item)  -->
+            <!--  select the ViewModel of the selected item (options item)  -->
             <mah:HamburgerMenu.Content>
                 <MultiBinding Converter="{StaticResource SelectedItemToContentConverter}">
                     <Binding FallbackValue="{x:Null}"
                              Mode="OneWay"
-                             Path="SelectedItem.Tag"
+                             Path="SelectedItem"
                              RelativeSource="{RelativeSource Self}" />
                     <Binding FallbackValue="{x:Null}"
                              Mode="OneWay"
-                             Path="SelectedOptionsItem.Tag"
+                             Path="SelectedOptionsItem"
                              RelativeSource="{RelativeSource Self}" />
                 </MultiBinding>
             </mah:HamburgerMenu.Content>

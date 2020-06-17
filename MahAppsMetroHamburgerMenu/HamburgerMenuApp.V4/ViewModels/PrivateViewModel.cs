@@ -1,12 +1,11 @@
-﻿namespace HamburgerMenuApp.V4.ViewModels
-{
-    public class PrivateViewModel : PropertyChangedViewModel
-    {
-        private readonly PropertyChangedViewModel _mainViewModel;
+﻿using HamburgerMenuApp.Core.MVVM;
 
-        public PrivateViewModel(PropertyChangedViewModel mainViewModel)
+namespace HamburgerMenuApp.V4.ViewModels
+{
+    public class PrivateViewModel : MenuItemViewModel
+    {
+        public PrivateViewModel(MainViewModel mainViewModel) : base(mainViewModel)
         {
-            _mainViewModel = mainViewModel;
         }
     }
 }

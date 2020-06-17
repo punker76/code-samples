@@ -45,7 +45,7 @@ var gitBranch = GitBranchCurrent(".");
 var branchName = gitBranch.FriendlyName;
 
 var isDevelopBranch = StringComparer.OrdinalIgnoreCase.Equals("develop", branchName);
-var isReleaseBranch = StringComparer.OrdinalIgnoreCase.Equals("master", branchName);
+var isReleaseBranch = StringComparer.OrdinalIgnoreCase.Equals("main", branchName);
 
 // Define global marcos.
 Action Abort = () => { throw new Exception("a non-recoverable fatal error occurred."); };
