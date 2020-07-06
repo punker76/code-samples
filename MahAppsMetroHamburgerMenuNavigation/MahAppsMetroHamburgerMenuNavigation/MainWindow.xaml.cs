@@ -12,7 +12,7 @@ namespace MahAppsMetroHamburgerMenuNavigation
     /// </summary>
     public partial class MainWindow : MetroWindow
     {
-        private Navigation.NavigationServiceEx navigationServiceEx;
+        private readonly Navigation.NavigationServiceEx navigationServiceEx;
 
         public MainWindow()
         {

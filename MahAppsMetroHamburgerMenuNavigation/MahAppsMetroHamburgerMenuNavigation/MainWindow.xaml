@@ -36,7 +36,7 @@
                           DataType="{x:Type viewModels:MenuItem}">
                 <Grid Height="48">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="48" />
+                        <ColumnDefinition Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type controls:HamburgerMenu}}, Path=CompactPaneLength, Mode=OneWay}" />
                         <ColumnDefinition />
                     </Grid.ColumnDefinitions>
                     <ContentControl Grid.Column="0"
@@ -47,7 +47,7 @@
                     <TextBlock Grid.Column="1"
                                VerticalAlignment="Center"
                                FontSize="16"
-                               Text="{Binding Text}" />
+                               Text="{Binding Label}" />
                 </Grid>
             </DataTemplate>
 

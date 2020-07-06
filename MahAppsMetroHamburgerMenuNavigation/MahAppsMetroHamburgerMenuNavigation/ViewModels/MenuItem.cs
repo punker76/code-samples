@@ -1,71 +1,29 @@
 ﻿using System;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
-using JetBrains.Annotations;
+using System.Windows;
 using MahApps.Metro.Controls;
 
 namespace MahAppsMetroHamburgerMenuNavigation.ViewModels
 {
-    internal class MenuItem : HamburgerMenuItem, INotifyPropertyChanged
+    public class MenuItem : HamburgerMenuIconItem
     {
-        private object _icon;
-        private string _text;
-        private Uri _navigationDestination;
-        private Type _navigationType;
-
-        public object Icon
-        {
-            get { return this._icon; }
-            set { this.SetProperty(ref this._icon, value); }
-        }
-
-        public string Text
-        {
-            get { return this._text; }
-            set { this.SetProperty(ref this._text, value); }
-        }
+        public static readonly DependencyProperty NavigationDestinationProperty = DependencyProperty.Register(
+            nameof(NavigationDestination), typeof(Uri), typeof(MenuItem), new PropertyMetadata(default(Uri)));
 
         public Uri NavigationDestination
         {
-            get { return this._navigationDestination; }
-            set { this.SetProperty(ref this._navigationDestination, value); }
+            get => (Uri)this.GetValue(NavigationDestinationProperty);
+            set => this.SetValue(NavigationDestinationProperty, value);
         }
+
+        public static readonly DependencyProperty NavigationTypeProperty = DependencyProperty.Register(
+            nameof(NavigationType), typeof(Type), typeof(MenuItem), new PropertyMetadata(default(Type)));
 
         public Type NavigationType
         {
-            get { return this._navigationType; }
-            set { this.SetProperty(ref this._navigationType, value); }
+            get => (Type)this.GetValue(NavigationTypeProperty);
+            set => this.SetValue(NavigationTypeProperty, value);
         }
 
-        public bool IsNavigation => this._navigationDestination != null;
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        [NotifyPropertyChangedInvocator]
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
-        /// <summary>
-        /// Checks if a property already matches a desired value.  Sets the property and
-        /// notifies listeners only when necessary.
-        /// </summary>
-        /// <typeparam name="T">Type of the property.</typeparam>
-        /// <param name="storage">Reference to a property with both getter and setter.</param>
-        /// <param name="value">Desired value for the property.</param>
-        /// <param name="propertyName">Name of the property used to notify listeners.  This
-        /// value is optional and can be provided automatically when invoked from compilers that
-        /// support CallerMemberName.</param>
-        /// <returns>True if the value was changed, false if the existing value matched the
-        /// desired value.</returns>
-        protected bool SetProperty<T>(ref T storage, T value, [CallerMemberName] string propertyName = null)
-        {
-            if (Equals(storage, value)) return false;
-
-            storage = value;
-            this.OnPropertyChanged(propertyName);
-            return true;
-        }
+        public bool IsNavigation => this.NavigationDestination != null;
     }
 }

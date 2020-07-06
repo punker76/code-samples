@@ -1,6 +1,5 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using MahApps.Metro.Controls;
 
 namespace MahAppsMetroHamburgerMenuNavigation.Mvvm
 {
