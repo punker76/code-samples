@@ -10,7 +10,9 @@
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Themes/Light.Steel.xaml" />
             </ResourceDictionary.MergedDictionaries>
 
-            <Style TargetType="{x:Type Page}" BasedOn="{StaticResource MahApps.Styles.Page}" x:Key="PageStyle">
+            <Style x:Key="PageStyle"
+                   BasedOn="{StaticResource MahApps.Styles.Page}"
+                   TargetType="{x:Type Page}">
                 <Setter Property="Background" Value="Transparent" />
                 <Setter Property="Template">
                     <Setter.Value>
@@ -21,7 +23,10 @@
                                     <RowDefinition Height="Auto" />
                                 </Grid.RowDefinitions>
                                 <ContentPresenter Grid.Row="0" />
-                                <TextBlock Grid.Row="1" Margin="4" Text="{TemplateBinding Title}" FontSize="48" />
+                                <TextBlock Grid.Row="1"
+                                           Margin="4"
+                                           FontSize="48"
+                                           Text="{TemplateBinding Title}" />
                             </Grid>
                         </ControlTemplate>
                     </Setter.Value>
