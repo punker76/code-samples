@@ -234,8 +234,18 @@
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
+        <Reference Include="MahApps.Metro.IconPacks.BootstrapIcons">
+          <HintPath>..\..\packages\MahApps.Metro.IconPacks\lib\net45\MahApps.Metro.IconPacks.BootstrapIcons.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
         <Reference Include="MahApps.Metro.IconPacks.BoxIcons">
           <HintPath>..\..\packages\MahApps.Metro.IconPacks\lib\net45\MahApps.Metro.IconPacks.BoxIcons.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="MahApps.Metro.IconPacks.Codicons">
+          <HintPath>..\..\packages\MahApps.Metro.IconPacks\lib\net45\MahApps.Metro.IconPacks.Codicons.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
@@ -259,8 +269,23 @@
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
+        <Reference Include="MahApps.Metro.IconPacks.FileIcons">
+          <HintPath>..\..\packages\MahApps.Metro.IconPacks\lib\net45\MahApps.Metro.IconPacks.FileIcons.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
         <Reference Include="MahApps.Metro.IconPacks.FontAwesome">
           <HintPath>..\..\packages\MahApps.Metro.IconPacks\lib\net45\MahApps.Metro.IconPacks.FontAwesome.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="MahApps.Metro.IconPacks.Fontaudio">
+          <HintPath>..\..\packages\MahApps.Metro.IconPacks\lib\net45\MahApps.Metro.IconPacks.Fontaudio.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="MahApps.Metro.IconPacks.ForkAwesome">
+          <HintPath>..\..\packages\MahApps.Metro.IconPacks\lib\net45\MahApps.Metro.IconPacks.ForkAwesome.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
@@ -309,8 +334,23 @@
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
+        <Reference Include="MahApps.Metro.IconPacks.PixelartIcons">
+          <HintPath>..\..\packages\MahApps.Metro.IconPacks\lib\net45\MahApps.Metro.IconPacks.PixelartIcons.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
         <Reference Include="MahApps.Metro.IconPacks.RPGAwesome">
           <HintPath>..\..\packages\MahApps.Metro.IconPacks\lib\net45\MahApps.Metro.IconPacks.RPGAwesome.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="MahApps.Metro.IconPacks.RadixIcons">
+          <HintPath>..\..\packages\MahApps.Metro.IconPacks\lib\net45\MahApps.Metro.IconPacks.RadixIcons.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="MahApps.Metro.IconPacks.RemixIcon">
+          <HintPath>..\..\packages\MahApps.Metro.IconPacks\lib\net45\MahApps.Metro.IconPacks.RemixIcon.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
@@ -326,6 +366,11 @@
         </Reference>
         <Reference Include="MahApps.Metro.IconPacks.Unicons">
           <HintPath>..\..\packages\MahApps.Metro.IconPacks\lib\net45\MahApps.Metro.IconPacks.Unicons.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="MahApps.Metro.IconPacks.VaadinIcons">
+          <HintPath>..\..\packages\MahApps.Metro.IconPacks\lib\net45\MahApps.Metro.IconPacks.VaadinIcons.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
@@ -348,8 +393,18 @@
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
+        <Reference Include="MahApps.Metro.IconPacks.BootstrapIcons">
+          <HintPath>..\..\packages\MahApps.Metro.IconPacks\lib\net46\MahApps.Metro.IconPacks.BootstrapIcons.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
         <Reference Include="MahApps.Metro.IconPacks.BoxIcons">
           <HintPath>..\..\packages\MahApps.Metro.IconPacks\lib\net46\MahApps.Metro.IconPacks.BoxIcons.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="MahApps.Metro.IconPacks.Codicons">
+          <HintPath>..\..\packages\MahApps.Metro.IconPacks\lib\net46\MahApps.Metro.IconPacks.Codicons.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
@@ -373,8 +428,23 @@
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
+        <Reference Include="MahApps.Metro.IconPacks.FileIcons">
+          <HintPath>..\..\packages\MahApps.Metro.IconPacks\lib\net46\MahApps.Metro.IconPacks.FileIcons.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
         <Reference Include="MahApps.Metro.IconPacks.FontAwesome">
           <HintPath>..\..\packages\MahApps.Metro.IconPacks\lib\net46\MahApps.Metro.IconPacks.FontAwesome.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="MahApps.Metro.IconPacks.Fontaudio">
+          <HintPath>..\..\packages\MahApps.Metro.IconPacks\lib\net46\MahApps.Metro.IconPacks.Fontaudio.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="MahApps.Metro.IconPacks.ForkAwesome">
+          <HintPath>..\..\packages\MahApps.Metro.IconPacks\lib\net46\MahApps.Metro.IconPacks.ForkAwesome.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
@@ -423,8 +493,23 @@
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
+        <Reference Include="MahApps.Metro.IconPacks.PixelartIcons">
+          <HintPath>..\..\packages\MahApps.Metro.IconPacks\lib\net46\MahApps.Metro.IconPacks.PixelartIcons.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
         <Reference Include="MahApps.Metro.IconPacks.RPGAwesome">
           <HintPath>..\..\packages\MahApps.Metro.IconPacks\lib\net46\MahApps.Metro.IconPacks.RPGAwesome.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="MahApps.Metro.IconPacks.RadixIcons">
+          <HintPath>..\..\packages\MahApps.Metro.IconPacks\lib\net46\MahApps.Metro.IconPacks.RadixIcons.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="MahApps.Metro.IconPacks.RemixIcon">
+          <HintPath>..\..\packages\MahApps.Metro.IconPacks\lib\net46\MahApps.Metro.IconPacks.RemixIcon.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
@@ -440,6 +525,11 @@
         </Reference>
         <Reference Include="MahApps.Metro.IconPacks.Unicons">
           <HintPath>..\..\packages\MahApps.Metro.IconPacks\lib\net46\MahApps.Metro.IconPacks.Unicons.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="MahApps.Metro.IconPacks.VaadinIcons">
+          <HintPath>..\..\packages\MahApps.Metro.IconPacks\lib\net46\MahApps.Metro.IconPacks.VaadinIcons.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
@@ -462,8 +552,18 @@
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
+        <Reference Include="MahApps.Metro.IconPacks.BootstrapIcons">
+          <HintPath>..\..\packages\MahApps.Metro.IconPacks\lib\net47\MahApps.Metro.IconPacks.BootstrapIcons.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
         <Reference Include="MahApps.Metro.IconPacks.BoxIcons">
           <HintPath>..\..\packages\MahApps.Metro.IconPacks\lib\net47\MahApps.Metro.IconPacks.BoxIcons.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="MahApps.Metro.IconPacks.Codicons">
+          <HintPath>..\..\packages\MahApps.Metro.IconPacks\lib\net47\MahApps.Metro.IconPacks.Codicons.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
@@ -487,8 +587,23 @@
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
+        <Reference Include="MahApps.Metro.IconPacks.FileIcons">
+          <HintPath>..\..\packages\MahApps.Metro.IconPacks\lib\net47\MahApps.Metro.IconPacks.FileIcons.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
         <Reference Include="MahApps.Metro.IconPacks.FontAwesome">
           <HintPath>..\..\packages\MahApps.Metro.IconPacks\lib\net47\MahApps.Metro.IconPacks.FontAwesome.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="MahApps.Metro.IconPacks.Fontaudio">
+          <HintPath>..\..\packages\MahApps.Metro.IconPacks\lib\net47\MahApps.Metro.IconPacks.Fontaudio.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="MahApps.Metro.IconPacks.ForkAwesome">
+          <HintPath>..\..\packages\MahApps.Metro.IconPacks\lib\net47\MahApps.Metro.IconPacks.ForkAwesome.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
@@ -537,8 +652,23 @@
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
+        <Reference Include="MahApps.Metro.IconPacks.PixelartIcons">
+          <HintPath>..\..\packages\MahApps.Metro.IconPacks\lib\net47\MahApps.Metro.IconPacks.PixelartIcons.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
         <Reference Include="MahApps.Metro.IconPacks.RPGAwesome">
           <HintPath>..\..\packages\MahApps.Metro.IconPacks\lib\net47\MahApps.Metro.IconPacks.RPGAwesome.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="MahApps.Metro.IconPacks.RadixIcons">
+          <HintPath>..\..\packages\MahApps.Metro.IconPacks\lib\net47\MahApps.Metro.IconPacks.RadixIcons.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="MahApps.Metro.IconPacks.RemixIcon">
+          <HintPath>..\..\packages\MahApps.Metro.IconPacks\lib\net47\MahApps.Metro.IconPacks.RemixIcon.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
@@ -554,6 +684,11 @@
         </Reference>
         <Reference Include="MahApps.Metro.IconPacks.Unicons">
           <HintPath>..\..\packages\MahApps.Metro.IconPacks\lib\net47\MahApps.Metro.IconPacks.Unicons.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="MahApps.Metro.IconPacks.VaadinIcons">
+          <HintPath>..\..\packages\MahApps.Metro.IconPacks\lib\net47\MahApps.Metro.IconPacks.VaadinIcons.dll</HintPath>
           <Private>True</Private>
           <Paket>True</Paket>
         </Reference>
