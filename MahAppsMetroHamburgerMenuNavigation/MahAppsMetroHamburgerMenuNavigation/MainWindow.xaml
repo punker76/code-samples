@@ -5,6 +5,7 @@
                       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                       xmlns:viewModels="clr-namespace:MahAppsMetroHamburgerMenuNavigation.ViewModels"
+                      xmlns:navigation="clr-namespace:MahAppsMetroHamburgerMenuNavigation.Navigation"
                       Title="MainWindow"
                       Width="600"
                       Height="450"
@@ -50,43 +51,51 @@
             </Grid>
         </DataTemplate>
 
-        <Style BasedOn="{StaticResource {x:Type Frame}}" TargetType="{x:Type Frame}">
-            <Setter Property="Background" Value="{DynamicResource MahApps.Brushes.Accent4}" />
-            <Setter Property="ClipToBounds" Value="True" />
-            <Setter Property="ContentTemplate">
-                <Setter.Value>
-                    <DataTemplate>
-                        <controls:TransitioningContentControl Content="{Binding}"
-                                                              RestartTransitionOnContentChange="True"
-                                                              Transition="Custom">
-                            <controls:TransitioningContentControl.CustomVisualStates>
-                                <VisualState x:Name="CustomTransition">
-                                    <Storyboard>
-                                        <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
-                                                                       Storyboard.TargetName="CurrentContentPresentationSite"
-                                                                       Storyboard.TargetProperty="(UIElement.Opacity)">
-                                            <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0" />
-                                            <SplineDoubleKeyFrame KeyTime="00:00:00.150" Value="1" />
-                                        </DoubleAnimationUsingKeyFrames>
-                                        <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
-                                                                       Storyboard.TargetName="CurrentContentPresentationSite"
-                                                                       Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)">
-                                            <SplineDoubleKeyFrame KeyTime="00:00:00" Value="200" />
-                                            <SplineDoubleKeyFrame KeySpline="0.1, 0.9, 0.2, 1"
-                                                                  KeyTime="00:00:00.300"
-                                                                  Value="0" />
-                                        </DoubleAnimationUsingKeyFrames>
+        <Storyboard x:Key="NavigationStoryboard">
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetProperty="(UIElement.Opacity)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00"
+                                      Value="0" />
+                <SplineDoubleKeyFrame KeyTime="00:00:00.150"
+                                      Value="1" />
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
+                                           Storyboard.TargetProperty="(UIElement.RenderTransform).(TranslateTransform.Y)">
+                <SplineDoubleKeyFrame KeyTime="00:00:00"
+                                      Value="200" />
+                <SplineDoubleKeyFrame KeySpline="0.1, 0.9, 0.2, 1"
+                                      KeyTime="00:00:00.300"
+                                      Value="0" />
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
 
-                                        <DoubleAnimationUsingKeyFrames BeginTime="00:00:00"
-                                                                       Storyboard.TargetName="PreviousContentPresentationSite"
-                                                                       Storyboard.TargetProperty="(UIElement.Opacity)">
-                                            <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0" />
-                                        </DoubleAnimationUsingKeyFrames>
-                                    </Storyboard>
-                                </VisualState>
-                            </controls:TransitioningContentControl.CustomVisualStates>
-                        </controls:TransitioningContentControl>
-                    </DataTemplate>
+        <Style BasedOn="{StaticResource {x:Type Frame}}"
+               TargetType="{x:Type Frame}">
+            <Setter Property="navigation:FrameAnimator.FrameNavigationStoryboard"
+                    Value="{StaticResource NavigationStoryboard}" />
+            <Setter Property="RenderTransform">
+                <Setter.Value>
+                    <TranslateTransform />
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Background"
+                    Value="{DynamicResource MahApps.Brushes.Accent4}" />
+            <Setter Property="ClipToBounds"
+                    Value="True" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Frame}">
+                        <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                Padding="{TemplateBinding Padding}">
+                            <ContentPresenter x:Name="PART_FrameCP">
+                                <ContentPresenter.RenderTransform>
+                                    <TranslateTransform />
+                                </ContentPresenter.RenderTransform>
+                            </ContentPresenter>
+                        </Border>
+                    </ControlTemplate>
                 </Setter.Value>
             </Setter>
         </Style>
