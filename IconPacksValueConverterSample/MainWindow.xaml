@@ -45,8 +45,8 @@
                 <iconPacks:PackIconMaterial.Kind>
                     <MultiBinding Converter="{StaticResource BatteryValueConverter}">
                         <MultiBinding.Bindings>
-                            <Binding ElementName="ValueSlider" Path="Value"/>
-                            <Binding ElementName="ChargingCheckBox" Path="IsChecked"/>
+                            <Binding ElementName="ValueSlider" Path="Value" />
+                            <Binding ElementName="ChargingCheckBox" Path="IsChecked" />
                         </MultiBinding.Bindings>
                     </MultiBinding>
                 </iconPacks:PackIconMaterial.Kind>
