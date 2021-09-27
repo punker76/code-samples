@@ -37,14 +37,15 @@ namespace MahAppsMetroHamburgerMenuNavigation
         private void NavigationServiceEx_OnNavigated(object sender, NavigationEventArgs e)
         {
             // select the menu item
-            this.HamburgerMenuControl.SelectedItem = this.HamburgerMenuControl
-                                                         .Items
-                                                         .OfType<MenuItem>()
-                                                         .FirstOrDefault(x => x.NavigationDestination == e.Uri);
-            this.HamburgerMenuControl.SelectedOptionsItem = this.HamburgerMenuControl
-                                                                .OptionsItems
-                                                                .OfType<MenuItem>()
-                                                                .FirstOrDefault(x => x.NavigationDestination == e.Uri);
+            this.HamburgerMenuControl.SetCurrentValue(HamburgerMenu.SelectedItemProperty,
+                this.HamburgerMenuControl.Items
+                    .OfType<MenuItem>()
+                    .FirstOrDefault(x => x.NavigationDestination == e.Uri));
+            this.HamburgerMenuControl.SetCurrentValue(HamburgerMenu.SelectedOptionsItemProperty,
+                this.HamburgerMenuControl
+                    .OptionsItems
+                    .OfType<MenuItem>()
+                    .FirstOrDefault(x => x.NavigationDestination == e.Uri));
 
             // or when using the NavigationType on menu item
             // this.HamburgerMenuControl.SelectedItem = this.HamburgerMenuControl
@@ -57,7 +58,7 @@ namespace MahAppsMetroHamburgerMenuNavigation
             //                                                     .FirstOrDefault(x => x.NavigationType == e.Content?.GetType());
 
             // update back button
-            this.GoBackButton.Visibility = this.navigationServiceEx.CanGoBack ? Visibility.Visible : Visibility.Collapsed;
+            this.GoBackButton.SetCurrentValue(VisibilityProperty, this.navigationServiceEx.CanGoBack ? Visibility.Visible : Visibility.Collapsed);
         }
 
         private void GoBack_OnClick(object sender, RoutedEventArgs e)

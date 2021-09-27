@@ -30,12 +30,7 @@ namespace MahAppsMetroHamburgerMenuNavigation.Mvvm
         /// <exception cref="ArgumentNullException">If the execute argument is null.</exception>
         public DelegateCommand(Action execute, Func<bool> canExecute)
         {
-            if (execute == null)
-            {
-                throw new ArgumentNullException(nameof(execute));
-            }
-
-            this._execute = execute;
+            this._execute = execute ?? throw new ArgumentNullException(nameof(execute));
             this._canExecute = canExecute;
         }
 
@@ -47,7 +42,6 @@ namespace MahAppsMetroHamburgerMenuNavigation.Mvvm
         /// <summary>
         /// Raises the <see cref="CanExecuteChanged" /> event.
         /// </summary>
-        [SuppressMessage("Microsoft.Design", "CA1030:UseEventsWhereAppropriate", Justification = "This cannot be an event")]
         public void RaiseCanExecuteChanged()
         {
             this.CanExecuteChanged?.Invoke(this, EventArgs.Empty);

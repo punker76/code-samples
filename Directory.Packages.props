@@ -8,5 +8,7 @@
     </PackageVersion>
     <PackageVersion Include="MahApps.Metro" Version="2.4.7" />
     <PackageVersion Include="MahApps.Metro.IconPacks" Version="4.9.0" />
+    <PackageVersion Include="MahApps.Metro.IconPacks.FontAwesome" Version="4.9.0" />
+    <PackageVersion Include="MahApps.Metro.IconPacks.Material" Version="4.9.0" />
   </ItemGroup>
 </Project>
