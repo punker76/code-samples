@@ -25,8 +25,8 @@ namespace MahAppsMetroThemesSample
                 DispatcherPriority.Normal,
                 (o, args) =>
                 {
-                    this.theProgressBar.Value = DateTime.Now.Millisecond;
-                    theOtherProgressBar.Value = DateTime.Now.Millisecond;
+                    this.theProgressBar.SetCurrentValue(System.Windows.Controls.Primitives.RangeBase.ValueProperty, (double)DateTime.Now.Millisecond);
+                    theOtherProgressBar.SetCurrentValue(System.Windows.Controls.Primitives.RangeBase.ValueProperty, (double)DateTime.Now.Millisecond);
                 },
                 Dispatcher);
             _timer.Start();
@@ -50,8 +50,8 @@ namespace MahAppsMetroThemesSample
             accentThemeTestWindow = new AccentStyleWindow();
             accentThemeTestWindow.Owner = this;
             accentThemeTestWindow.Closed += (o, args) => accentThemeTestWindow = null;
-            accentThemeTestWindow.Left = this.Left + this.ActualWidth / 2.0;
-            accentThemeTestWindow.Top = this.Top + this.ActualHeight / 2.0;
+            accentThemeTestWindow.SetCurrentValue(LeftProperty, this.Left + this.ActualWidth / 2.0);
+            accentThemeTestWindow.SetCurrentValue(TopProperty, this.Top + this.ActualHeight / 2.0);
             accentThemeTestWindow.Show();
         }
     }

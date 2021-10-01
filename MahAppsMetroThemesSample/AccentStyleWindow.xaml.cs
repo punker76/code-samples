@@ -15,28 +15,28 @@ namespace MahAppsMetroThemesSample
     public partial class AccentStyleWindow : MetroWindow
     {
         public static readonly DependencyProperty ColorsProperty
-            = DependencyProperty.Register("Colors",
-                                          typeof(List<KeyValuePair<string, Color>>),
-                                          typeof(AccentStyleWindow),
-                                          new PropertyMetadata(default(List<KeyValuePair<string, Color>>)));
+            = DependencyProperty.Register(
+                nameof(Colors),
+                typeof(List<KeyValuePair<string, Color>>),
+                typeof(AccentStyleWindow));
 
         public List<KeyValuePair<string, Color>> Colors
         {
-            get { return (List<KeyValuePair<string, Color>>)GetValue(ColorsProperty); }
-            set { SetValue(ColorsProperty, value); }
+            get => (List<KeyValuePair<string, Color>>)GetValue(ColorsProperty);
+            set => SetValue(ColorsProperty, value);
         }
 
         public AccentStyleWindow()
         {
-            InitializeComponent();
+            this.InitializeComponent();
 
             this.DataContext = this;
 
             this.Colors = typeof(Colors)
-                          .GetProperties()
-                          .Where(prop => typeof(Color).IsAssignableFrom(prop.PropertyType))
-                          .Select(prop => new KeyValuePair<String, Color>(prop.Name, (Color)prop.GetValue(null)))
-                          .ToList();
+                .GetProperties()
+                .Where(prop => typeof(Color).IsAssignableFrom(prop.PropertyType))
+                .Select(prop => new KeyValuePair<String, Color>(prop.Name, (Color)prop.GetValue(null)))
+                .ToList();
 
             var appTheme = ThemeManager.Current.DetectTheme(Application.Current);
             ThemeManager.Current.ChangeTheme(this, appTheme);

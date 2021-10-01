@@ -2,7 +2,6 @@
 using System.Windows;
 using System.Windows.Media;
 using ControlzEx.Theming;
-using MahApps.Metro;
 using MahApps.Metro.Theming;
 
 namespace MahAppsMetroThemesSample
@@ -16,17 +15,17 @@ namespace MahAppsMetroThemesSample
         {
             // Add custom theme resource dictionaries
             ThemeManager.Current.AddLibraryTheme(new LibraryTheme(
-                                                     new Uri("pack://application:,,,/MahAppsMetroThemesSample;component/CustomAccents/Light.Accent1.xaml"),
-                                                     MahAppsLibraryThemeProvider.DefaultInstance));
+                new Uri("pack://application:,,,/MahAppsMetroThemesSample;component/CustomAccents/Light.Accent1.xaml"),
+                MahAppsLibraryThemeProvider.DefaultInstance));
             ThemeManager.Current.AddLibraryTheme(new LibraryTheme(
-                                                     new Uri("pack://application:,,,/MahAppsMetroThemesSample;component/CustomAccents/Dark.Accent1.xaml"),
-                                                     MahAppsLibraryThemeProvider.DefaultInstance));
+                new Uri("pack://application:,,,/MahAppsMetroThemesSample;component/CustomAccents/Dark.Accent1.xaml"),
+                MahAppsLibraryThemeProvider.DefaultInstance));
             ThemeManager.Current.AddLibraryTheme(new LibraryTheme(
-                                                     new Uri("pack://application:,,,/MahAppsMetroThemesSample;component/CustomAccents/Light.Accent2.xaml"),
-                                                     MahAppsLibraryThemeProvider.DefaultInstance));
+                new Uri("pack://application:,,,/MahAppsMetroThemesSample;component/CustomAccents/Light.Accent2.xaml"),
+                MahAppsLibraryThemeProvider.DefaultInstance));
             ThemeManager.Current.AddLibraryTheme(new LibraryTheme(
-                                                     new Uri("pack://application:,,,/MahAppsMetroThemesSample;component/CustomAccents/Dark.Accent2.xaml"),
-                                                     MahAppsLibraryThemeProvider.DefaultInstance));
+                new Uri("pack://application:,,,/MahAppsMetroThemesSample;component/CustomAccents/Dark.Accent2.xaml"),
+                MahAppsLibraryThemeProvider.DefaultInstance));
 
             base.OnStartup(e);
 
