@@ -4,7 +4,7 @@
                       xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
                       Title="CleanWindow"
                       Height="300"
-                      Width="300"
+                      Width="600"
                       GlowBrush="{DynamicResource MahApps.Brushes.Accent}"
                       Style="{DynamicResource MahApps.Styles.MetroWindow.Clean}">
 
@@ -14,12 +14,12 @@
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Themes/Light.Blue.xaml" />
-                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Clean/Clean.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Clean/Controls.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </controls:MetroWindow.Resources>
 
     <Grid>
-
+        <TextBlock Text="Clean Window works!" FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Center" />
     </Grid>
 </controls:MetroWindow>
