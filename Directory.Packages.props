@@ -10,5 +10,6 @@
     <PackageVersion Include="MahApps.Metro.IconPacks" Version="4.9.0" />
     <PackageVersion Include="MahApps.Metro.IconPacks.FontAwesome" Version="4.9.0" />
     <PackageVersion Include="MahApps.Metro.IconPacks.Material" Version="4.9.0" />
+    <PackageVersion Include="Extended.Wpf.Toolkit" Version="4.1.0" />
   </ItemGroup>
 </Project>

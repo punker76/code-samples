@@ -41,11 +41,14 @@
                         </Grid>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsSelected" Value="true">
-                                <Setter Property="Foreground" Value="{DynamicResource MahApps.Brushes.Selected.Foreground}" />
-                                <Setter TargetName="_background" Property="Background" Value="{DynamicResource MahApps.Brushes.Accent}" />
+                                <Setter Property="Foreground"
+                                        Value="{DynamicResource MahApps.Brushes.Selected.Foreground}" />
+                                <Setter TargetName="_background" Property="Background"
+                                        Value="{DynamicResource MahApps.Brushes.Accent}" />
                             </Trigger>
                             <Trigger Property="IsMouseOver" Value="true">
-                                <Setter TargetName="_background" Property="Background" Value="{DynamicResource MahApps.Brushes.Accent2}" />
+                                <Setter TargetName="_background" Property="Background"
+                                        Value="{DynamicResource MahApps.Brushes.Accent2}" />
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
@@ -69,7 +72,8 @@
                             <Grid Margin="1">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="0" MinWidth="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Grid}}, Path=ActualHeight, Mode=OneWay}" />
+                                    <ColumnDefinition Width="0"
+                                                      MinWidth="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Grid}}, Path=ActualHeight, Mode=OneWay}" />
                                 </Grid.ColumnDefinitions>
 
                                 <TextBox Margin="1"
@@ -103,13 +107,16 @@
                         </Grid>
                         <ControlTemplate.Triggers>
                             <Trigger SourceName="ArrowBackground" Property="IsMouseOver" Value="True">
-                                <Setter TargetName="ArrowBackground" Property="Background" Value="{DynamicResource MahApps.Brushes.Gray5}" />
+                                <Setter TargetName="ArrowBackground" Property="Background"
+                                        Value="{DynamicResource MahApps.Brushes.Gray5}" />
                             </Trigger>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter TargetName="Background" Property="Background" Value="{DynamicResource MahApps.Brushes.Gray8}" />
+                                <Setter TargetName="Background" Property="Background"
+                                        Value="{DynamicResource MahApps.Brushes.Gray8}" />
                             </Trigger>
                             <Trigger Property="IsPressed" Value="True">
-                                <Setter TargetName="Background" Property="Background" Value="{DynamicResource MahApps.Brushes.Gray7}" />
+                                <Setter TargetName="Background" Property="Background"
+                                        Value="{DynamicResource MahApps.Brushes.Gray7}" />
                             </Trigger>
                             <Trigger Property="IsEnabled" Value="false">
                                 <Setter TargetName="Arrow" Property="Fill" Value="#AFAFAF" />
@@ -124,8 +131,10 @@
             <Setter Property="Background" Value="{DynamicResource MahApps.Brushes.Control.Background}" />
             <Setter Property="BorderBrush" Value="{DynamicResource MahApps.Brushes.TextBox.Border}" />
             <Setter Property="BorderThickness" Value="1" />
-            <Setter Property="Controls:ControlsHelper.FocusBorderBrush" Value="{DynamicResource MahApps.Brushes.ComboBox.Border.Focus}" />
-            <Setter Property="Controls:ControlsHelper.MouseOverBorderBrush" Value="{DynamicResource MahApps.Brushes.ComboBox.Border.MouseOver}" />
+            <Setter Property="Controls:ControlsHelper.FocusBorderBrush"
+                    Value="{DynamicResource MahApps.Brushes.ComboBox.Border.Focus}" />
+            <Setter Property="Controls:ControlsHelper.MouseOverBorderBrush"
+                    Value="{DynamicResource MahApps.Brushes.ComboBox.Border.MouseOver}" />
             <Setter Property="FontFamily" Value="{DynamicResource MahApps.Fonts.Family.Control}" />
             <Setter Property="FontSize" Value="{DynamicResource MahApps.Font.Size.Content}" />
             <Setter Property="Foreground" Value="{DynamicResource MahApps.Brushes.Text}" />
@@ -149,7 +158,8 @@
                                    Placement="Bottom"
                                    PopupAnimation="{DynamicResource {x:Static SystemParameters.ComboBoxPopupAnimationKey}}"
                                    StaysOpen="False">
-                                <Grid MinWidth="{Binding ActualWidth, ElementName=MainGrid}" MaxHeight="{Binding MaxDropDownHeight, RelativeSource={RelativeSource TemplatedParent}}">
+                                <Grid MinWidth="{Binding ActualWidth, ElementName=MainGrid}"
+                                      MaxHeight="{Binding MaxDropDownHeight, RelativeSource={RelativeSource TemplatedParent}}">
                                     <Border x:Name="DropDownBorder"
                                             Height="Auto"
                                             Background="{DynamicResource MahApps.Brushes.ThemeBackground}"
@@ -205,15 +215,18 @@
 
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter TargetName="FocusBorder" Property="BorderBrush" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(Controls:ControlsHelper.MouseOverBorderBrush)}" />
+                                <Setter TargetName="FocusBorder" Property="BorderBrush"
+                                        Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(Controls:ControlsHelper.MouseOverBorderBrush)}" />
                                 <Setter TargetName="FocusBorder" Property="Visibility" Value="Visible" />
                             </Trigger>
                             <Trigger Property="IsFocused" Value="True">
-                                <Setter TargetName="FocusBorder" Property="BorderBrush" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(Controls:ControlsHelper.FocusBorderBrush)}" />
+                                <Setter TargetName="FocusBorder" Property="BorderBrush"
+                                        Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(Controls:ControlsHelper.FocusBorderBrush)}" />
                                 <Setter TargetName="FocusBorder" Property="Visibility" Value="Visible" />
                             </Trigger>
                             <Trigger Property="IsKeyboardFocusWithin" Value="True">
-                                <Setter TargetName="FocusBorder" Property="BorderBrush" Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(Controls:ControlsHelper.FocusBorderBrush)}" />
+                                <Setter TargetName="FocusBorder" Property="BorderBrush"
+                                        Value="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(Controls:ControlsHelper.FocusBorderBrush)}" />
                                 <Setter TargetName="FocusBorder" Property="Visibility" Value="Visible" />
                             </Trigger>
                             <Trigger Property="IsEnabled" Value="False">
@@ -246,12 +259,12 @@
                                    Grid.Column="9"
                                    Margin="100 0 50 0"
                                    IsOn="True" />
-                                   <!-- BorderBrush="#FF898989" -->
-                                   <!-- IsChecked="True" -->
-                                   <!-- OffSwitchBrush="#FFB4B4B4" -->
-                                   <!-- OnSwitchBrush="YellowGreen" -->
-                                   <!-- ThumbIndicatorBrush="Black" -->
-                                   <!-- ThumbIndicatorDisabledBrush="Gray" /> -->
+            <!-- BorderBrush="#FF898989" -->
+            <!-- IsChecked="True" -->
+            <!-- OffSwitchBrush="#FFB4B4B4" -->
+            <!-- OnSwitchBrush="YellowGreen" -->
+            <!-- ThumbIndicatorBrush="Black" -->
+            <!-- ThumbIndicatorDisabledBrush="Gray" /> -->
             <!--  <TextBox Text="Lorem ipsum dolor sit amet, consetetur sadipscing"  -->
             <!--  HorizontalAlignment="Left"  -->
             <!--  Margin="5" />  -->
@@ -262,4 +275,3 @@
 
     </Grid>
 </mahAppsMetroSample:CustomBaseMetroWindow>
-

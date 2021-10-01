@@ -3,7 +3,8 @@
                     xmlns:mahAppsMetroSample="clr-namespace:MahAppsMetroSample"
                     xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls">
 
-    <Style TargetType="mahAppsMetroSample:CustomBaseMetroWindow" BasedOn="{StaticResource {x:Type controls:MetroWindow}}">
+    <Style TargetType="mahAppsMetroSample:CustomBaseMetroWindow"
+           BasedOn="{StaticResource {x:Type controls:MetroWindow}}">
         <Setter Property="TitleCharacterCasing" Value="Lower" />
         <Setter Property="WindowTitleBrush" Value="Brown" />
     </Style>

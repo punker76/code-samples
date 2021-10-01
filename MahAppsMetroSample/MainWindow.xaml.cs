@@ -11,46 +11,54 @@ namespace MahAppsMetroSample
         public MainWindow()
         {
             this.DataContext = this;
-            InitializeComponent();
-            this.TestColl.Add("Test 1");
-            this.TestColl.Add("Test 2");
-            this.TestColl.Add("Test 3");
+            this.InitializeComponent();
+            this.TestColl = new ObservableCollection<string>(new[]
+            {
+                "Test 1",
+                "Test 2",
+                "Test 3",
+            });
         }
 
-        public static readonly DependencyProperty TestCollProperty = DependencyProperty.Register(
-            "TestColl", typeof(ObservableCollection<string>), typeof(MainWindow), new PropertyMetadata(new ObservableCollection<string>()));
+        public static readonly DependencyProperty TestCollProperty
+            = DependencyProperty.Register(
+                nameof(TestColl),
+                typeof(ObservableCollection<string>),
+                typeof(MainWindow));
 
         public ObservableCollection<string> TestColl
         {
-            get { return (ObservableCollection<string>) GetValue(TestCollProperty); }
-            set { SetValue(TestCollProperty, value); }
+            get => (ObservableCollection<string>)GetValue(TestCollProperty);
+            set => SetValue(TestCollProperty, value);
         }
 
         private void ButtonBase_OnClick(object sender, EventArgs e)
         {
-            var w = new MetroWindow();
-            w.GlowBrush = Brushes.Gray;
-            w.BorderThickness = new Thickness(1);
-            w.Title = "Modal";
-            w.Width = 300;
-            w.Height = 200;
-            w.Owner = this;
-            w.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+            var w = new MetroWindow
+            {
+                GlowBrush = Brushes.Gray,
+                BorderThickness = new Thickness(1),
+                Title = "Modal",
+                Width = 300,
+                Height = 200,
+                Owner = this,
+                WindowStartupLocation = WindowStartupLocation.CenterOwner
+            };
             w.ShowDialog();
         }
 
-        public static readonly DependencyProperty ToggleFullScreenProperty =
-            DependencyProperty.Register("ToggleFullScreen",
+        public static readonly DependencyProperty ToggleFullScreenProperty
+            = DependencyProperty.Register(
+                nameof(ToggleFullScreen),
                 typeof(bool),
                 typeof(MainWindow),
-                new PropertyMetadata(default(bool), ToggleFullScreenPropertyChangedCallback));
+                new PropertyMetadata(default(bool), OnToggleFullScreenChanged));
 
-        private static void ToggleFullScreenPropertyChangedCallback(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs e)
+        private static void OnToggleFullScreenChanged(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs e)
         {
-            var metroWindow = (MetroWindow) dependencyObject;
-            if (e.OldValue != e.NewValue)
+            if (e.OldValue != e.NewValue && dependencyObject is MetroWindow metroWindow)
             {
-                var fullScreen = (bool) e.NewValue;
+                var fullScreen = (bool)e.NewValue;
                 if (fullScreen)
                 {
                     metroWindow.UseNoneWindowStyle = true;
@@ -75,8 +83,8 @@ namespace MahAppsMetroSample
 
         public bool ToggleFullScreen
         {
-            get { return (bool) GetValue(ToggleFullScreenProperty); }
-            set { SetValue(ToggleFullScreenProperty, value); }
+            get => (bool)GetValue(ToggleFullScreenProperty);
+            set => SetValue(ToggleFullScreenProperty, value);
         }
     }
 }
