@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <PackageVersion Include="JetBrains.Annotations" Version="2021.2.0" PrivateAssets="All" IncludeAssets="build;compile" />
+    <PackageVersion Include="WpfAnalyzers" Version="3.5.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageVersion>
+
+    <PackageVersion Include="MahApps.Metro" Version="2.4.7" />
+    <PackageVersion Include="ControlzEx" Version="4.4.0" />
+    <PackageVersion Include="MahApps.Metro.IconPacks" Version="4.10.0" />
+    <PackageVersion Include="MahApps.Metro.IconPacks.BoxIcons" Version="4.10.0" />
+    <PackageVersion Include="MahApps.Metro.IconPacks.FontAwesome" Version="4.10.0" />
+    <PackageVersion Include="MahApps.Metro.IconPacks.Material" Version="4.10.0" />
+    <PackageVersion Include="MahApps.Metro.IconPacks.Modern" Version="4.10.0" />
+    <PackageVersion Include="Extended.Wpf.Toolkit" Version="4.1.0" />
+  </ItemGroup>
+</Project>

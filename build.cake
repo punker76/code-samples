@@ -1,51 +1,50 @@
-
-//////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
 // TOOLS / ADDINS
-//////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
 
-#tool paket:?package=vswhere
-#addin paket:?package=Cake.Git
-#addin paket:?package=Cake.Figlet
-#addin paket:?package=Cake.Paket
+#tool dotnet:?package=GitVersion.Tool&version=5.6.6
+#tool nuget:?package=vswhere&version=2.8.4
+#addin nuget:?package=Cake.Figlet&version=2.0.1
 
-//////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
 // ARGUMENTS
-//////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
 
 var target = Argument("target", "Default");
-if (string.IsNullOrWhiteSpace(target))
-{
-    target = "Default";
-}
-
 var configuration = Argument("configuration", "Release");
-if (string.IsNullOrWhiteSpace(configuration))
-{
-    configuration = "Release";
-}
-
 var verbosity = Argument("verbosity", Verbosity.Normal);
-if (string.IsNullOrWhiteSpace(configuration))
-{
-    verbosity = Verbosity.Normal;
-}
 
-//////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
 // PREPARATION
-//////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
 
 var repoName = "code-samples";
-var local = BuildSystem.IsLocalBuild;
+var isLocal = BuildSystem.IsLocalBuild;
 
-var latestInstallationPath = VSWhereLatest(new VSWhereLatestSettings { IncludePrerelease = true });
-var msBuildPath = latestInstallationPath?.CombineWithFilePath("./MSBuild/15.0/Bin/MSBuild.exe");
-var msBuildCurrentPath = latestInstallationPath?.CombineWithFilePath("./MSBuild/Current/Bin/MSBuild.exe");
+// Set build version
+if (isLocal == false || verbosity == Verbosity.Verbose)
+{
+    GitVersion(new GitVersionSettings { OutputType = GitVersionOutput.BuildServer });
+}
+GitVersion gitVersion = GitVersion(new GitVersionSettings { OutputType = GitVersionOutput.Json });
 
-var gitBranch = GitBranchCurrent(".");
-var branchName = gitBranch.FriendlyName;
-
+var isPullRequest = AppVeyor.Environment.PullRequest.IsPullRequest;
+var branchName = gitVersion.BranchName;
 var isDevelopBranch = StringComparer.OrdinalIgnoreCase.Equals("develop", branchName);
 var isReleaseBranch = StringComparer.OrdinalIgnoreCase.Equals("main", branchName);
+var isTagged = AppVeyor.Environment.Repository.Tag.IsTag;
+
+var latestInstallationPath = VSWhereLatest(new VSWhereLatestSettings { IncludePrerelease = true });
+var msBuildPath = latestInstallationPath.Combine("./MSBuild/Current/Bin");
+var msBuildPathExe = msBuildPath.CombineWithFilePath("./MSBuild.exe");
+
+if (FileExists(msBuildPathExe) == false)
+{
+    throw new NotImplementedException("You need at least Visual Studio 2019 to build this project.");
+}
+
+// Directories and Paths
+var solution = "./code-samples.sln";
 
 // Define global marcos.
 Action Abort = () => { throw new Exception("a non-recoverable fatal error occurred."); };
@@ -54,77 +53,77 @@ Action Abort = () => { throw new Exception("a non-recoverable fatal error occurr
 // SETUP / TEARDOWN
 ///////////////////////////////////////////////////////////////////////////////
 
-Setup(context =>
+Setup(ctx =>
 {
     if (!IsRunningOnWindows())
     {
         throw new NotImplementedException($"{repoName} will only build on Windows because it's not possible to target WPF and Windows Forms from UNIX.");
     }
 
-    if (FileExists(msBuildCurrentPath))
-    {
-    	msBuildPath = msBuildCurrentPath;
-    }
-
     Information(Figlet(repoName));
 
-    Information("IsLocalBuild           : {0}", local);
+    Information("Informational   Version: {0}", gitVersion.InformationalVersion);
+    Information("SemVer          Version: {0}", gitVersion.SemVer);
+    Information("AssemblySemVer  Version: {0}", gitVersion.AssemblySemVer);
+    Information("MajorMinorPatch Version: {0}", gitVersion.MajorMinorPatch);
+    Information("NuGet           Version: {0}", gitVersion.NuGetVersion);
+    Information("IsLocalBuild           : {0}", isLocal);
     Information("Branch                 : {0}", branchName);
     Information("Configuration          : {0}", configuration);
     Information("MSBuildPath            : {0}", msBuildPath);
 });
 
-Teardown(context =>
+Teardown(ctx =>
 {
-    // Executed AFTER the last task.
 });
 
-//////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
 // TASKS
-//////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
 
-Task("CleanOutput")
-  .ContinueOnError()
-  .Does(() =>
+Task("Clean")
+    .ContinueOnError()
+    .Does(() =>
 {
-    var directoriesToDelete = GetDirectories("./**/obj").Concat(GetDirectories("./**/bin"));
+    var directoriesToDelete = GetDirectories("./**/obj")
+        .Concat(GetDirectories("./**/bin"));
     DeleteDirectories(directoriesToDelete, new DeleteDirectorySettings { Recursive = true, Force = true });
 });
 
 Task("Restore")
     .Does(() =>
 {
-    PaketRestore();
-
-    // var msBuildSettings = new MSBuildSettings { ToolPath = msBuildPath, ArgumentCustomization = args => args.Append("/m") };
-    // MSBuild(iconPacksSolution, msBuildSettings
-    //         .SetConfiguration(configuration)
-    //         .SetVerbosity(Verbosity.Minimal)
-    //         .WithTarget("restore")
-    //         );
+    NuGetRestore(solution, new NuGetRestoreSettings { MSBuildPath = msBuildPath.ToString() });
 });
 
-Task("BuildAll")
+Task("Build")
   .Does(() =>
 {
-  var msBuildSettings = new MSBuildSettings { ToolPath = msBuildPath, ArgumentCustomization = args => args.Append("/m") };
-  var solutions = GetFiles("./**/*.sln");
+    var msBuildSettings = new MSBuildSettings {
+        Verbosity = verbosity
+        , ToolPath = msBuildPathExe
+        , Configuration = configuration
+        , ArgumentCustomization = args => args.Append("/m").Append("/nr:false") // The /nr switch tells msbuild to quite once it�s done
+        // , BinaryLogger = new MSBuildBinaryLogSettings() { Enabled = isLocal }
+    };
 
-  foreach(var solution in solutions)
-  {
-    MSBuild(solution, msBuildSettings
-      .SetMaxCpuCount(0)
-      .SetConfiguration(configuration)
-      .SetVerbosity(Verbosity.Normal)
+    MSBuild(solution,
+            msBuildSettings
+            .SetMaxCpuCount(0)
     );
-  }
 });
 
-// Task Targets
-Task("Default")
-    .IsDependentOn("CleanOutput")
-    .IsDependentOn("Restore")
-    .IsDependentOn("BuildAll");
+///////////////////////////////////////////////////////////////////////////////
+// TASK TARGETS
+///////////////////////////////////////////////////////////////////////////////
 
-// Execution
+Task("Default")
+    .IsDependentOn("Clean")
+    .IsDependentOn("Restore")
+    .IsDependentOn("Build");
+
+///////////////////////////////////////////////////////////////////////////////
+// EXECUTION
+///////////////////////////////////////////////////////////////////////////////
+
 RunTarget(target);

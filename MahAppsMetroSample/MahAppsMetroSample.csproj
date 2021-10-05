@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+
+  <!-- Add the references for all projects and targets -->
+  <ItemGroup>
+    <PackageReference Include="JetBrains.Annotations" />
+    <PackageReference Include="WpfAnalyzers" />
+    <PackageReference Include="MahApps.Metro" />
+    <PackageReference Include="Extended.Wpf.Toolkit" />
+  </ItemGroup>
+</Project>

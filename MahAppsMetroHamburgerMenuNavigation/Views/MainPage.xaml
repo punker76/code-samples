@@ -1,0 +1,29 @@
+﻿<Page x:Class="MahAppsMetroHamburgerMenuNavigation.Views.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      Title="MainPage"
+      d:DesignHeight="300"
+      d:DesignWidth="300"
+      mc:Ignorable="d">
+
+    <StackPanel HorizontalAlignment="Center"
+                VerticalAlignment="Top"
+                Orientation="Vertical">
+        <TextBlock Margin="24"
+                   HorizontalAlignment="Center"
+                   FontSize="48"
+                   Text="MahApps.Metro" />
+        <iconPacks:PackIconMaterial Width="128"
+                                    Height="128"
+                                    HorizontalAlignment="Center"
+                                    Foreground="{DynamicResource MahApps.Brushes.AccentBase}"
+                                    Kind="Hamburger" />
+        <TextBlock Margin="24"
+                   HorizontalAlignment="Center"
+                   FontSize="48"
+                   Text="Frame Navigation" />
+    </StackPanel>
+</Page>

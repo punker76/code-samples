@@ -1,11 +1,11 @@
 # Just some code samples...
 
-To build these samples you'll need at least [Visual Studio 2019 16.3.x Community Edition](<https://www.visualstudio.com/>).
+To build these samples you'll need at least [Visual Studio 2019 16.x Community Edition](<https://www.visualstudio.com/>).
 
-You can use the cake build script to compile all projects via commandline:
+You can use the cake build script to compile all projects via powershell commandline:
 
-```bash
-powershell .\build.ps1
+```ps
+.\build.ps1
 ```
 
 ## IconPacksValueConverterSample
