@@ -6,11 +6,14 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageVersion>
+
     <PackageVersion Include="MahApps.Metro" Version="2.4.7" />
-    <PackageVersion Include="MahApps.Metro.IconPacks" Version="4.9.0" />
-    <PackageVersion Include="MahApps.Metro.IconPacks.FontAwesome" Version="4.9.0" />
-    <PackageVersion Include="MahApps.Metro.IconPacks.Material" Version="4.9.0" />
-    <PackageVersion Include="MahApps.Metro.IconPacks.Modern" Version="4.9.0" />
+    <PackageVersion Include="ControlzEx" Version="4.4.0" />
+    <PackageVersion Include="MahApps.Metro.IconPacks" Version="4.10.0" />
+    <PackageVersion Include="MahApps.Metro.IconPacks.BoxIcons" Version="4.10.0" />
+    <PackageVersion Include="MahApps.Metro.IconPacks.FontAwesome" Version="4.10.0" />
+    <PackageVersion Include="MahApps.Metro.IconPacks.Material" Version="4.10.0" />
+    <PackageVersion Include="MahApps.Metro.IconPacks.Modern" Version="4.10.0" />
     <PackageVersion Include="Extended.Wpf.Toolkit" Version="4.1.0" />
   </ItemGroup>
 </Project>

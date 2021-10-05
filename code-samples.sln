@@ -39,6 +39,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HamburgerMenuApp.V3", "MahA
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HamburgerMenuApp.V4", "MahAppsMetroHamburgerMenu\HamburgerMenuApp.V4\HamburgerMenuApp.V4.csproj", "{4B4077EC-8554-48E5-8796-4E9BAE8C900E}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToolTipAutoMoveSample", "ToolTipAutoMoveSample\ToolTipAutoMoveSample.csproj", "{19C78DF6-B608-45BB-9AAB-B80F8EB88F46}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -217,6 +219,18 @@ Global
 		{4B4077EC-8554-48E5-8796-4E9BAE8C900E}.Release|x64.Build.0 = Release|Any CPU
 		{4B4077EC-8554-48E5-8796-4E9BAE8C900E}.Release|x86.ActiveCfg = Release|Any CPU
 		{4B4077EC-8554-48E5-8796-4E9BAE8C900E}.Release|x86.Build.0 = Release|Any CPU
+		{19C78DF6-B608-45BB-9AAB-B80F8EB88F46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19C78DF6-B608-45BB-9AAB-B80F8EB88F46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19C78DF6-B608-45BB-9AAB-B80F8EB88F46}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{19C78DF6-B608-45BB-9AAB-B80F8EB88F46}.Debug|x64.Build.0 = Debug|Any CPU
+		{19C78DF6-B608-45BB-9AAB-B80F8EB88F46}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{19C78DF6-B608-45BB-9AAB-B80F8EB88F46}.Debug|x86.Build.0 = Debug|Any CPU
+		{19C78DF6-B608-45BB-9AAB-B80F8EB88F46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19C78DF6-B608-45BB-9AAB-B80F8EB88F46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19C78DF6-B608-45BB-9AAB-B80F8EB88F46}.Release|x64.ActiveCfg = Release|Any CPU
+		{19C78DF6-B608-45BB-9AAB-B80F8EB88F46}.Release|x64.Build.0 = Release|Any CPU
+		{19C78DF6-B608-45BB-9AAB-B80F8EB88F46}.Release|x86.ActiveCfg = Release|Any CPU
+		{19C78DF6-B608-45BB-9AAB-B80F8EB88F46}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
