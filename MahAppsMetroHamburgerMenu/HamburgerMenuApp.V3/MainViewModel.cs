@@ -18,7 +18,7 @@ namespace HamburgerMenuApp.V3
 
         public HamburgerMenuItemCollection MenuItems
         {
-            get { return _menuItems; }
+            get => _menuItems;
             set
             {
                 if (Equals(value, _menuItems)) return;
@@ -29,7 +29,7 @@ namespace HamburgerMenuApp.V3
 
         public HamburgerMenuItemCollection MenuOptionItems
         {
-            get { return _menuOptionItems; }
+            get => _menuOptionItems;
             set
             {
                 if (Equals(value, _menuOptionItems)) return;
@@ -46,7 +46,7 @@ namespace HamburgerMenuApp.V3
             this.MenuItems.Add(
                 new HamburgerMenuIconItem()
                 {
-                    Icon = new PackIconMaterial() {Kind = PackIconMaterialKind.Home},
+                    Icon = new PackIconMaterial() { Kind = PackIconMaterialKind.Home },
                     Label = "Home",
                     ToolTip = "The Home view.",
                     Tag = new HomeView()
@@ -55,7 +55,7 @@ namespace HamburgerMenuApp.V3
             this.MenuItems.Add(
                 new HamburgerMenuIconItem()
                 {
-                    Icon = new PackIconMaterial() {Kind = PackIconMaterialKind.AccountCircle},
+                    Icon = new PackIconMaterial() { Kind = PackIconMaterialKind.AccountCircle },
                     Label = "Private",
                     ToolTip = "Private stuff.",
                     Tag = new PrivateView()
@@ -64,7 +64,7 @@ namespace HamburgerMenuApp.V3
             this.MenuItems.Add(
                 new HamburgerMenuIconItem()
                 {
-                    Icon = new PackIconMaterial() {Kind = PackIconMaterialKind.Cog},
+                    Icon = new PackIconMaterial() { Kind = PackIconMaterialKind.Cog },
                     Label = "Settings",
                     ToolTip = "The Application settings.",
                     Tag = new SettingsView()
@@ -74,7 +74,7 @@ namespace HamburgerMenuApp.V3
             this.MenuOptionItems.Add(
                 new HamburgerMenuIconItem()
                 {
-                    Icon = new PackIconMaterial() {Kind = PackIconMaterialKind.Help},
+                    Icon = new PackIconMaterial() { Kind = PackIconMaterialKind.Help },
                     Label = "About",
                     ToolTip = "Some help.",
                     Tag = new AboutView()

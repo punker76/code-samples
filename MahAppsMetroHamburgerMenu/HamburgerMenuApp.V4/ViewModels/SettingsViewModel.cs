@@ -1,6 +1,4 @@
-﻿using HamburgerMenuApp.Core.MVVM;
-
-namespace HamburgerMenuApp.V4.ViewModels
+﻿namespace HamburgerMenuApp.V4.ViewModels
 {
     public class SettingsViewModel : MenuItemViewModel
     {

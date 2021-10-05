@@ -20,19 +20,19 @@ namespace HamburgerMenuApp.V4.ViewModels
             {
                 new HomeViewModel(this)
                 {
-                    Icon = new PackIconMaterial() {Kind = PackIconMaterialKind.Home},
+                    Icon = new PackIconMaterial() { Kind = PackIconMaterialKind.Home },
                     Label = "Home",
                     ToolTip = "Welcome Home"
                 },
                 new PrivateViewModel(this)
                 {
-                    Icon = new PackIconMaterial() {Kind = PackIconMaterialKind.AccountCircle},
+                    Icon = new PackIconMaterial() { Kind = PackIconMaterialKind.AccountCircle },
                     Label = "Private",
                     ToolTip = "...42"
                 },
                 new AboutViewModel(this)
                 {
-                    Icon = new PackIconMaterial() {Kind = PackIconMaterialKind.Help},
+                    Icon = new PackIconMaterial() { Kind = PackIconMaterialKind.Help },
                     Label = "About",
                     ToolTip = "About this one..."
                 }
@@ -42,7 +42,7 @@ namespace HamburgerMenuApp.V4.ViewModels
             {
                 new SettingsViewModel(this)
                 {
-                    Icon = new PackIconMaterial() {Kind = PackIconMaterialKind.Cog},
+                    Icon = new PackIconMaterial() { Kind = PackIconMaterialKind.Cog },
                     Label = "Settings",
                     ToolTip = "The App settings"
                 }

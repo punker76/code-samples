@@ -17,13 +17,13 @@ namespace HamburgerMenuApp.V3
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            ((MainViewModel) this.DataContext).CreateMenuItems();
+            ((MainViewModel)this.DataContext).CreateMenuItems();
         }
 
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
         {
-            HamburgerMenuControl.SelectedIndex = -1;
-            HamburgerMenuControl.SelectedOptionsIndex = -1;
+            HamburgerMenuControl.SetCurrentValue(HamburgerMenu.SelectedIndexProperty, -1);
+            HamburgerMenuControl.SetCurrentValue(HamburgerMenu.SelectedOptionsIndexProperty, -1);
         }
     }
 }

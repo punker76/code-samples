@@ -3,29 +3,41 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IconPacksValueConverterSample", "IconPacksValueConverterSample\IconPacksValueConverterSample.csproj", "{29A292BB-9F07-45AD-9137-45E2BCE82CF5}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8032BB86-F1AF-4716-939A-691B01D69B00}"
 	ProjectSection(SolutionItems) = preProject
 		Directory.Build.props = Directory.Build.props
 		Directory.Packages.props = Directory.Packages.props
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListViewSample", "ListViewSwitchItemsPanel\ListViewSample.csproj", "{868C932E-EAC7-423B-BDFC-FAAFD4DEFA40}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IconPacksValueConverterSample", "IconPacksValueConverterSample\IconPacksValueConverterSample.csproj", "{29A292BB-9F07-45AD-9137-45E2BCE82CF5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MahAppsMetroDataGridSample", "MahAppsMetroDataGridSample\MahAppsMetroDataGridSample.csproj", "{F8421ABE-21A3-4724-AD4F-91D03BB44A80}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ListViewSample", "ListViewSwitchItemsPanel\ListViewSample.csproj", "{868C932E-EAC7-423B-BDFC-FAAFD4DEFA40}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MahAppsMetroFullScreen", "MahAppsMetroFullScreen\MahAppsMetroFullScreen.csproj", "{41B584D6-0CBD-4ACD-B82E-871E38A17E6B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MahAppsMetroDataGridSample", "MahAppsMetroDataGridSample\MahAppsMetroDataGridSample.csproj", "{F8421ABE-21A3-4724-AD4F-91D03BB44A80}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MahAppsMetroHamburgerMenuNavigation", "MahAppsMetroHamburgerMenuNavigation\MahAppsMetroHamburgerMenuNavigation.csproj", "{C537B540-274F-4DA7-B3E6-21E4E10ECC02}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MahAppsMetroFullScreen", "MahAppsMetroFullScreen\MahAppsMetroFullScreen.csproj", "{41B584D6-0CBD-4ACD-B82E-871E38A17E6B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MahAppsMetroSample", "MahAppsMetroSample\MahAppsMetroSample.csproj", "{3A611573-695A-4764-8300-F75727B8DABB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MahAppsMetroHamburgerMenuNavigation", "MahAppsMetroHamburgerMenuNavigation\MahAppsMetroHamburgerMenuNavigation.csproj", "{C537B540-274F-4DA7-B3E6-21E4E10ECC02}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MahAppsMetroStyleOnlyWindowSample", "MahAppsMetroStyleOnlyWindowSample\MahAppsMetroStyleOnlyWindowSample.csproj", "{06CCDF59-D076-4684-8201-2D2D038AFAFF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MahAppsMetroSample", "MahAppsMetroSample\MahAppsMetroSample.csproj", "{3A611573-695A-4764-8300-F75727B8DABB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MahAppsMetroThemesSample", "MahAppsMetroThemesSample\MahAppsMetroThemesSample.csproj", "{A055F1B6-990B-45B3-A8BE-E3E20F62C2EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MahAppsMetroStyleOnlyWindowSample", "MahAppsMetroStyleOnlyWindowSample\MahAppsMetroStyleOnlyWindowSample.csproj", "{06CCDF59-D076-4684-8201-2D2D038AFAFF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MahAppsMetroWindowButtonCommands", "MahAppsMetroWindowButtonCommands\MahAppsMetroWindowButtonCommands.csproj", "{6A8777C9-0803-4AB1-895E-6F7FD23EC9F6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MahAppsMetroThemesSample", "MahAppsMetroThemesSample\MahAppsMetroThemesSample.csproj", "{A055F1B6-990B-45B3-A8BE-E3E20F62C2EB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MahAppsMetroWindowButtonCommands", "MahAppsMetroWindowButtonCommands\MahAppsMetroWindowButtonCommands.csproj", "{6A8777C9-0803-4AB1-895E-6F7FD23EC9F6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MahAppsMetroHamburgerMenu", "MahAppsMetroHamburgerMenu", "{E1D1AE11-E154-4319-8EAD-04C398E0F289}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HamburgerMenuApp.Core", "MahAppsMetroHamburgerMenu\HamburgerMenuApp.Core\HamburgerMenuApp.Core.csproj", "{E7359E5B-84B8-4DD5-B32F-64E2961ACCDC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HamburgerMenuApp", "MahAppsMetroHamburgerMenu\HamburgerMenuApp\HamburgerMenuApp.csproj", "{E830F1EA-6C04-43FB-B98F-9716E6F9456F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HamburgerMenuApp.V2", "MahAppsMetroHamburgerMenu\HamburgerMenuApp.V2\HamburgerMenuApp.V2.csproj", "{A556024B-0C8E-4AAA-B5E5-7FBA589BAB86}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HamburgerMenuApp.V3", "MahAppsMetroHamburgerMenu\HamburgerMenuApp.V3\HamburgerMenuApp.V3.csproj", "{609D8C1B-2F9E-43B3-AEDD-7F89FF58F7F7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HamburgerMenuApp.V4", "MahAppsMetroHamburgerMenu\HamburgerMenuApp.V4\HamburgerMenuApp.V4.csproj", "{4B4077EC-8554-48E5-8796-4E9BAE8C900E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -145,11 +157,78 @@ Global
 		{6A8777C9-0803-4AB1-895E-6F7FD23EC9F6}.Release|x64.Build.0 = Release|Any CPU
 		{6A8777C9-0803-4AB1-895E-6F7FD23EC9F6}.Release|x86.ActiveCfg = Release|Any CPU
 		{6A8777C9-0803-4AB1-895E-6F7FD23EC9F6}.Release|x86.Build.0 = Release|Any CPU
+		{E7359E5B-84B8-4DD5-B32F-64E2961ACCDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7359E5B-84B8-4DD5-B32F-64E2961ACCDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7359E5B-84B8-4DD5-B32F-64E2961ACCDC}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{E7359E5B-84B8-4DD5-B32F-64E2961ACCDC}.Debug|x64.Build.0 = Debug|Any CPU
+		{E7359E5B-84B8-4DD5-B32F-64E2961ACCDC}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E7359E5B-84B8-4DD5-B32F-64E2961ACCDC}.Debug|x86.Build.0 = Debug|Any CPU
+		{E7359E5B-84B8-4DD5-B32F-64E2961ACCDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7359E5B-84B8-4DD5-B32F-64E2961ACCDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7359E5B-84B8-4DD5-B32F-64E2961ACCDC}.Release|x64.ActiveCfg = Release|Any CPU
+		{E7359E5B-84B8-4DD5-B32F-64E2961ACCDC}.Release|x64.Build.0 = Release|Any CPU
+		{E7359E5B-84B8-4DD5-B32F-64E2961ACCDC}.Release|x86.ActiveCfg = Release|Any CPU
+		{E7359E5B-84B8-4DD5-B32F-64E2961ACCDC}.Release|x86.Build.0 = Release|Any CPU
+		{E830F1EA-6C04-43FB-B98F-9716E6F9456F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E830F1EA-6C04-43FB-B98F-9716E6F9456F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E830F1EA-6C04-43FB-B98F-9716E6F9456F}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{E830F1EA-6C04-43FB-B98F-9716E6F9456F}.Debug|x64.Build.0 = Debug|Any CPU
+		{E830F1EA-6C04-43FB-B98F-9716E6F9456F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E830F1EA-6C04-43FB-B98F-9716E6F9456F}.Debug|x86.Build.0 = Debug|Any CPU
+		{E830F1EA-6C04-43FB-B98F-9716E6F9456F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E830F1EA-6C04-43FB-B98F-9716E6F9456F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E830F1EA-6C04-43FB-B98F-9716E6F9456F}.Release|x64.ActiveCfg = Release|Any CPU
+		{E830F1EA-6C04-43FB-B98F-9716E6F9456F}.Release|x64.Build.0 = Release|Any CPU
+		{E830F1EA-6C04-43FB-B98F-9716E6F9456F}.Release|x86.ActiveCfg = Release|Any CPU
+		{E830F1EA-6C04-43FB-B98F-9716E6F9456F}.Release|x86.Build.0 = Release|Any CPU
+		{A556024B-0C8E-4AAA-B5E5-7FBA589BAB86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A556024B-0C8E-4AAA-B5E5-7FBA589BAB86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A556024B-0C8E-4AAA-B5E5-7FBA589BAB86}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{A556024B-0C8E-4AAA-B5E5-7FBA589BAB86}.Debug|x64.Build.0 = Debug|Any CPU
+		{A556024B-0C8E-4AAA-B5E5-7FBA589BAB86}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A556024B-0C8E-4AAA-B5E5-7FBA589BAB86}.Debug|x86.Build.0 = Debug|Any CPU
+		{A556024B-0C8E-4AAA-B5E5-7FBA589BAB86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A556024B-0C8E-4AAA-B5E5-7FBA589BAB86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A556024B-0C8E-4AAA-B5E5-7FBA589BAB86}.Release|x64.ActiveCfg = Release|Any CPU
+		{A556024B-0C8E-4AAA-B5E5-7FBA589BAB86}.Release|x64.Build.0 = Release|Any CPU
+		{A556024B-0C8E-4AAA-B5E5-7FBA589BAB86}.Release|x86.ActiveCfg = Release|Any CPU
+		{A556024B-0C8E-4AAA-B5E5-7FBA589BAB86}.Release|x86.Build.0 = Release|Any CPU
+		{609D8C1B-2F9E-43B3-AEDD-7F89FF58F7F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{609D8C1B-2F9E-43B3-AEDD-7F89FF58F7F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{609D8C1B-2F9E-43B3-AEDD-7F89FF58F7F7}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{609D8C1B-2F9E-43B3-AEDD-7F89FF58F7F7}.Debug|x64.Build.0 = Debug|Any CPU
+		{609D8C1B-2F9E-43B3-AEDD-7F89FF58F7F7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{609D8C1B-2F9E-43B3-AEDD-7F89FF58F7F7}.Debug|x86.Build.0 = Debug|Any CPU
+		{609D8C1B-2F9E-43B3-AEDD-7F89FF58F7F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{609D8C1B-2F9E-43B3-AEDD-7F89FF58F7F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{609D8C1B-2F9E-43B3-AEDD-7F89FF58F7F7}.Release|x64.ActiveCfg = Release|Any CPU
+		{609D8C1B-2F9E-43B3-AEDD-7F89FF58F7F7}.Release|x64.Build.0 = Release|Any CPU
+		{609D8C1B-2F9E-43B3-AEDD-7F89FF58F7F7}.Release|x86.ActiveCfg = Release|Any CPU
+		{609D8C1B-2F9E-43B3-AEDD-7F89FF58F7F7}.Release|x86.Build.0 = Release|Any CPU
+		{4B4077EC-8554-48E5-8796-4E9BAE8C900E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B4077EC-8554-48E5-8796-4E9BAE8C900E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B4077EC-8554-48E5-8796-4E9BAE8C900E}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{4B4077EC-8554-48E5-8796-4E9BAE8C900E}.Debug|x64.Build.0 = Debug|Any CPU
+		{4B4077EC-8554-48E5-8796-4E9BAE8C900E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{4B4077EC-8554-48E5-8796-4E9BAE8C900E}.Debug|x86.Build.0 = Debug|Any CPU
+		{4B4077EC-8554-48E5-8796-4E9BAE8C900E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B4077EC-8554-48E5-8796-4E9BAE8C900E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B4077EC-8554-48E5-8796-4E9BAE8C900E}.Release|x64.ActiveCfg = Release|Any CPU
+		{4B4077EC-8554-48E5-8796-4E9BAE8C900E}.Release|x64.Build.0 = Release|Any CPU
+		{4B4077EC-8554-48E5-8796-4E9BAE8C900E}.Release|x86.ActiveCfg = Release|Any CPU
+		{4B4077EC-8554-48E5-8796-4E9BAE8C900E}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0BB42A30-F3A1-4197-9BF3-AB54CCBC2D40}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E7359E5B-84B8-4DD5-B32F-64E2961ACCDC} = {E1D1AE11-E154-4319-8EAD-04C398E0F289}
+		{E830F1EA-6C04-43FB-B98F-9716E6F9456F} = {E1D1AE11-E154-4319-8EAD-04C398E0F289}
+		{A556024B-0C8E-4AAA-B5E5-7FBA589BAB86} = {E1D1AE11-E154-4319-8EAD-04C398E0F289}
+		{609D8C1B-2F9E-43B3-AEDD-7F89FF58F7F7} = {E1D1AE11-E154-4319-8EAD-04C398E0F289}
+		{4B4077EC-8554-48E5-8796-4E9BAE8C900E} = {E1D1AE11-E154-4319-8EAD-04C398E0F289}
 	EndGlobalSection
 EndGlobal
