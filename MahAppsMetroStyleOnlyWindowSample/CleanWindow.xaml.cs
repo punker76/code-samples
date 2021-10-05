@@ -1,6 +1,6 @@
 ﻿using MahApps.Metro.Controls;
 
-namespace MahAppsMetroSample
+namespace MahAppsMetroStyleOnlyWindowSample
 {
     /// <summary>
     /// Interaction logic for CleanWindow.xaml

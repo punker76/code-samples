@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace MahAppsMetroStyleOnlyWindowSample
+namespace MahAppsMetroWindowButtonCommands
 {
     /// <summary>
     /// Interaction logic for App.xaml

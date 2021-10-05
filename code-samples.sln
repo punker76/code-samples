@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MahAppsMetroStyleOnlyWindow
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MahAppsMetroThemesSample", "MahAppsMetroThemesSample\MahAppsMetroThemesSample.csproj", "{A055F1B6-990B-45B3-A8BE-E3E20F62C2EB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MahAppsMetroWindowButtonCommands", "MahAppsMetroWindowButtonCommands\MahAppsMetroWindowButtonCommands.csproj", "{6A8777C9-0803-4AB1-895E-6F7FD23EC9F6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -131,6 +133,18 @@ Global
 		{A055F1B6-990B-45B3-A8BE-E3E20F62C2EB}.Release|x64.Build.0 = Release|Any CPU
 		{A055F1B6-990B-45B3-A8BE-E3E20F62C2EB}.Release|x86.ActiveCfg = Release|Any CPU
 		{A055F1B6-990B-45B3-A8BE-E3E20F62C2EB}.Release|x86.Build.0 = Release|Any CPU
+		{6A8777C9-0803-4AB1-895E-6F7FD23EC9F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A8777C9-0803-4AB1-895E-6F7FD23EC9F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A8777C9-0803-4AB1-895E-6F7FD23EC9F6}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{6A8777C9-0803-4AB1-895E-6F7FD23EC9F6}.Debug|x64.Build.0 = Debug|Any CPU
+		{6A8777C9-0803-4AB1-895E-6F7FD23EC9F6}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{6A8777C9-0803-4AB1-895E-6F7FD23EC9F6}.Debug|x86.Build.0 = Debug|Any CPU
+		{6A8777C9-0803-4AB1-895E-6F7FD23EC9F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A8777C9-0803-4AB1-895E-6F7FD23EC9F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A8777C9-0803-4AB1-895E-6F7FD23EC9F6}.Release|x64.ActiveCfg = Release|Any CPU
+		{6A8777C9-0803-4AB1-895E-6F7FD23EC9F6}.Release|x64.Build.0 = Release|Any CPU
+		{6A8777C9-0803-4AB1-895E-6F7FD23EC9F6}.Release|x86.ActiveCfg = Release|Any CPU
+		{6A8777C9-0803-4AB1-895E-6F7FD23EC9F6}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
