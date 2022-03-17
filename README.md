@@ -1,3 +1,5 @@
+[![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/banner2-direct.svg)](https://vshymanskyy.github.io/StandWithUkraine)
+
 # Just some code samples...
 
 To build these samples you'll need at least [Visual Studio 2019 16.x Community Edition](<https://www.visualstudio.com/>).
