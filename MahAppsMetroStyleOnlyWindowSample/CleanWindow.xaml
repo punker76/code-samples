@@ -5,7 +5,7 @@
                       Title="CleanWindow"
                       Height="300"
                       Width="600"
-                      GlowBrush="{DynamicResource MahApps.Brushes.Accent}"
+                      GlowColor="{DynamicResource MahApps.Colors.Accent}"
                       Style="{DynamicResource MahApps.Styles.MetroWindow.Clean}">
 
     <controls:MetroWindow.Resources>

@@ -26,6 +26,9 @@ namespace MahAppsMetroThemesSample
             ThemeManager.Current.AddLibraryTheme(new LibraryTheme(
                 new Uri("pack://application:,,,/MahAppsMetroThemesSample;component/CustomAccents/Dark.Accent2.xaml"),
                 MahAppsLibraryThemeProvider.DefaultInstance));
+            ThemeManager.Current.AddLibraryTheme(new LibraryTheme(
+                new Uri("pack://application:,,,/MahAppsMetroThemesSample;component/CustomAccents/AccentColor.Light.Clean.xaml"),
+                MahAppsLibraryThemeProvider.DefaultInstance));
 
             base.OnStartup(e);
 

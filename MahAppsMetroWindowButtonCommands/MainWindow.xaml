@@ -4,10 +4,11 @@
                       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                       xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+                      xmlns:controlzex="urn:controlzex"
                       mc:Ignorable="d" ResizeMode="CanResizeWithGrip"
                       Title="MainWindow" Height="350" Width="525"
                       BorderThickness="1"
-                      GlowBrush="{DynamicResource MahApps.Brushes.AccentBase}"
+                      GlowColor="{DynamicResource MahApps.Colors.AccentBase}"
                       WindowStartupLocation="CenterScreen">
 
     <mah:MetroWindow.Resources>
@@ -23,6 +24,13 @@
                 <Trigger Property="IsPressed" Value="True">
                     <Setter Property="Background" Value="Green" />
                 </Trigger>
+                <Trigger Property="controlzex:NonClientControlProperties.IsNCMouseOver" Value="true">
+                    <Setter Property="Background" Value="DarkGreen" />
+                    <Setter Property="Foreground" Value="White" />
+                </Trigger>
+                <Trigger Property="controlzex:NonClientControlProperties.IsNCPressed" Value="true">
+                    <Setter Property="Background" Value="Green" />
+                </Trigger>
             </Style.Triggers>
         </Style>
         <Style x:Key="CustomDarkMinButtonStyle"
@@ -35,6 +43,13 @@
                     <Setter Property="Foreground" Value="White" />
                 </Trigger>
                 <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="Background" Value="Green" />
+                </Trigger>
+                <Trigger Property="controlzex:NonClientControlProperties.IsNCMouseOver" Value="true">
+                    <Setter Property="Background" Value="DarkGreen" />
+                    <Setter Property="Foreground" Value="White" />
+                </Trigger>
+                <Trigger Property="controlzex:NonClientControlProperties.IsNCPressed" Value="true">
                     <Setter Property="Background" Value="Green" />
                 </Trigger>
             </Style.Triggers>
@@ -52,6 +67,14 @@
                     <Setter Property="Background" Value="Yellow" />
                     <Setter Property="Foreground" Value="Black" />
                 </Trigger>
+                <Trigger Property="controlzex:NonClientControlProperties.IsNCMouseOver" Value="true">
+                    <Setter Property="Background" Value="DarkGoldenrod" />
+                    <Setter Property="Foreground" Value="White" />
+                </Trigger>
+                <Trigger Property="controlzex:NonClientControlProperties.IsNCPressed" Value="true">
+                    <Setter Property="Background" Value="Yellow" />
+                    <Setter Property="Foreground" Value="Black" />
+                </Trigger>
             </Style.Triggers>
         </Style>
         <Style x:Key="CustomDarkMaxButtonStyle"
@@ -63,6 +86,14 @@
                     <Setter Property="Foreground" Value="White" />
                 </Trigger>
                 <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="Background" Value="Yellow" />
+                    <Setter Property="Foreground" Value="Black" />
+                </Trigger>
+                <Trigger Property="controlzex:NonClientControlProperties.IsNCMouseOver" Value="true">
+                    <Setter Property="Background" Value="DarkGoldenrod" />
+                    <Setter Property="Foreground" Value="White" />
+                </Trigger>
+                <Trigger Property="controlzex:NonClientControlProperties.IsNCPressed" Value="true">
                     <Setter Property="Background" Value="Yellow" />
                     <Setter Property="Foreground" Value="Black" />
                 </Trigger>
@@ -80,6 +111,13 @@
                 <Trigger Property="IsPressed" Value="True">
                     <Setter Property="Background" Value="Red" />
                 </Trigger>
+                <Trigger Property="controlzex:NonClientControlProperties.IsNCMouseOver" Value="true">
+                    <Setter Property="Background" Value="DarkRed" />
+                    <Setter Property="Foreground" Value="White" />
+                </Trigger>
+                <Trigger Property="controlzex:NonClientControlProperties.IsNCPressed" Value="true">
+                    <Setter Property="Background" Value="Red" />
+                </Trigger>
             </Style.Triggers>
         </Style>
         <Style x:Key="CustomDarkCloseButtonStyle"
@@ -93,22 +131,25 @@
                 <Trigger Property="IsPressed" Value="True">
                     <Setter Property="Background" Value="Red" />
                 </Trigger>
+                <Trigger Property="controlzex:NonClientControlProperties.IsNCMouseOver" Value="true">
+                    <Setter Property="Background" Value="DarkRed" />
+                    <Setter Property="Foreground" Value="White" />
+                </Trigger>
+                <Trigger Property="controlzex:NonClientControlProperties.IsNCPressed" Value="true">
+                    <Setter Property="Background" Value="Red" />
+                </Trigger>
             </Style.Triggers>
         </Style>
 
     </mah:MetroWindow.Resources>
 
     <mah:MetroWindow.WindowButtonCommands>
-        <mah:WindowButtonCommands Minimize="A custom Tooltip which will be shown on Min button"
-                                       Maximize="Maximize the window"
-                                       Restore="Restore the window"
-                                       Close="Noooo... don't close me!"
-                                       LightMinButtonStyle="{StaticResource CustomLightMinButtonStyle}"
-                                       LightMaxButtonStyle="{StaticResource CustomLightMaxButtonStyle}"
-                                       LightCloseButtonStyle="{StaticResource CustomLightCloseButtonStyle}"
-                                       DarkMinButtonStyle="{StaticResource CustomDarkMinButtonStyle}"
-                                       DarkMaxButtonStyle="{StaticResource CustomDarkMaxButtonStyle}"
-                                       DarkCloseButtonStyle="{StaticResource CustomDarkCloseButtonStyle}" />
+        <mah:WindowButtonCommands LightMinButtonStyle="{StaticResource CustomLightMinButtonStyle}"
+                                  LightMaxButtonStyle="{StaticResource CustomLightMaxButtonStyle}"
+                                  LightCloseButtonStyle="{StaticResource CustomLightCloseButtonStyle}"
+                                  DarkMinButtonStyle="{StaticResource CustomDarkMinButtonStyle}"
+                                  DarkMaxButtonStyle="{StaticResource CustomDarkMaxButtonStyle}"
+                                  DarkCloseButtonStyle="{StaticResource CustomDarkCloseButtonStyle}" />
     </mah:MetroWindow.WindowButtonCommands>
 
 </mah:MetroWindow>

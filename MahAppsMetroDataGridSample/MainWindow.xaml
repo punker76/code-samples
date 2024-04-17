@@ -8,7 +8,7 @@
                  Title="MahApps.Metro DataGrid Sample"
                  Width="670"
                  Height="350"
-                 GlowBrush="{DynamicResource MahApps.Brushes.Accent}"
+                 GlowColor="{DynamicResource MahApps.Colors.Accent}"
                  mc:Ignorable="d">
 
     <mah:MetroWindow.Resources>

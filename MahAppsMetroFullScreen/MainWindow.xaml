@@ -6,11 +6,8 @@
                       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                       Title="MainWindow"
                       BorderThickness="1"
-                      GlowBrush="{DynamicResource MahApps.Brushes.AccentBase}"
+                      GlowColor="{DynamicResource MahApps.Colors.AccentBase}"
                       WindowStartupLocation="CenterScreen"
-                      WindowState="Maximized"
-                      UseNoneWindowStyle="True"
-                      IgnoreTaskbarOnMaximize="True"
                       Width="525"
                       Height="350"
                       mc:Ignorable="d">

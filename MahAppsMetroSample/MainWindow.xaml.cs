@@ -36,8 +36,7 @@ namespace MahAppsMetroSample
         {
             var w = new MetroWindow
             {
-                GlowBrush = Brushes.Gray,
-                BorderThickness = new Thickness(1),
+                GlowColor = Colors.Gray,
                 Title = "Modal",
                 Width = 300,
                 Height = 200,
@@ -61,7 +60,7 @@ namespace MahAppsMetroSample
                 var fullScreen = (bool)e.NewValue;
                 if (fullScreen)
                 {
-                    metroWindow.UseNoneWindowStyle = true;
+                    metroWindow.WindowStyle = WindowStyle.None;
                     metroWindow.IgnoreTaskbarOnMaximize = true;
                     metroWindow.ShowMinButton = false;
                     metroWindow.ShowMaxRestoreButton = false;
@@ -70,7 +69,7 @@ namespace MahAppsMetroSample
                 }
                 else
                 {
-                    metroWindow.UseNoneWindowStyle = false;
+                    metroWindow.WindowStyle = WindowStyle.SingleBorderWindow;
                     metroWindow.ShowTitleBar = true; // <-- this must be set to true
                     metroWindow.IgnoreTaskbarOnMaximize = false;
                     metroWindow.ShowMinButton = true;

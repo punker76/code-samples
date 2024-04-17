@@ -7,7 +7,7 @@
                  Width="600"
                  Height="250"
                  TitleCharacterCasing="Normal"
-                 GlowBrush="{DynamicResource MahApps.Brushes.Accent}"
+                 GlowColor="{DynamicResource MahApps.Colors.Accent}"
                  RenderOptions.ClearTypeHint="Enabled"
                  ResizeMode="CanResizeWithGrip"
                  TextOptions.TextFormattingMode="Display"

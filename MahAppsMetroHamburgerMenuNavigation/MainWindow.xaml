@@ -9,7 +9,7 @@
                       Title="MainWindow"
                       Width="600"
                       Height="450"
-                      GlowBrush="{DynamicResource MahApps.Brushes.AccentBase}"
+                      GlowColor="{DynamicResource MahApps.Colors.AccentBase}"
                       WindowStartupLocation="CenterScreen"
                       WindowTransitionsEnabled="False"
                       mc:Ignorable="d">

@@ -9,7 +9,7 @@
                  TextOptions.TextFormattingMode="Display"
                  Title="Change App Style"
                  SizeToContent="WidthAndHeight"
-                 GlowBrush="{DynamicResource MahApps.Brushes.Accent}"
+                 GlowColor="{DynamicResource MahApps.Colors.Accent}"
                  ResizeMode="CanResizeWithGrip">
 
     <mah:MetroWindow.Resources>

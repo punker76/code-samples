@@ -2,11 +2,11 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <!-- Project properties -->
     <PropertyGroup>
-        <TargetFrameworks>net472;netcoreapp3.1;net5.0-windows</TargetFrameworks>
+        <TargetFrameworks>net8.0-windows;net6.0-windows;net462</TargetFrameworks>
         <AppendTargetFrameworkToOutputPath>true</AppendTargetFrameworkToOutputPath>
         <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
         <GenerateDocumentationFile>false</GenerateDocumentationFile>
-        <LangVersion>9.0</LangVersion>
+        <LangVersion>10.0</LangVersion>
         <DebugSymbols>true</DebugSymbols>
         <DebugType>full</DebugType>
         <UseWPF>true</UseWPF>
@@ -20,8 +20,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <None Remove="**\*.png;**\*.jpg;**\*.ico;**\*.ttf" />
-        <Resource Include="**\*.png;**\*.jpg;**\*.ico;**\*.ttf" />
+        <None Remove="**\*.bmp;**\*.cur;**\*.gif;**\*.ico;**\*.jpg;**\*.png;**\*.ttf"/>
+        <Resource Include="**\*.bmp;**\*.cur;**\*.gif;**\*.ico;**\*.jpg;**\*.png;**\*.ttf" Exclude="**\bin\**\*.*;**\obj\**\*.*"/>
     </ItemGroup>
 
     <ItemGroup>
