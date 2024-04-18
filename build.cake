@@ -2,8 +2,7 @@
 // TOOLS / ADDINS
 ///////////////////////////////////////////////////////////////////////////////
 
-#tool dotnet:?package=GitVersion.Tool&version=5.6.6
-#tool nuget:?package=vswhere&version=2.8.4
+#tool nuget:?package=GitVersion.CommandLine&version=5.12.0
 #addin nuget:?package=Cake.Figlet&version=2.0.1
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -28,20 +27,9 @@ if (isLocal == false || verbosity == Verbosity.Verbose)
 }
 GitVersion gitVersion = GitVersion(new GitVersionSettings { OutputType = GitVersionOutput.Json });
 
-var isPullRequest = AppVeyor.Environment.PullRequest.IsPullRequest;
 var branchName = gitVersion.BranchName;
 var isDevelopBranch = StringComparer.OrdinalIgnoreCase.Equals("develop", branchName);
 var isReleaseBranch = StringComparer.OrdinalIgnoreCase.Equals("main", branchName);
-var isTagged = AppVeyor.Environment.Repository.Tag.IsTag;
-
-var latestInstallationPath = VSWhereLatest(new VSWhereLatestSettings { IncludePrerelease = true });
-var msBuildPath = latestInstallationPath.Combine("./MSBuild/Current/Bin");
-var msBuildPathExe = msBuildPath.CombineWithFilePath("./MSBuild.exe");
-
-if (FileExists(msBuildPathExe) == false)
-{
-    throw new NotImplementedException("You need at least Visual Studio 2019 to build this project.");
-}
 
 // Directories and Paths
 var solution = "./code-samples.sln";
@@ -70,7 +58,6 @@ Setup(ctx =>
     Information("IsLocalBuild           : {0}", isLocal);
     Information("Branch                 : {0}", branchName);
     Information("Configuration          : {0}", configuration);
-    Information("MSBuildPath            : {0}", msBuildPath);
 });
 
 Teardown(ctx =>
@@ -93,24 +80,31 @@ Task("Clean")
 Task("Restore")
     .Does(() =>
 {
-    NuGetRestore(solution, new NuGetRestoreSettings { MSBuildPath = msBuildPath.ToString() });
+    DotNetRestore(solution);
 });
 
 Task("Build")
   .Does(() =>
 {
-    var msBuildSettings = new MSBuildSettings {
-        Verbosity = verbosity
-        , ToolPath = msBuildPathExe
-        , Configuration = configuration
-        , ArgumentCustomization = args => args.Append("/m").Append("/nr:false") // The /nr switch tells msbuild to quite once it�s done
-        // , BinaryLogger = new MSBuildBinaryLogSettings() { Enabled = isLocal }
+    var msbuildSettings = new DotNetMSBuildSettings
+    {
+      MaxCpuCount = 0,
+      Version = gitVersion.MajorMinorPatch,
+      AssemblyVersion = gitVersion.AssemblySemVer,
+      FileVersion = gitVersion.AssemblySemFileVer,
+      InformationalVersion = gitVersion.InformationalVersion,
+      PackageVersion = gitVersion.NuGetVersion,
+      ArgumentCustomization = args => args.Append("/m").Append("/nr:false") // The /nr switch tells msbuild to quite once it�s done
     };
 
-    MSBuild(solution,
-            msBuildSettings
-            .SetMaxCpuCount(0)
-    );
+    var settings = new DotNetBuildSettings
+    {
+      MSBuildSettings = msbuildSettings,
+      Configuration = configuration,
+      NoRestore = true
+    };
+
+    DotNetBuild(solution, settings);
 });
 
 ///////////////////////////////////////////////////////////////////////////////
